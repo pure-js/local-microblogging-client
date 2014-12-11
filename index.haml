@@ -2,10 +2,19 @@
 %html
   %head
     %meta(charset='utf-8')
-    %title Reen
-    %link{:rel => :stylesheet, :href => "base.min.css"}
+    %title Local microblogging client
     %link{:rel => :stylesheet, :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"}
 
   %body
-
-    %link{:href => '', :rel => 'stylesheet', :type => 'text/css'}
+    .container
+      .row
+        .col-md-12
+          %ul
+            %li
+              %h3 Automatic Music Generator Jukedeck Wins Le Web Startup Competition
+              %p As per usual the Le Web startup competition has been showcasing a smorgasbord of Europe’s hottest startups this week, and three stood out for the judges. But out of Easysize, Naturalcycles and Jukedeck, it was Jukedeck which won the top prize in the end.
+              %button.btn.btn-primary
+                %i.glyphicon.glyphicon-pencil
+                Add new post
+              %button.btn.btn-danger{:title => 'Remove post', :type => 'button'}
+                %i.glyphicon.glyphicon-trash
