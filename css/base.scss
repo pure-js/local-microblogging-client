@@ -5,7 +5,11 @@
 
 
 .news-list {
+  overflow: hidden;
+  padding: 0;
+
   &__item {
     list-style: none;
+    display: block;
   }
 }
