@@ -1,0 +1,11 @@
+.img {
+  display: block;
+  max-width: 100%;
+}
+
+
+.news-list {
+  &__item {
+    list-style: none;
+  }
+}
