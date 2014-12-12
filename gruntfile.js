@@ -52,6 +52,18 @@ module.exports = function(grunt){
                 'src': ['build/base.css'],
                 'dest': 'build/base.min.css'
             }
+        },
+        'gh-pages': {
+            options: {
+                // Options for all targets go here.
+            },
+            'gh-pages': {
+                options: {
+                    base: 'build'
+                },
+                // These files will get pushed to the `gh-pages` branch (the default).
+                src: ['index.html', 'base.min.css', 'all-of-its.min.js']
+            }
         }
     });
 
@@ -60,6 +72,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-haml');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-yui-compressor');
+    grunt.loadNpmTasks('grunt-gh-pages');
 
 
     grunt.registerTask('default', [
@@ -74,5 +87,9 @@ module.exports = function(grunt){
         'sass',
         'cssmin',
         'min'
+    ]);
+
+    grunt.registerTask('gh-pages', [
+        'gh-pages'
     ]);
 };
