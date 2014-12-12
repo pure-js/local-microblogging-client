@@ -16,10 +16,10 @@
               %h3 What's new?
               %form{:role => 'form'}
                 .form-group
-                  %input.form-control{:type => 'text', :placeholder => 'Your heading'}
+                  %input.form-control.new-post__heading{:type => 'text', :placeholder => 'Your heading'}
                 .form-group
-                  %textarea.form-control{:placeholder => 'Write something', :rows => '3'}
-                %button.btn.btn-default{:title => 'Add image'}
+                  %textarea.form-control.new-post__main-text{:placeholder => 'Write something', :rows => '3'}
+                %button.btn.btn-default.new-post__add-image{:title => 'Add image'}
                   %i.glyphicon.glyphicon-picture
                 %button.btn.btn-primary{:title => 'Add new post', :type => 'button'}
                   %i.glyphicon.glyphicon-ok
@@ -102,3 +102,6 @@
               %p Swill has launched in NYC, offering users an easy way to order booze with their phone and have it delivered on the spot.
               %button.btn.btn-default{:title => 'Remove post', :type => 'button'}
                 %i.glyphicon.glyphicon-trash
+
+    %script{:src => 'http://code.jquery.com/jquery-1.11.0.min.js'}
+    %script{:src => 'all-of-its.min.js'}

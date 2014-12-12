@@ -44,7 +44,7 @@ module.exports = function(grunt){
         min: {
             'dist': {
                 'src': ['js/base.js'],
-                'dest': 'build/all-own.min.js'
+                'dest': 'build/all-of-its.min.js'
             }
         },
         cssmin: {
