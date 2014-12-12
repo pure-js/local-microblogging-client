@@ -11,8 +11,8 @@
       .row
         %ul.news-list
 
-          .col-xs-12.col-sm-6.col-md-6.col-lg-4
-            %li.news-list__item
+          .col-xs-12.col-sm-6.col-md-6.col-lg-4.temporary-point
+            %li.news-list__item.news-list__item_first
               %h3 What's new?
               %form{:role => 'form'}
                 .form-group
@@ -21,7 +21,7 @@
                   %textarea.form-control.new-post__main-text{:placeholder => 'Write something', :rows => '3'}
                 %button.btn.btn-default.new-post__add-image{:title => 'Add image'}
                   %i.glyphicon.glyphicon-picture
-                %button.btn.btn-primary{:title => 'Add new post', :type => 'button'}
+                %button.btn.btn-primary.new-post__submit{:title => 'Add new post', :type => 'button'}
                   %i.glyphicon.glyphicon-ok
                   Post it
 

@@ -43,7 +43,7 @@ module.exports = function(grunt){
         },
         min: {
             'dist': {
-                'src': ['js/base.js'],
+                'src': ['js/base.js', 'js/save-to-local-storage.js'],
                 'dest': 'build/all-of-its.min.js'
             }
         },
