@@ -12,7 +12,7 @@ module.exports = function(grunt){
                     style: 'expanded'
                 },
                 files: {
-                    'build/base.css': 'css/base.scss'
+                    'pre-build/base.css': 'css/base.scss'
                 }
             }
         },
@@ -29,7 +29,7 @@ module.exports = function(grunt){
                 tasks: ['sass']
             },
             cssmin: {
-                files: 'build/*.css',
+                files: 'pre-build/*.css',
                 tasks: ['cssmin']
             },
             haml: {
@@ -44,13 +44,13 @@ module.exports = function(grunt){
         min: {
             'dist': {
                 'src': ['js/base.js', 'js/save-to-local-storage.js'],
-                'dest': 'build/all-of-its.min.js'
+                'dest': 'build/combined.min.js'
             }
         },
         cssmin: {
             'dist': {
-                'src': ['build/base.css'],
-                'dest': 'build/base.min.css'
+                'src': ['pre-build/base.css'],
+                'dest': 'build/combined.min.css'
             }
         },
         'gh-pages': {
@@ -58,7 +58,7 @@ module.exports = function(grunt){
                 base: 'build'
             },
             // These files will get pushed to the `gh-pages` branch (the default).
-            src: ['index.html', 'base.min.css', 'all-of-its.min.js']
+            src: ['index.html', 'combined.min.css', 'combined.min.js', 'img/*']
         }
     });
 

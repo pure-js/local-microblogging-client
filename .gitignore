@@ -9,3 +9,9 @@ node_modules/*
 
 # Build
 build/*
+
+# Pre Build
+pre-build/*
+
+# Grunt
+.grunt/*
