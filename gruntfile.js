@@ -55,15 +55,10 @@ module.exports = function(grunt){
         },
         'gh-pages': {
             options: {
-                // Options for all targets go here.
+                base: 'build'
             },
-            'gh-pages': {
-                options: {
-                    base: 'build'
-                },
-                // These files will get pushed to the `gh-pages` branch (the default).
-                src: ['index.html', 'base.min.css', 'all-of-its.min.js']
-            }
+            // These files will get pushed to the `gh-pages` branch (the default).
+            src: ['index.html', 'base.min.css', 'all-of-its.min.js']
         }
     });
 
@@ -89,7 +84,7 @@ module.exports = function(grunt){
         'min'
     ]);
 
-    grunt.registerTask('gh-pages', [
+    grunt.registerTask('to-github', [
         'gh-pages'
     ]);
 };
