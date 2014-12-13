@@ -13,5 +13,5 @@ build/*
 # Pre Build
 pre-build/*
 
-# Grunt
+# Grunt folder for gh-pages grunt module
 .grunt/*
