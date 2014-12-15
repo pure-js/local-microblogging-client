@@ -10,23 +10,25 @@ Create the client for working with a local micro blog, using JS/HTML/CSS. The cl
 
 ## For beginning ##
 ```
-npm install
-grunt build
+$ npm install
+$ bower install
+$ grunt build
 ```
 
 ## Watching ##
 ```
-grunt
+$ grunt
 ```
 
 ## To publish on Github pages ##
 ```
-grunt gh-pages
+$ grunt gh-pages
 ```
 
 ## Used ##
 - Sass (SCSS)
 - Bootstrap 3
+- jQuery v1.11.0
 - Haml
 - Grunt, include this plugins:
   - grunt-contrib-copy

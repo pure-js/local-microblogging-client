@@ -15,3 +15,6 @@ pre-build/*
 
 # Grunt folder for gh-pages grunt module
 .grunt/*
+
+Bower
+bower_components/*
