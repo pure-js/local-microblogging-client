@@ -50,7 +50,6 @@
 
             $submit.on('click', function(e) {
                 var headingValue = $heading.val();
-                //var imageValue = $image.val();
                 var textValue = $text.val();
 
                 // Store
@@ -60,7 +59,7 @@
                 console.log(localStorage.getItem('headingValue'));
                 console.log(localStorage.getItem('textValue'));
 
-                $after.after('<li class=\"news-list__item\"><h3><a href=\"#\">' + headingValue + '</a></h3><p>' + textValue + '</p><button class=\"btn btn-default remove-post\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
+                $after.after('<li class=\"news-list__item\"><h3 class=\"h3\"><a class=\"h3__link\" href=\"#\">' + headingValue + '</a></h3><p class=\"p\">' + textValue + '</p><button class=\"btn btn-default remove-post\" title=\"Remove post\" type=\"button\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
 
                 e.preventDefault();
             });

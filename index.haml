@@ -7,21 +7,20 @@
 
   %body.body
     .container
-      .row
-        %ul.news-list
 
-          %li.news-list__item.news-list__item_first
-            %h3.h3 What's new?
-            %form{:role => 'form'}
-              .form-group
-                %input.form-control.new-post__heading{:type => 'text', :placeholder => 'Your heading'}
-              .form-group
-                %textarea.form-control.new-post__main-text{:placeholder => 'Write something', :rows => '3'}
-              %button.btn.btn-default.new-post__add-image{:title => 'Add image'}
-                %i.glyphicon.glyphicon-picture
-              %button.btn.btn-primary.new-post__submit{:title => 'Add new post', :type => 'button'}
-                %i.glyphicon.glyphicon-ok
-                Post it
+      %ul.news-list
+        %li.news-list__item.news-list__item_first
+          %h3.h3 What's new?
+          %form{:role => 'form'}
+            .form-group
+              %input.form-control.new-post__heading{:type => 'text', :placeholder => 'Your heading'}
+            .form-group
+              %textarea.form-control.new-post__main-text{:placeholder => 'Write something', :rows => '3'}
+            %button.btn.btn-default.new-post__add-image{:title => 'Add image'}
+              %i.glyphicon.glyphicon-picture
+            %button.btn.btn-primary.new-post__submit{:title => 'Add new post', :type => 'button'}
+              %i.glyphicon.glyphicon-ok
+              Post it
 
 
     %script{:src => 'http://code.jquery.com/jquery-1.11.0.min.js'}

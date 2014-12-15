@@ -31,7 +31,6 @@ $ grunt gh-pages
 - jQuery v1.11.0
 - Haml
 - Grunt, include this plugins:
-  - grunt-contrib-copy
   - grunt-contrib-haml
   - grunt-contrib-sass
   - grunt-contrib-watch
