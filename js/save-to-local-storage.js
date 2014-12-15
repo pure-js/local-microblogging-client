@@ -2,6 +2,7 @@
 
 (function ($) {
 
+
     $.fn.saveToLocalStorage = function(options) {
 
         var defaults = {
@@ -30,15 +31,15 @@
 
 
 
-            /*$.getJSON('https://api.myjson.com/bins/5a7kb', function(json) {
+            $.getJSON('https://api.myjson.com/bins/5a7kb', function(json) {
 
                 $.each( json.posts, function( index ) {
                     var currentPostHeading = json.posts[index][0];
                     var currentPostText = json.posts[index][1];
 
-                    $('.temporary-point').append('<li class=\"news-list__item\"><h3><a href=\"#\">' + currentPostHeading + '</a></h3><p>' + currentPostText + '</p><button class=\"btn btn-default remove-post\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
+                    $newsList.append('<li class=\"news-list__item\"><h3 class=\"h3\"><a class=\"h3__link\" href=\"#\">' + currentPostHeading + '</a></h3><p class=\"p\">' + currentPostText + '</p><button class=\"btn btn-default remove-post\" title=\"Remove post\" type=\"button\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
                 });
-            });*/
+            });
 
 
             //localStorage["names"] = JSON.stringify(posts);

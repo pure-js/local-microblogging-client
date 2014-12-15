@@ -65,7 +65,7 @@ module.exports = function(grunt){
                 base: 'build'
             },
             // These files will get pushed to the `gh-pages` branch (the default).
-            src: ['index.html', 'combined.min.css', 'combined.min.js', 'posts.json']
+            src: ['index.html', 'combined.min.css', 'combined.min.js']
         }
     });
 

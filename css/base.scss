@@ -1,12 +1,44 @@
 // Bootstrap custom
+// Overwrite path variable
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/" !default;
 @import "bootstrap-custom";
+
+
+// Begin
 
 @import "variables";
 
 
 .body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $very-dark-gray;
 }
+
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
 
 
 // Headings
@@ -39,9 +71,9 @@
   overflow: hidden;
   width: 100%;
   padding: 0 20px;
-  -moz-column-gap: 20px;
-  -webkit-column-gap: 20px;
-  column-gap: 20px;
+  -moz-column-gap: 30px;
+  -webkit-column-gap: 30px;
+  column-gap: 30px;
   -moz-column-count: 1;
   -webkit-column-count: 1;
   column-count: 1;
@@ -50,6 +82,7 @@
     list-style: none;
     display: inline-block;
     width: 100%;
+    padding: 0;
   }
 }
 
