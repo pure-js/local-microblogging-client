@@ -27,7 +27,7 @@ $ grunt gh-pages
 
 ## Used ##
 - Sass (SCSS)
-- Bootstrap 3
+- Bootstrap v3.3.1 assets
 - jQuery v1.11.0
 - Haml
 - Grunt, include this plugins:
