@@ -29,6 +29,7 @@ grunt gh-pages
 - Bootstrap 3
 - Haml
 - Grunt, include this plugins:
+  - grunt-contrib-copy
   - grunt-contrib-haml
   - grunt-contrib-sass
   - grunt-contrib-watch

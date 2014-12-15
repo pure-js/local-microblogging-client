@@ -31,7 +31,7 @@
 
 
             $.getJSON('https://raw.githubusercontent.com/IamEmpty/local-microblogging-client/gh-pages/posts.json', function(json) {
-                var firstPostHeading = json.posts[0][0];
+                var firstPostHeading = json.posts[0][1];
                 console.log('firstPostHeading' + firstPostHeading);
             });
 
