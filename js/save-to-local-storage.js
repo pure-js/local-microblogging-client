@@ -30,7 +30,7 @@
 
 
 
-            $.getJSON('https://raw.githubusercontent.com/IamEmpty/local-microblogging-client/gh-pages/posts.json', function(json) {
+            $.getJSON('http://iamempty.github.io/local-microblogging-client/posts.json', function(json) {
                 var firstPostHeading = json.posts[0][1];
                 console.log('firstPostHeading' + firstPostHeading);
             });
@@ -38,8 +38,7 @@
 
             //localStorage["names"] = JSON.stringify(posts);
             //var storedNames = JSON.parse(localStorage["names"]);
-
-
+            
             //$after.after('<li class=\"news-list__item\"><h3><a href=\"#\">' + headingValue + '</a></h3><a href=\"#\"><img class=\"img\" src=\"#\" alt=\"\"></a><p>' + textValue + '</p><button class=\"btn btn-default remove-post\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
 
 
