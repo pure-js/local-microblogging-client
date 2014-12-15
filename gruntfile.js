@@ -6,6 +6,13 @@ module.exports = function(grunt){
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        copy: {
+            main: {
+                src: 'posts.json',
+                dest: 'build/posts.json'
+            }
+        },
         sass: {
             dist: {
                 options: {
@@ -63,6 +70,7 @@ module.exports = function(grunt){
     });
 
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-haml');
     grunt.loadNpmTasks('grunt-contrib-watch');
