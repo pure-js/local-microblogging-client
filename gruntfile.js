@@ -86,6 +86,7 @@ module.exports = function(grunt){
     // Compile production files
 
     grunt.registerTask('build', [
+        'copy',
         'haml',
         'sass',
         'cssmin',

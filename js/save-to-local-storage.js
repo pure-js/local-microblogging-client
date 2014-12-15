@@ -30,16 +30,21 @@
 
 
 
-            $.getJSON('http://iamempty.github.io/local-microblogging-client/posts.json', function(json) {
-                var firstPostHeading = json.posts[0][1];
-                console.log('firstPostHeading' + firstPostHeading);
-            });
+            /*$.getJSON('https://api.myjson.com/bins/5a7kb', function(json) {
+
+                $.each( json.posts, function( index ) {
+                    var currentPostHeading = json.posts[index][0];
+                    var currentPostText = json.posts[index][1];
+
+                    $('.temporary-point').append('<li class=\"news-list__item\"><h3><a href=\"#\">' + currentPostHeading + '</a></h3><p>' + currentPostText + '</p><button class=\"btn btn-default remove-post\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
+                });
+            });*/
 
 
             //localStorage["names"] = JSON.stringify(posts);
             //var storedNames = JSON.parse(localStorage["names"]);
-            
-            //$after.after('<li class=\"news-list__item\"><h3><a href=\"#\">' + headingValue + '</a></h3><a href=\"#\"><img class=\"img\" src=\"#\" alt=\"\"></a><p>' + textValue + '</p><button class=\"btn btn-default remove-post\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
+
+
 
 
             $submit.on('click', function(e) {
@@ -54,7 +59,7 @@
                 console.log(localStorage.getItem('headingValue'));
                 console.log(localStorage.getItem('textValue'));
 
-                $after.after('<li class=\"news-list__item\"><h3><a href=\"#\">' + headingValue + '</a></h3><a href=\"#\"><img class=\"img\" src=\"#\" alt=\"\"></a><p>' + textValue + '</p><button class=\"btn btn-default remove-post\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
+                $after.after('<li class=\"news-list__item\"><h3><a href=\"#\">' + headingValue + '</a></h3><p>' + textValue + '</p><button class=\"btn btn-default remove-post\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
 
                 e.preventDefault();
             });
