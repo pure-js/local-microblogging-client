@@ -2,12 +2,10 @@
 
 (function ($) {
 
-
     $.fn.saveToLocalStorage = function(options) {
 
         var defaults = {
             heading: '.new-post__heading',
-            image: '.new-post__add-image',
             text: '.new-post__main-text',
             submit: '.new-post__submit',
             newsList: '.news-list',
@@ -21,14 +19,12 @@
 
             var settings = $.extend({}, defaults, options),
                 $heading = $(settings.heading, this),
-                $image = $(settings.image, this),
                 $text = $(settings.text, this),
                 $submit = $(settings.submit, this),
                 $newsList = $(settings.newsList, this),
-                $post = $(settings.post, this),
+                $post = settings.post,
                 $after = $(settings.after, this),
                 $removePost = settings.removePost;
-
 
 
             $.getJSON('https://api.myjson.com/bins/5a7kb', function(json) {
@@ -39,11 +35,30 @@
 
                     $newsList.append('<li class=\"news-list__item\"><h3 class=\"h3\"><a class=\"h3__link\" href=\"#\">' + currentPostHeading + '</a></h3><p class=\"p\">' + currentPostText + '</p><button class=\"btn btn-default remove-post\" title=\"Remove post\" type=\"button\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
                 });
+
+                // Put the object into storage
+                localStorage.setItem('testObject', JSON.stringify(json.posts));
+
+                // Retrieve the object from storage
+                var retrievedObject = localStorage.getItem('testObject');
+
+                console.log('retrievedObject: ', JSON.parse(retrievedObject));
+
+
+                // Transform array to object
+
+                /*function toObject(json.posts) {
+                    var rv = {};
+                    for (var i = 0; i < arr.length; ++i)
+                        rv[i] = arr[i];
+                    return rv;
+                }*/
+
+                console.log(toObject());
             });
 
 
-            //localStorage["names"] = JSON.stringify(posts);
-            //var storedNames = JSON.parse(localStorage["names"]);
+
 
 
 
@@ -55,6 +70,7 @@
                 // Store
                 localStorage.setItem('headingValue', headingValue);
                 localStorage.setItem('textValue', textValue);
+
                 // Retrieve
                 console.log(localStorage.getItem('headingValue'));
                 console.log(localStorage.getItem('textValue'));
@@ -65,9 +81,9 @@
             });
 
 
-            $newsList.on('click', '.remove-post',  function(e) {
-                $(this).parent('.news-list__item').slideUp(400, function() {
-                    $(this).parent('.news-list__item').remove();
+            $newsList.on('click', $removePost,  function(e) {
+                $(this).parent($post).slideUp(400, function() {
+                    this.remove();
                 });
 
                 e.preventDefault();
