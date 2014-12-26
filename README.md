@@ -30,9 +30,4 @@ $ grunt gh-pages
 - Bootstrap v3.3.1 assets
 - jQuery v1.11.0
 - Haml
-- Grunt, include this plugins:
-  - grunt-contrib-haml
-  - grunt-contrib-sass
-  - grunt-contrib-watch
-  - grunt-yui-compressor
-  - grunt-gh-pages
+- Grunt

@@ -24,6 +24,18 @@ module.exports = function(grunt){
                 }
             }
         },
+        min: {
+            'dist': {
+                'src': ['js/base.js', 'js/save-to-local-storage.js'],
+                'dest': 'build/combined.min.js'
+            }
+        },
+        cssmin: {
+            'dist': {
+                'src': ['pre-build/base.css'],
+                'dest': 'build/combined.min.css'
+            }
+        },
         watch: {
             css: {
                 files: 'css/*.scss',
@@ -40,18 +52,14 @@ module.exports = function(grunt){
             min: {
                 files: 'js/*.js',
                 tasks: ['min']
-            }
-        },
-        min: {
-            'dist': {
-                'src': ['js/base.js', 'js/save-to-local-storage.js'],
-                'dest': 'build/combined.min.js'
-            }
-        },
-        cssmin: {
-            'dist': {
-                'src': ['pre-build/base.css'],
-                'dest': 'build/combined.min.css'
+            },
+            livereload: {
+                // Here we watch the files the sass task will compile to
+                // These files are sent to the live reload server after sass compiles to them
+                options: {
+                    livereload: true
+                },
+                files: ['build/*']
             }
         },
         'gh-pages': {
