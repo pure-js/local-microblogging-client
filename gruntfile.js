@@ -8,19 +8,32 @@ module.exports = function(grunt){
         pkg: grunt.file.readJSON('package.json'),
 
         sass: {
-            dist: {
+            dev: {
                 options: {
                     style: 'expanded'
                 },
                 files: {
                     'build/development/main.css': 'stylesheets/main.scss'
                 }
+            },
+            production: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    'build/production/main.css': 'stylesheets/main.scss'
+                }
             }
         },
         haml: {
-            dist: {
+            dev: {
                 files: {
                     'build/development/index.html': 'index.haml'
+                }
+            },
+            production: {
+                files: {
+                    'build/production/index.html': 'index.haml'
                 }
             }
         },
@@ -37,7 +50,7 @@ module.exports = function(grunt){
             }
         },
         copy: {
-            main: {
+            dev: {
                 expand: true,
                 cwd: 'js/',
                 src: ['*.js'],
@@ -47,15 +60,15 @@ module.exports = function(grunt){
         watch: {
             copy: {
                 files: 'js/*.js',
-                tasks: ['copy']
+                tasks: ['copy:dev']
             },
             css: {
                 files: ['stylesheets/*.scss', 'stylesheets/*/*.scss'],
-                tasks: ['sass']
+                tasks: ['sass:dev']
             },
             haml: {
                 files: '*.haml',
-                tasks: ['haml']
+                tasks: ['haml:dev']
             },
             livereload: {
                 // Here we watch the files the sass task will compile to
@@ -66,9 +79,14 @@ module.exports = function(grunt){
                 files: ['build/development/*']
             }
         },
+        clean: {
+            production: {
+                src: ['build/production/main.css.map', 'build/production/main.css']
+            }
+        },
         'gh-pages': {
             options: {
-                base: 'build'
+                base: 'build/production'
             },
             // These files will get pushed to the `gh-pages` branch (the default).
             src: ['index.html', 'combined.min.css', 'combined.min.js']
@@ -76,6 +94,7 @@ module.exports = function(grunt){
     });
 
 
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-haml');
@@ -92,25 +111,27 @@ module.exports = function(grunt){
     // Compile developers files
 
     grunt.registerTask('dev-build', [
-        'copy',
-        'haml',
-        'sass'
+        'copy:dev',
+        'haml:dev',
+        'sass:dev'
     ]);
 
 
     // Compile production files
 
     grunt.registerTask('production-build', [
-        'haml',
-        'sass',
+        'haml:production',
+        'sass:production',
         'cssmin',
-        'min'
+        'min',
+        'clean'
     ]);
 
 
     // Send production files to GitHub
 
     grunt.registerTask('to-github', [
+        'production-build',
         'gh-pages'
     ]);
 };

@@ -6,6 +6,7 @@ Create the client for working with a local micro blog, using JS/HTML/CSS. The cl
 
 ## Working environment ##
 - node.js v0.10.33
+- ruby 2.0.0p481
 
 
 ## For beginning ##
@@ -16,9 +17,20 @@ $ bower install
 $ grunt build
 ```
 
+## Developers build ##
+### Using for testing and development ###
+```
+$ grunt dev-build
+```
+
 ## Watching ##
 ```
 $ grunt
+```
+
+## Production ##
+```
+$ grunt production-build
 ```
 
 ## To publish on Github pages ##

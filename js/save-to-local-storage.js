@@ -60,9 +60,6 @@
 
 
 
-
-
-
             $submit.on('click', function(e) {
                 var headingValue = $heading.val();
                 var textValue = $text.val();
