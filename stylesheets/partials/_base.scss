@@ -1,0 +1,42 @@
+@import "../modules/colors";
+@import "../modules/paths";
+
+
+// Bootstrap customization
+// Overwrite path variable
+
+$icon-font-path: "../#{$path-to-bootstrap}fonts/bootstrap/" !default;
+
+
+/*-- Begin --*/
+
+
+.body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: $very-dark-gray;
+}
+
+
+.container {
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

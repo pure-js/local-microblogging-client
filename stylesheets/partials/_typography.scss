@@ -1,0 +1,24 @@
+// Headings
+
+.h3 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  &__link {
+    color: $moderate-blue;
+    text-decoration: none;
+
+    &:hover {
+      color: $dark-blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.p {
+  margin: 0 0 10px;
+}

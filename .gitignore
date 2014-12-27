@@ -7,14 +7,11 @@ node_modules/*
 # WebStrom files
 .idea/*
 
-# Build
+# Builds
 build/*
-
-# Pre Build
-pre-build/*
 
 # Grunt folder for gh-pages grunt module
 .grunt/*
 
-Bower
+# Bower
 bower_components/*

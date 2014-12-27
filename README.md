@@ -10,6 +10,7 @@ Create the client for working with a local micro blog, using JS/HTML/CSS. The cl
 
 ## For beginning ##
 ```
+$ bundle install
 $ npm install
 $ bower install
 $ grunt build

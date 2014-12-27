@@ -13,45 +13,49 @@ module.exports = function(grunt){
                     style: 'expanded'
                 },
                 files: {
-                    'pre-build/base.css': 'css/base.scss'
+                    'build/development/main.css': 'stylesheets/main.scss'
                 }
             }
         },
         haml: {
             dist: {
                 files: {
-                    'build/index.html': 'index.haml'
+                    'build/development/index.html': 'index.haml'
                 }
             }
         },
         min: {
             'dist': {
                 'src': ['js/base.js', 'js/save-to-local-storage.js'],
-                'dest': 'build/combined.min.js'
+                'dest': 'build/production/combined.min.js'
             }
         },
         cssmin: {
             'dist': {
-                'src': ['pre-build/base.css'],
-                'dest': 'build/combined.min.css'
+                'src': ['build/development/base.css'],
+                'dest': 'build/production/combined.min.css'
+            }
+        },
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'js/',
+                src: ['*.js'],
+                dest: 'build/development/'
             }
         },
         watch: {
-            css: {
-                files: 'css/*.scss',
-                tasks: ['sass']
+            copy: {
+                files: 'js/*.js',
+                tasks: ['copy']
             },
-            cssmin: {
-                files: 'pre-build/*.css',
-                tasks: ['cssmin']
+            css: {
+                files: ['stylesheets/*.scss', 'stylesheets/*/*.scss'],
+                tasks: ['sass']
             },
             haml: {
                 files: '*.haml',
                 tasks: ['haml']
-            },
-            min: {
-                files: 'js/*.js',
-                tasks: ['min']
             },
             livereload: {
                 // Here we watch the files the sass task will compile to
@@ -59,7 +63,7 @@ module.exports = function(grunt){
                 options: {
                     livereload: true
                 },
-                files: ['build/*']
+                files: ['build/development/*']
             }
         },
         'gh-pages': {
@@ -72,6 +76,7 @@ module.exports = function(grunt){
     });
 
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-haml');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -84,14 +89,26 @@ module.exports = function(grunt){
     ]);
 
 
+    // Compile developers files
+
+    grunt.registerTask('dev-build', [
+        'copy',
+        'haml',
+        'sass'
+    ]);
+
+
     // Compile production files
 
-    grunt.registerTask('build', [
+    grunt.registerTask('production-build', [
         'haml',
         'sass',
         'cssmin',
         'min'
     ]);
+
+
+    // Send production files to GitHub
 
     grunt.registerTask('to-github', [
         'gh-pages'
