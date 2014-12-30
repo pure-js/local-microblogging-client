@@ -49,6 +49,18 @@ module.exports = function(grunt){
                 'dest': 'build/production/combined.min.css'
             }
         },
+        htmlmin: {
+            production: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    removeScriptTypeAttributes: true
+                },
+                files: {
+                    'build/production/index.html': 'build/production/index.html'
+                }
+            }
+        },
         copy: {
             dev: {
                 expand: true,
@@ -100,6 +112,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-haml');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-yui-compressor');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-gh-pages');
 
 
