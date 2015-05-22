@@ -2,7 +2,7 @@ local-microblogging-client
 ==========================
 
 ## Task ##
-Create the client for working with a local micro blog, using JS/HTML/CSS. The client should allow watch the news feed, add new posts and remove it. Posts should be saving locally, without writing back-end. Permission is granted to using all frameworks and libraries. The visual design remains at your discretion.
+Create the client for working with a local micro blog, using JS/HTML/CSS. The client should allow to watch the news feed, add new posts and remove posts. Posts should be saving locally, without writing back-end. Permission is granted to using all frameworks and libraries. The visual design remains at your discretion.
 
 ## Working environment ##
 - node.js v0.10.33
@@ -10,33 +10,33 @@ Create the client for working with a local micro blog, using JS/HTML/CSS. The cl
 
 
 ## For beginning ##
-```
-$ bundle install
-$ npm install
-$ bower install
-$ grunt build
-```
+
+    $ bundle install
+    $ npm install
+    $ bower install
+    $ grunt build
+
 
 ## Developers build ##
 ### Using for testing and development ###
-```
-$ grunt dev-build
-```
+
+    $ grunt dev-build
+
 
 ## Watching ##
-```
-$ grunt
-```
+
+    $ grunt
+
 
 ## Production ##
-```
-$ grunt production-build
-```
+
+    $ grunt production-build
+
 
 ## To publish on Github pages ##
-```
-$ grunt gh-pages
-```
+
+  $ grunt gh-pages
+
 
 ## Used ##
 - Sass (SCSS)
