@@ -26,6 +26,7 @@
     "grunt-gh-pages": "^1.0.0",
     "grunt-haml2html": "^0.3.0",
     "grunt-shell": "^1.1.2",
-    "grunt-yui-compressor": "^0.4.0"
+    "grunt-yui-compressor": "^0.4.0",
+    "jshint": "^2.8.0"
   }
 }
