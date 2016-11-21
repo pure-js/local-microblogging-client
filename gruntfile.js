@@ -13,54 +13,51 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'build/development/main.css': 'src/stylesheets/main.scss'
+          '.tmp/main.css': 'src/stylesheets/main.scss'
         }
       },
-      production: {
+      build: {
         options: {
           style: 'expanded'
         },
         files: {
-          'build/production/main.css': 'src/stylesheets/main.scss'
+          'build/main.css': 'src/stylesheets/main.scss'
         }
       }
     },
     haml: {
       dev: {
         files: {
-          'build/development/index.html': 'src/index.haml'
+          '.tmp/index.html': 'src/index.haml'
         }
       },
-      production: {
+      build: {
         files: {
-          'build/production/index.html': 'src/index.haml'
+          'build/index.html': 'src/index.haml'
         }
-      },
-      options: {
-        language: 'js'
       }
     },
-    min: {
-      'dist': {
+    uglify: {
+      build: {
         'src': ['src/js/base.js', 'src/js/save-to-local-storage.js'],
-        'dest': 'build/production/combined.min.js'
+        'dest': 'build/combined.min.js'
       }
     },
     cssmin: {
-      'dist': {
-        'src': ['build/development/base.css'],
-        'dest': 'build/production/combined.min.css'
+      build: {
+        'src': '.tmp/base.css',
+        'dest': 'build/combined.min.css'
       }
     },
     htmlmin: {
-      production: {
+      build: {
         options: {
           removeComments: true,
           collapseWhitespace: true,
           removeScriptTypeAttributes: true
         },
         files: {
-          'build/production/index.html': 'build/production/index.html'
+          'build/index.html': 'build/index.html'
         }
       }
     },
@@ -69,7 +66,7 @@ module.exports = function(grunt) {
         expand: true,
         cwd: 'src/js/',
         src: ['*.js'],
-        dest: 'build/development/'
+        dest: '.tmp/'
       }
     },
     watch: {
@@ -78,7 +75,7 @@ module.exports = function(grunt) {
         tasks: ['copy:dev']
       },
       css: {
-        files: ['src/stylesheets/*.scss', 'src/stylesheets/*/*.scss'],
+        files: ['src/stylesheets/*.scss', 'src/stylesheets/**/*.scss'],
         tasks: ['sass:dev']
       },
       haml: {
@@ -91,51 +88,48 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         },
-        files: ['build/development/*']
+        files: ['.tmp/*']
       }
     },
     clean: {
-      production: {
-        src: ['build/production/main.css.map', 'build/production/main.css']
+      build: {
+        src: ['build/']
       }
     },
     'gh-pages': {
       options: {
-        base: 'build/production'
+        base: 'build'
       },
       // These files will get pushed to the `gh-pages` branch (the default).
-      src: ['index.html', 'combined.min.css', 'combined.min.js']
+      src: ['*.*']
     }
   });
 
   require('jit-grunt')(grunt);
 
   grunt.registerTask('default', [
+    'dev',
     'watch'
   ]);
 
   // Compile developers files
-
-  grunt.registerTask('dev-build', [
+  grunt.registerTask('dev', [
     'copy:dev',
     'haml:dev',
     'sass:dev'
   ]);
 
   // Compile production files
-
-  grunt.registerTask('production-build', [
-    'haml:production',
-    'sass:production',
+  grunt.registerTask('build', [
+    'haml:build',
+    'sass:build',
     'cssmin',
-    'min',
-    'clean'
+    'uglify'
   ]);
 
-  // Send production files to GitHub
-
-  grunt.registerTask('to-github', [
-    'production-build',
+  // Send production files to GitHub pages
+  grunt.registerTask('deploy', [
+    'build',
     'gh-pages'
   ]);
 };

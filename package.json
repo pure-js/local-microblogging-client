@@ -24,10 +24,11 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-gh-pages": "^2.0.0",
     "grunt-shell": "^2.1.0",
-    "grunt-yui-compressor": "^0.4.0",
     "jshint": "^2.8.0"
   },
   "dependencies": {
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
     "grunt-haml": "^0.9.0",
     "grunt-sass": "^1.2.1",
     "jit-grunt": "^0.10.0"

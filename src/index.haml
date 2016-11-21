@@ -1,14 +1,11 @@
 !!! 5
 %html
   %head
-    %meta(charset='utf-8')
+    %meta{:charset => 'utf-8'}
     %title Local microblogging client
-    -#%link{:rel => :stylesheet, :href => "combined.min.css"}
-    %link{:rel => :stylesheet, :href => "main.css"}
-
+    %link{:rel => 'stylesheet', :href => 'main.css'}
   %body.body
     .container
-
       %ul.news-list
         %li.news-list__item.news-list__item_first
           %h3.h3 What's new?
@@ -22,9 +19,6 @@
             %button.btn.btn-primary.new-post__submit{:title => 'Add new post', :type => 'button'}
               %i.glyphicon.glyphicon-ok
               Post it
-
-    %script{:src => 'http://localhost:35729/livereload.js'}
-    %script{:src => 'http://code.jquery.com/jquery-1.11.0.min.js'}
-    -#%script{:src => 'combined.min.js'}
-    %script{:src => 'save-to-local-storage.js'}
-    %script{:src => 'base.js'}
+      %script{:src => 'http://code.jquery.com/jquery-1.11.0.min.js'}
+      %script{:src => 'save-to-local-storage.js'}
+      %script{:src => 'base.js'}

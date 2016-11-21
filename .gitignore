@@ -1,17 +1,17 @@
-# Sass cache
-.sass-cache/
-
 # Node modules
-node_modules
+node_modules/
 
-# WebStrom files
+# WebStorm files
 .idea/
 
-# Builds
-build
+# Build
+build/
+
+# Dev
+.tmp/
 
 # Grunt folder for gh-pages grunt module
 .grunt/
 
 # Bower
-bower_components
+bower_components/

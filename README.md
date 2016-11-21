@@ -5,14 +5,14 @@ Create the client for working with a local micro blog, using JS/HTML/CSS. The cl
 
 ## Step 1
 
-    $ npm install
-    $ bower install
+    $ npm i
+    $ bower i
     $ grunt build
 
 ## Developers build
 ### Using for testing and development
 
-    $ grunt dev-build
+    $ grunt dev
 
 ## Watching
 
@@ -20,8 +20,8 @@ Create the client for working with a local micro blog, using JS/HTML/CSS. The cl
 
 ## Production
 
-    $ grunt production-build
+    $ grunt build
 
 ## To publish on Github pages
 
-  $ grunt gh-pages
+    $ grunt deploy
