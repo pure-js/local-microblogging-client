@@ -3,7 +3,7 @@
 
   $.fn.saveToLocalStorage = function(options) {
 
-    var defaults = {
+    let defaults = {
       heading: '.new-post__heading',
       text: '.new-post__main-text',
       submit: '.new-post__submit',
@@ -44,8 +44,8 @@
 
 
       $submit.on('click', function(e) {
-        var headingValue = $heading.val();
-        var textValue = $text.val();
+        let headingValue = $heading.val();
+        let textValue = $text.val();
 
         // Store
         localStorage.setItem('headingValue', headingValue);

@@ -37,9 +37,20 @@ module.exports = function(grunt) {
         }
       }
     },
+    babel: {
+      options: {
+        sourceMap: false,
+        presets: ['babel-preset-es2015']
+      },
+      build: {
+        files: {
+          'build/js/*.js': 'src/js/*.js'
+        }
+      }
+    },
     uglify: {
       build: {
-        'src': ['src/js/base.js', 'src/js/save-to-local-storage.js'],
+        'src': ['build/js/*.js'],
         'dest': 'build/combined.min.js'
       }
     },
@@ -124,6 +135,7 @@ module.exports = function(grunt) {
     'haml:build',
     'sass:build',
     'cssmin',
+    'babel',
     'uglify'
   ]);
 
