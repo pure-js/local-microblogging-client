@@ -1,6 +1,6 @@
 {
   "name": "local-microblogging-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "For local microblogging client",
   "main": "index.js",
   "scripts": {
