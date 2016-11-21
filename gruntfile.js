@@ -1,4 +1,4 @@
-module.exports = function(grunt){
+module.exports = function(grunt) {
 
   // Start web server
   // Compile developer friendly environment
@@ -13,7 +13,7 @@ module.exports = function(grunt){
           style: 'expanded'
         },
         files: {
-          'build/development/main.css': 'stylesheets/main.scss'
+          'build/development/main.css': 'src/stylesheets/main.scss'
         }
       },
       production: {
@@ -21,25 +21,25 @@ module.exports = function(grunt){
           style: 'expanded'
         },
         files: {
-          'build/production/main.css': 'stylesheets/main.scss'
+          'build/production/main.css': 'src/stylesheets/main.scss'
         }
       }
     },
     haml: {
       dev: {
         files: {
-          'build/development/index.html': 'index.haml'
+          'build/development/index.html': 'src/index.haml'
         }
       },
       production: {
         files: {
-          'build/production/index.html': 'index.haml'
+          'build/production/index.html': 'src/index.haml'
         }
       }
     },
     min: {
       'dist': {
-        'src': ['js/base.js', 'js/save-to-local-storage.js'],
+        'src': ['src/js/base.js', 'src/js/save-to-local-storage.js'],
         'dest': 'build/production/combined.min.js'
       }
     },
@@ -64,22 +64,22 @@ module.exports = function(grunt){
     copy: {
       dev: {
         expand: true,
-        cwd: 'js/',
+        cwd: 'src/js/',
         src: ['*.js'],
         dest: 'build/development/'
       }
     },
     watch: {
       copy: {
-        files: 'js/*.js',
+        files: 'src/js/*.js',
         tasks: ['copy:dev']
       },
       css: {
-        files: ['stylesheets/*.scss', 'stylesheets/*/*.scss'],
+        files: ['src/stylesheets/*.scss', 'src/stylesheets/*/*.scss'],
         tasks: ['sass:dev']
       },
       haml: {
-        files: '*.haml',
+        files: 'src/index.haml',
         tasks: ['haml:dev']
       },
       livereload: {
@@ -115,11 +115,9 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-gh-pages');
 
-
   grunt.registerTask('default', [
     'watch'
   ]);
-
 
   // Compile developers files
 
@@ -128,7 +126,6 @@ module.exports = function(grunt){
     'haml:dev',
     'sass:dev'
   ]);
-
 
   // Compile production files
 
@@ -139,7 +136,6 @@ module.exports = function(grunt){
     'min',
     'clean'
   ]);
-
 
   // Send production files to GitHub
 
