@@ -8,25 +8,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IamEmpty/local-microblogging-client.git"
+    "url": "https://github.com/pure-js/local-microblogging-client.git"
   },
-  "author": "IamEmpty",
+  "author": "pure-js",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IamEmpty/local-microblogging-client/issues"
+    "url": "https://github.com/pure-js/local-microblogging-client/issues"
   },
-  "homepage": "https://github.com/IamEmpty/local-microblogging-client",
+  "homepage": "https://github.com/pure-js/local-microblogging-client",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-htmlmin": "^2.0.0",
-    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-gh-pages": "^2.0.0",
-    "grunt-haml2html": "^0.3.0",
     "grunt-shell": "^2.1.0",
     "grunt-yui-compressor": "^0.4.0",
     "jshint": "^2.8.0"
+  },
+  "dependencies": {
+    "grunt-haml": "^0.9.0",
+    "grunt-sass": "^1.2.1",
+    "jit-grunt": "^0.10.0"
   }
 }

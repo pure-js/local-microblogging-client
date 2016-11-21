@@ -35,6 +35,9 @@ module.exports = function(grunt) {
         files: {
           'build/production/index.html': 'src/index.haml'
         }
+      },
+      options: {
+        language: 'js'
       }
     },
     min: {
@@ -105,15 +108,7 @@ module.exports = function(grunt) {
     }
   });
 
-
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-haml2html');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-yui-compressor');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  grunt.loadNpmTasks('grunt-gh-pages');
+  require('jit-grunt')(grunt);
 
   grunt.registerTask('default', [
     'watch'
