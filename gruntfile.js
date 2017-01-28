@@ -17,30 +17,27 @@ module.exports = function(grunt) {
         }
       },
       build: {
-        options: {
-          style: 'expanded'
-        },
         files: {
-          'build/main.css': 'src/styles/main.scss'
+          'build/main.min.css': 'src/styles/main.scss'
         }
       }
     },
     pug: {
       dev: {
         files: {
-          '.tmp/index.html': 'src/index.pug'
+          '.tmp/index.html': 'src/index-dev.pug'
         }
       },
       build: {
         files: {
-          'build/index.html': 'src/index.pug'
+          'build/index.html': 'src/index-prod.pug'
         }
       }
     },
     concat: {
       build: {
         src: ['src/js/*.js'],
-        dest: 'build/built.js',
+        dest: 'build/main.min.js',
       },
     },
     babel: {
@@ -50,20 +47,20 @@ module.exports = function(grunt) {
           presets: ['babel-preset-es2015']
         },
         files: {
-          'build/bab.js': 'build/built.js'
+          'build/main.min.js': 'build/main.min.js'
         }
       }
     },
     uglify: {
       build: {
-        src: ['build/bab.js'],
-        dest: 'build/combined.min.js'
+        src: ['build/main.min.js'],
+        dest: 'build/main.min.js'
       }
     },
     cssmin: {
       build: {
-        src: '.tmp/base.css',
-        dest: 'build/combined.min.css'
+        src: 'build/main.min.css',
+        dest: 'build/main.min.css'
       }
     },
     htmlmin: {
@@ -96,7 +93,7 @@ module.exports = function(grunt) {
         tasks: ['sass:dev']
       },
       pug: {
-        files: 'src/index.pug',
+        files: 'src/*.pug',
         tasks: ['pug:dev']
       },
       livereload: {

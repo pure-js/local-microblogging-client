@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     title Local microblogging client
-    link(href='main.css', rel='stylesheet')
+    block head
   body.body
     .container
       ul.news-list
@@ -19,6 +19,4 @@ html
             button.btn.btn-primary.new-post__submit(title='Add new post', type='button')
               i.glyphicon.glyphicon-ok
               | Post it
-      script(src='http://code.jquery.com/jquery-1.11.0.min.js')
-      script(src='save-to-local-storage.js')
-      script(src='base.js')
+      block scripts
