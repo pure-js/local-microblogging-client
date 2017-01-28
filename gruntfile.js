@@ -13,7 +13,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          '.tmp/main.css': 'src/stylesheets/main.scss'
+          '.tmp/main.css': 'src/styles/main.scss'
         }
       },
       build: {
@@ -21,19 +21,19 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'build/main.css': 'src/stylesheets/main.scss'
+          'build/main.css': 'src/styles/main.scss'
         }
       }
     },
-    haml: {
+    pug: {
       dev: {
         files: {
-          '.tmp/index.html': 'src/index.haml'
+          '.tmp/index.html': 'src/index.pug'
         }
       },
       build: {
         files: {
-          'build/index.html': 'src/index.haml'
+          'build/index.html': 'src/index.pug'
         }
       }
     },
@@ -86,12 +86,12 @@ module.exports = function(grunt) {
         tasks: ['copy:dev']
       },
       css: {
-        files: ['src/stylesheets/*.scss', 'src/stylesheets/**/*.scss'],
+        files: ['src/styles/*.scss', 'src/styles/**/*.scss'],
         tasks: ['sass:dev']
       },
-      haml: {
-        files: 'src/index.haml',
-        tasks: ['haml:dev']
+      pug: {
+        files: 'src/index.pug',
+        tasks: ['pug:dev']
       },
       livereload: {
         // Here we watch the files the sass task will compile to
@@ -126,13 +126,13 @@ module.exports = function(grunt) {
   // Compile developers files
   grunt.registerTask('dev', [
     'copy:dev',
-    'haml:dev',
+    'pug:dev',
     'sass:dev'
   ]);
 
   // Compile production files
   grunt.registerTask('build', [
-    'haml:build',
+    'pug:build',
     'sass:build',
     'cssmin',
     'babel',

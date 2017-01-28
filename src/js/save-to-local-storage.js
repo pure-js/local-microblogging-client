@@ -13,6 +13,8 @@
       removePost: '.remove-post'
     };
 
+    const svgTrash = '<svg width="12" height="16" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg"><title>trashcan</title><path d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z" fill="#000" fill-rule="evenodd"/></svg>';
+
 
     return this.each(function () {
 
@@ -32,7 +34,7 @@
           var currentPostHeading = json.posts[index][0];
           var currentPostText = json.posts[index][1];
 
-          $newsList.append('<li class=\"news-list__item\"><h3 class=\"h3\"><a class=\"h3__link\" href=\"#\">' + currentPostHeading + '</a></h3><p class=\"p\">' + currentPostText + '</p><button class=\"btn btn-default remove-post\" title=\"Remove post\" type=\"button\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
+          $newsList.append('<li class=\"news-list__item\"><h3 class=\"h3\"><a class=\"h3__link\" href=\"#\">' + currentPostHeading + '</a></h3><p class=\"p\">' + currentPostText + '</p><button class=\"btn btn-default remove-post\" title=\"Remove post\" type=\"button\">' + svgTrash + '</button></li>');
         });
 
         // Put the object into storage
@@ -51,7 +53,7 @@
         localStorage.setItem('headingValue', headingValue);
         localStorage.setItem('textValue', textValue);
 
-        $after.after('<li class=\"news-list__item\"><h3 class=\"h3\"><a class=\"h3__link\" href=\"#\">' + headingValue + '</a></h3><p class=\"p\">' + textValue + '</p><button class=\"btn btn-default remove-post\" title=\"Remove post\" type=\"button\"><i class=\"glyphicon glyphicon-trash\"></i></button></li>');
+        $after.after('<li class=\"news-list__item\"><h3 class=\"h3\"><a class=\"h3__link\" href=\"#\">' + headingValue + '</a></h3><p class=\"p\">' + textValue + '</p><button class=\"btn btn-default remove-post\" title=\"Remove post\" type=\"button\">' + svgTrash + '</button></li>');
 
         e.preventDefault();
       });
