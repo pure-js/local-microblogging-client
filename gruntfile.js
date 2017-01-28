@@ -107,6 +107,9 @@ module.exports = function(grunt) {
         src: ['build/']
       }
     },
+    eslint: {
+      target: ['src/js/*.js']
+    },
     'gh-pages': {
       options: {
         base: 'build'
@@ -137,6 +140,11 @@ module.exports = function(grunt) {
     'cssmin',
     'babel',
     'uglify'
+  ]);
+
+  // Test
+  grunt.registerTask('test', [
+    'eslint'
   ]);
 
   // Send production files to GitHub pages
