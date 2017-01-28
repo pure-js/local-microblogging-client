@@ -37,27 +37,33 @@ module.exports = function(grunt) {
         }
       }
     },
-    babel: {
-      options: {
-        sourceMap: false,
-        presets: ['babel-preset-es2015']
-      },
+    concat: {
       build: {
+        src: ['src/js/*.js'],
+        dest: 'build/built.js',
+      },
+    },
+    babel: {
+      build: {
+        options: {
+          sourceMap: false,
+          presets: ['babel-preset-es2015']
+        },
         files: {
-          'build/js/*.js': 'src/js/*.js'
+          'build/bab.js': 'build/built.js'
         }
       }
     },
     uglify: {
       build: {
-        'src': ['build/js/*.js'],
-        'dest': 'build/combined.min.js'
+        src: ['build/bab.js'],
+        dest: 'build/combined.min.js'
       }
     },
     cssmin: {
       build: {
-        'src': '.tmp/base.css',
-        'dest': 'build/combined.min.css'
+        src: '.tmp/base.css',
+        dest: 'build/combined.min.css'
       }
     },
     htmlmin: {
@@ -138,6 +144,7 @@ module.exports = function(grunt) {
     'pug:build',
     'sass:build',
     'cssmin',
+    'concat',
     'babel',
     'uglify'
   ]);
