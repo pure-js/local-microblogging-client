@@ -36,7 +36,7 @@ module.exports = function(grunt) {
     },
     concat: {
       build: {
-        src: ['src/js/*.js'],
+        src: ['mock-posts.js', 'src/js/*.js'],
         dest: 'build/main.min.js',
       },
     },
@@ -78,14 +78,14 @@ module.exports = function(grunt) {
     copy: {
       dev: {
         expand: true,
-        cwd: 'src/js/',
+        cwd: './src/js',
         src: ['*.js'],
         dest: '.tmp/'
       }
     },
     watch: {
       copy: {
-        files: 'src/js/*.js',
+        files: ['src/js/*.js'],
         tasks: ['copy:dev']
       },
       css: {
