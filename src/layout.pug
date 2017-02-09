@@ -1,22 +1,24 @@
 doctype html
-html
+html(lang='en')
   head
     meta(charset='utf-8')
     title Local microblogging client
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     block head
   body.body
     .container
-      ul.news-list
-        li.news-list__item.news-list__item_first
-          h3.h3 What's new?
+      .card.mb-3
+        .card-block
+          h3.card-title What's new?
           form(role='form')
             .form-group
-              input.form-control.new-post__heading(placeholder='Your heading', type='text')
+              input.form-control.js-new-post__heading(placeholder='Your heading', type='text')
             .form-group
-              textarea.form-control.new-post__main-text(placeholder='Write something', rows='3')
+              textarea.form-control.js-new-post__main-text(placeholder='Write something', rows='3')
             button.btn.btn-default.new-post__add-image(title='Add image')
               i.glyphicon.glyphicon-picture
             button.btn.btn-primary.new-post__submit(title='Add new post', type='button', onclick='onSubmit()')
               i.glyphicon.glyphicon-ok
               | Post it
-      block scripts
+      .card-columns.js-news-list
+    block scripts

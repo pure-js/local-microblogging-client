@@ -8,18 +8,11 @@
   -moz-column-count: 1;
   -webkit-column-count: 1;
   column-count: 1;
-
-  &__item {
-    list-style: none;
-    display: inline-block;
-    width: 100%;
-    padding: 0;
-  }
 }
 
 
 @media screen and (min-width:860px) {
-  .news-list{
+  .news-list {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
