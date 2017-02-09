@@ -1,14 +1,14 @@
 # Local microblogging client
 
 ## The Task
-Create the client for working with a local micro blog, using JS/HTML/CSS. The client should allow to watch the news feed, add new posts and remove posts. Posts should be saving locally, without writing back-end. Permission is granted to using all frameworks and libraries. The visual design remains at your discretion.
+Create the micro blog app, using JS/HTML/CSS. App allow you to watch the news feed, add new posts and remove posts. Posts should  saving locally, without writing back-end. Permission is granted to using all frameworks and libraries. The visual design remains at your discretion.
 
 ## Usage
 
     $ npm i
     $ grunt build
 
-## Developers build
+## Development build
 
     $ grunt dev
 
