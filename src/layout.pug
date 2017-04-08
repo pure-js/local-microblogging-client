@@ -15,10 +15,22 @@ html(lang='en')
               input.form-control.js-new-post__heading(placeholder='Your heading', type='text')
             .form-group
               textarea.form-control.js-new-post__main-text(placeholder='Write something', rows='3')
-            button.btn.btn-default.new-post__add-image(title='Add image')
-              i.glyphicon.glyphicon-picture
+            img#preview(src='#')
+            input.btn.btn-default.new-post__add-image(type='file', title='Add image', onchange="readURL(this);")
             button.btn.btn-primary.new-post__submit(title='Add new post', type='button', onclick='onSubmit()')
               i.glyphicon.glyphicon-ok
               | Post it
       .card-columns.js-news-list
+    script.
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          let reader = new FileReader();
+
+          reader.onload = function (e) {
+            document.getElementById('preview').src =  e.target.result;
+          }
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
     block scripts

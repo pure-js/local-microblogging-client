@@ -6,20 +6,16 @@ Create the micro blog app, using JS/HTML/CSS. App allow you to watch the news fe
 ## Usage
 
     $ npm i
-    $ grunt build
-
-## Development build
-
-    $ grunt dev
+    $ npm start
 
 ## Develop & Watch
 
-    $ grunt
+    $ npm run dev
 
 ## Production build
 
-    $ grunt build
+    $ npm start
 
 ## Deploy to Github pages
 
-    $ grunt deploy
+    $ npm deploy
