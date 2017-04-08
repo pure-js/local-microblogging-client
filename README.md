@@ -18,4 +18,4 @@ Create the micro blog app, using JS/HTML/CSS. App allow you to watch the news fe
 
 ## Deploy to Github pages
 
-    $ npm deploy
+    $ npm run deploy
