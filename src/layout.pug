@@ -8,6 +8,7 @@ html(lang='en')
   body.body
     .container
       .card.mb-3
+        img#preview.card-img-top(src='#', alt='Card image cap')
         .card-block
           h3.card-title What's new?
           form(role='form')
@@ -15,7 +16,6 @@ html(lang='en')
               input.form-control.js-new-post__heading(placeholder='Your heading', type='text')
             .form-group
               textarea.form-control.js-new-post__main-text(placeholder='Write something', rows='3')
-            img#preview(src='#')
             input.btn.btn-default.new-post__add-image(type='file', title='Add image', onchange="readURL(this);")
             button.btn.btn-primary.new-post__submit(title='Add new post', type='button', onclick='onSubmit()')
               i.glyphicon.glyphicon-ok
