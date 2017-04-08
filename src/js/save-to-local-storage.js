@@ -9,6 +9,18 @@ const conf = {
   removePost: '.remove-post',
 };
 
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    let reader = new FileReader();
+
+    reader.onload = function (e) {
+      document.getElementById('preview').src =  e.target.result;
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
 function deletePost(el) {
   let blogPost = el.parentElement.parentElement;
   if (blogPost.className.includes(conf.post)) {
