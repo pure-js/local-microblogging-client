@@ -1,5 +1,4 @@
-module.exports = function(grunt) {
-
+module.exports = (grunt) => {
   // Start web server
   // Compile developer friendly environment
   // $ grunt serve
@@ -10,29 +9,29 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          style: 'expanded'
+          style: 'expanded',
         },
         files: {
-          '.tmp/main.css': 'src/styles/main.scss'
-        }
+          '.tmp/main.css': 'src/styles/main.scss',
+        },
       },
       build: {
         files: {
-          'build/main.min.css': 'src/styles/main.scss'
-        }
-      }
+          'build/main.min.css': 'src/styles/main.scss',
+        },
+      },
     },
     pug: {
       dev: {
         files: {
-          '.tmp/index.html': 'src/index-dev.pug'
-        }
+          '.tmp/index.html': 'src/index-dev.pug',
+        },
       },
       build: {
         files: {
-          'build/index.html': 'src/index-prod.pug'
-        }
-      }
+          'build/index.html': 'src/index-prod.pug',
+        },
+      },
     },
     concat: {
       build: {
@@ -44,34 +43,34 @@ module.exports = function(grunt) {
       build: {
         options: {
           sourceMap: false,
-          presets: ['babel-preset-es2015']
+          presets: ['babel-preset-es2015'],
         },
         files: {
-          'build/main.min.js': 'build/main.min.js'
+          'build/main.min.js': 'build/main.min.js',
         }
       }
     },
     uglify: {
       build: {
         src: ['build/main.min.js'],
-        dest: 'build/main.min.js'
+        dest: 'build/main.min.js',
       }
     },
     cssmin: {
       build: {
         src: 'build/main.min.css',
-        dest: 'build/main.min.css'
-      }
+        dest: 'build/main.min.css',
+      },
     },
     htmlmin: {
       build: {
         options: {
           removeComments: true,
           collapseWhitespace: true,
-          removeScriptTypeAttributes: true
+          removeScriptTypeAttributes: true,
         },
         files: {
-          'build/index.html': 'build/index.html'
+          'build/index.html': 'build/index.html',
         }
       }
     },
@@ -80,46 +79,46 @@ module.exports = function(grunt) {
         expand: true,
         cwd: './src/js',
         src: ['*.js'],
-        dest: '.tmp/'
-      }
+        dest: '.tmp/',
+      },
     },
     watch: {
       copy: {
         files: ['src/js/*.js'],
-        tasks: ['copy:dev']
+        tasks: ['copy:dev'],
       },
       css: {
         files: ['src/styles/*.scss', 'src/styles/**/*.scss'],
-        tasks: ['sass:dev']
+        tasks: ['sass:dev'],
       },
       pug: {
         files: 'src/*.pug',
-        tasks: ['pug:dev']
+        tasks: ['pug:dev'],
       },
       livereload: {
         // Here we watch the files the sass task will compile to
         // These files are sent to the live reload server after sass compiles to them
         options: {
-          livereload: true
+          livereload: true,
         },
-        files: ['.tmp/*']
-      }
+        files: ['.tmp/*'],
+      },
     },
     clean: {
       build: {
-        src: ['build/']
-      }
+        src: ['build/'],
+      },
     },
     eslint: {
-      target: ['src/js/*.js']
+      target: ['src/js/*.js'],
     },
     'gh-pages': {
       options: {
-        base: 'build'
+        base: 'build',
       },
       // These files will get pushed to the `gh-pages` branch (the default).
-      src: ['*.*']
-    }
+      src: ['*.*'],
+    },
   });
 
   require('jit-grunt')(grunt);
@@ -133,7 +132,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dev', [
     'copy:dev',
     'pug:dev',
-    'sass:dev'
+    'sass:dev',
   ]);
 
   // Compile production files
@@ -143,17 +142,17 @@ module.exports = function(grunt) {
     'cssmin',
     'concat',
     'babel',
-    'uglify'
+    'uglify',
   ]);
 
   // Test
   grunt.registerTask('test', [
-    'eslint'
+    'eslint',
   ]);
 
   // Send production files to GitHub pages
   grunt.registerTask('deploy', [
     'build',
-    'gh-pages'
+    'gh-pages',
   ]);
 };

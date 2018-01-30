@@ -1,13 +1,12 @@
 module.exports = {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
-    ],
-    "env": {
-        "browser": true,
-        "jquery": true
-    },
-    "parserOptions": {
-        "ecmaVersion": 7
-    }
+  extends: "airbnb-base",
+  plugins: [
+    "import",
+  ],
+  env: {
+    "browser": true,
+  },
+  parserOptions: {
+    "ecmaVersion": 2017,
+  }
 };
