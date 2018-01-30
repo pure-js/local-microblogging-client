@@ -9,15 +9,21 @@ html(lang='en')
     .container
       .card.mb-3
         img#preview.card-img-top(src='#', alt='Card image cap')
-        .card-block
+        .card-body
           h3.card-title What's new?
           form(role='form')
             .form-group
               input.form-control.js-new-post__heading(placeholder='Your heading', type='text')
             .form-group
               textarea.form-control.js-new-post__main-text(placeholder='Write something', rows='3')
-            input.btn.btn-default.new-post__add-image(type='file', title='Add image', onchange="readURL(this);")
-            button.btn.btn-primary.new-post__submit(title='Add new post', type='button', onclick='onSubmit()')
+            //.input-group.mb-3
+              .input-group-prepend
+                span.input-group-text Upload
+              .custom-file
+                input#inputGroupFile01.custom-file-input.new-post__add-image(type='file', onchange='readURL(this);')
+                label.custom-file-label(for='inputGroupFile01') Choose file
+            input.btn.btn-default.new-post__add-image(type='file', title='Add image', onchange='readURL(this);')
+            button.btn.btn-primary.btn-lg.new-post__submit(title='Add new post', type='button', onclick='onSubmit()')
               i.glyphicon.glyphicon-ok
               | Post it
       .card-columns.js-news-list

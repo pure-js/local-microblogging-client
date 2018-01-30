@@ -13,7 +13,7 @@ function readURL(input) {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
 
-    reader.onload = function (e) {
+    reader.onload = (e) => {
       document.getElementById('preview').src = e.target.result;
     };
 
@@ -30,8 +30,8 @@ function deletePost(el) {
 
 function createPost(heading, text, className) {
   const postMarkup = `
-    <div class="card-block">
-      <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
       <h3 class="card-title"><a class="h3__link" href="#">${heading}</a></h3>
       <p class="card-text">${text}</p>
       <button class="btn btn-default remove-post" title="Remove post" type="button" onclick="deletePost(this)">${svgTrash}</button>
