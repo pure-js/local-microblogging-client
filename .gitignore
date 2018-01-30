@@ -1,8 +1,13 @@
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+
 # Node modules
 node_modules/
-
-# WebStorm files
-.idea/
 
 # Build
 build/
@@ -12,9 +17,6 @@ build/
 
 # Grunt folder for gh-pages grunt module
 .grunt/
-
-# Bower
-bower_components/
 
 # macOS
 .DS_store
