@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/pure-js/local-microblogging-client",
   "devDependencies": {
+    "babel-core": "~6.26.0",
     "babel-preset-env": "~1.6.1",
     "eslint": "~4.16.0",
     "eslint-config-airbnb-base": "~12.1.0",

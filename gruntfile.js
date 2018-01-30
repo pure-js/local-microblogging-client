@@ -49,7 +49,7 @@ module.exports = (grunt) => {
       build: {
         options: {
           sourceMap: false,
-          presets: ['babel-preset-es2015'],
+          presets: ['env'],
         },
         files: {
           'build/main.min.js': 'build/main.min.js',
