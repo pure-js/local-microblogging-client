@@ -1,3 +1,5 @@
+const tildeImporter = require('grunt-sass-tilde-importer');
+
 module.exports = (grunt) => {
   // Start web server
   // Compile developer friendly environment
@@ -9,6 +11,7 @@ module.exports = (grunt) => {
     sass: {
       dev: {
         options: {
+          importer: tildeImporter,
           style: 'expanded',
         },
         files: {
@@ -16,6 +19,9 @@ module.exports = (grunt) => {
         },
       },
       build: {
+        options: {
+          importer: tildeImporter,
+        },
         files: {
           'build/main.min.css': 'src/styles/main.scss',
         },
@@ -47,14 +53,14 @@ module.exports = (grunt) => {
         },
         files: {
           'build/main.min.js': 'build/main.min.js',
-        }
-      }
+        },
+      },
     },
     uglify: {
       build: {
         src: ['build/main.min.js'],
         dest: 'build/main.min.js',
-      }
+      },
     },
     cssmin: {
       build: {
@@ -71,8 +77,8 @@ module.exports = (grunt) => {
         },
         files: {
           'build/index.html': 'build/index.html',
-        }
-      }
+        },
+      },
     },
     copy: {
       dev: {
@@ -125,7 +131,7 @@ module.exports = (grunt) => {
 
   grunt.registerTask('default', [
     'dev',
-    'watch'
+    'watch',
   ]);
 
   // Compile developers files
