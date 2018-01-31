@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "grunt",
-    "build": "grunt build && webpack --mode production",
+    "build": "grunt build && webpack --mode production --config webpack.production.config.js",
     "deploy": "grunt deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
