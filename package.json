@@ -2,10 +2,10 @@
   "name": "local-microblogging-client",
   "version": "1.1.0",
   "description": "For local microblogging client",
-  "main": "src/js/base.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "grunt",
-    "build": "grunt build",
+    "build": "grunt build && webpack --mode production",
     "deploy": "grunt deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,7 +40,9 @@
     "grunt-sass": "~2.0.0",
     "grunt-sass-tilde-importer": "~1.0.2",
     "grunt-shell": "^2.1.0",
-    "jit-grunt": "~0.10.0"
+    "jit-grunt": "~0.10.0",
+    "webpack": "~4.0.0-beta.0",
+    "webpack-cli": "~2.0.4"
   },
   "dependencies": {
     "bootstrap": "~4.0.0"
