@@ -64,11 +64,17 @@ function loadPosts(posts) {
   }
 }
 
-loadPosts(posts);
-
 function onSubmit() {
   const heading = document.getElementsByClassName(conf.heading)[0].value;
   const text = document.getElementsByClassName(conf.text)[0].value;
 
   createPost(heading, text, conf.newsList);
 }
+
+export {
+  readURL,
+  deletePost,
+  createPost,
+  loadPosts,
+  onSubmit,
+};
