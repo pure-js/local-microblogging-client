@@ -32,3 +32,5 @@ const posts = [
     'Swill has launched in NYC, offering users an easy way to order booze with their phone and have it delivered on the spot.',
   ],
 ];
+
+export default posts;
