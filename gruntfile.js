@@ -73,11 +73,6 @@ module.exports = (grunt) => {
         files: ['.tmp/*'],
       },
     },
-    clean: {
-      build: {
-        src: ['dist/'],
-      },
-    },
     'gh-pages': {
       options: {
         base: 'dist',
