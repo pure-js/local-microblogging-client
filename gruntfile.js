@@ -23,7 +23,7 @@ module.exports = (grunt) => {
           importer: tildeImporter,
         },
         files: {
-          'build/main.min.css': 'src/styles/main.scss',
+          'dist/main.min.css': 'src/styles/main.scss',
         },
       },
     },
@@ -35,37 +35,14 @@ module.exports = (grunt) => {
       },
       build: {
         files: {
-          'build/index.html': 'src/index-prod.pug',
+          'dist/index.html': 'src/index-prod.pug',
         },
-      },
-    },
-    concat: {
-      build: {
-        src: ['mock-posts.js', 'src/js/*.js'],
-        dest: 'build/main.min.js',
-      },
-    },
-    babel: {
-      build: {
-        options: {
-          sourceMap: false,
-          presets: ['env'],
-        },
-        files: {
-          'build/main.min.js': 'build/main.min.js',
-        },
-      },
-    },
-    uglify: {
-      build: {
-        src: ['build/main.min.js'],
-        dest: 'build/main.min.js',
       },
     },
     cssmin: {
       build: {
-        src: 'build/main.min.css',
-        dest: 'build/main.min.css',
+        src: 'dist/main.min.css',
+        dest: 'dist/main.min.css',
       },
     },
     htmlmin: {
@@ -76,7 +53,7 @@ module.exports = (grunt) => {
           removeScriptTypeAttributes: true,
         },
         files: {
-          'build/index.html': 'build/index.html',
+          'dist/index.html': 'dist/index.html',
         },
       },
     },
@@ -112,7 +89,7 @@ module.exports = (grunt) => {
     },
     clean: {
       build: {
-        src: ['build/'],
+        src: ['dist/'],
       },
     },
     eslint: {
@@ -120,7 +97,7 @@ module.exports = (grunt) => {
     },
     'gh-pages': {
       options: {
-        base: 'build',
+        base: 'dist',
       },
       // These files will get pushed to the `gh-pages` branch (the default).
       src: ['*.*'],
@@ -146,9 +123,6 @@ module.exports = (grunt) => {
     'pug:build',
     'sass:build',
     'cssmin',
-    'concat',
-    'babel',
-    'uglify',
   ]);
 
   // Test
