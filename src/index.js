@@ -7,4 +7,6 @@ import {
   onSubmit,
 } from './services/storiesService';
 
+import styles from './styles/main.scss';
+
 loadPosts(posts);

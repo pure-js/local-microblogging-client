@@ -18,14 +18,6 @@ module.exports = (grunt) => {
           '.tmp/main.css': 'src/styles/main.scss',
         },
       },
-      build: {
-        options: {
-          importer: tildeImporter,
-        },
-        files: {
-          'dist/main.min.css': 'src/styles/main.scss',
-        },
-      },
     },
     pug: {
       dev: {
@@ -37,12 +29,6 @@ module.exports = (grunt) => {
         files: {
           'dist/index.html': 'src/index-prod.pug',
         },
-      },
-    },
-    cssmin: {
-      build: {
-        src: 'dist/main.min.css',
-        dest: 'dist/main.min.css',
       },
     },
     htmlmin: {
@@ -92,9 +78,6 @@ module.exports = (grunt) => {
         src: ['dist/'],
       },
     },
-    eslint: {
-      target: ['src/js/*.js'],
-    },
     'gh-pages': {
       options: {
         base: 'dist',
@@ -121,13 +104,6 @@ module.exports = (grunt) => {
   // Compile production files
   grunt.registerTask('build', [
     'pug:build',
-    'sass:build',
-    'cssmin',
-  ]);
-
-  // Test
-  grunt.registerTask('test', [
-    'eslint',
   ]);
 
   // Send production files to GitHub pages
