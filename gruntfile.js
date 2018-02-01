@@ -1,9 +1,6 @@
 const tildeImporter = require('grunt-sass-tilde-importer');
 
 module.exports = (grunt) => {
-  // Start web server
-  // Compile developer friendly environment
-  // $ grunt serve
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
