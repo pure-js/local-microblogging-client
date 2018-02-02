@@ -83,7 +83,6 @@ module.exports = (grunt) => {
 
   grunt.registerTask('default', [
     'dev',
-    'watch',
   ]);
 
   // Compile developers files
