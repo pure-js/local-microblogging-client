@@ -4,11 +4,12 @@
   "description": "For local microblogging client",
   "main": "src/index.jsx",
   "scripts": {
-    "start": "webpack --config webpack.development.config.js && grunt",
+    "start": "grunt && webpack-dev-server --open --config webpack.development.config.js",
     "build": "grunt build && webpack --config webpack.production.config.js",
     "deploy": "grunt deploy",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "trash dist"
+    "clean": "trash dist",
+    "lint": "eslint src/**/*.{js,jsx}"
   },
   "repository": {
     "type": "git",
@@ -29,8 +30,10 @@
     "clean-webpack-plugin": "~0.1.18",
     "css-loader": "~0.28.9",
     "eslint": "~4.16.0",
-    "eslint-config-airbnb-base": "~12.1.0",
+    "eslint-config-airbnb": "~16.1.0",
     "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "~6.0.3",
+    "eslint-plugin-react": "~7.6.1",
     "extract-text-webpack-plugin": "~3.0.2",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
