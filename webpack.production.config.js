@@ -1,10 +1,16 @@
+const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  // For webpack 4
+  // mode: 'production',
   entry: './src/index.jsx',
   output: {
-    filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash].min.js',
   },
   module: {
     rules: [
@@ -17,17 +23,44 @@ module.exports = {
       },
       {
         test: /\.scss/,
-        use: [{
-          loader: 'style-loader',
-        }, {
-          loader: 'css-loader',
-        }, {
-          loader: 'sass-loader',
-        }],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                modules: true,
+              },
+            },
+            {
+              loader: 'sass-loader',
+            },
+          ],
+        }),
+        // use: [{
+        //   loader: 'style-loader',
+        // }, {
+        //   loader: 'css-loader',
+        // }, {
+        //   loader: 'sass-loader',
+        // }],
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: 'index-template.html',
-  })],
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+    new HtmlWebpackPlugin({
+      template: 'index-template.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeScriptTypeAttributes: true,
+      },
+    }),
+    new ExtractTextPlugin('[name].[chunkhash].min.css'),
+  ],
 };
