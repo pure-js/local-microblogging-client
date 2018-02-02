@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 const plugins = [
   new HtmlWebpackPlugin({
-    template: 'src/index-template.html',
+    template: './src/index-template.html',
   }),
   new ScriptExtHtmlWebpackPlugin({
     defaultAttribute: 'defer',
@@ -22,7 +22,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
@@ -47,14 +47,15 @@ const config = {
       },
     ],
   },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, '.tmp'),
-  },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: 'dist',
+    contentBase: path.join(__dirname, 'dist'),
+    port: 9000,
     hot: true,
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
   },
 };
 

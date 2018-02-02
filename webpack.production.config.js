@@ -66,7 +66,7 @@ module.exports = {
     new MinifyPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index-template.html',
+      template: './src/index-template.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
