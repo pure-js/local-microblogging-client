@@ -1,13 +1,21 @@
 const path = require('path');
 const webpack = require('webpack');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 module.exports = {
-  // For webpack 4
-  // mode: 'production',
-  entry: './src/index.jsx',
+  entry: {
+    app: './src/index.jsx',
+    vendor: [
+      'react',
+      'react-dom',
+      // 'classnames',
+      // 'prop-types',
+    ],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].min.js',
@@ -38,13 +46,6 @@ module.exports = {
             },
           ],
         }),
-        // use: [{
-        //   loader: 'style-loader',
-        // }, {
-        //   loader: 'css-loader',
-        // }, {
-        //   loader: 'sass-loader',
-        // }],
       },
     ],
   },
@@ -53,6 +54,17 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer',
+    }),
+    new MinifyPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
       template: 'index-template.html',
       minify: {
