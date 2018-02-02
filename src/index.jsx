@@ -9,7 +9,7 @@ import {
 
 import styles from './styles/main.scss';
 
-loadPosts(posts);
+// loadPosts(posts);
 
 
 import React from 'react';
