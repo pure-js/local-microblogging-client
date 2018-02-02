@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.development.config.js",
     "build": "webpack --config webpack.production.config.js",
-    "deploy": "grunt deploy",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "trash dist",
     "lint": "eslint src/**/*.{js,jsx}"
