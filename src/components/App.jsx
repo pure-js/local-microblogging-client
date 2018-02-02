@@ -14,7 +14,7 @@ class App extends Component {
       <div className="container">
         <CreateStory />
         <div className="card-columns js-news-list">
-          {posts.map((story) =>
+          {posts.map(story =>
             <Story key={story.heading} heading={story.heading} body={story.body} />)
           }
         </div>

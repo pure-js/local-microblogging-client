@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 
 class StoriesFeed extends Component {
   render() {
-    function deletePost(el) {
-      const blogPost = el.parentElement.parentElement;
-      if (blogPost.className.includes(conf.post)) {
-        blogPost.remove();
-      }
-    }
+    function deletePost() {}
 
     return (
       <section className="card js-news-list__item">

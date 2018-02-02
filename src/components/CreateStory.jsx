@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { createPost } from '../services/storiesService';
 
 class CreateStory extends Component {
   render() {
-    function onSubmit() {
-      const heading = document.getElementsByClassName(conf.heading)[0].value;
-      const text = document.getElementsByClassName(conf.text)[0].value;
-
-      createPost(heading, text, conf.newsList);
-    }
+    function onSubmit() {}
 
     function readURL(input) {
       if (input.files && input.files[0]) {
@@ -24,7 +18,7 @@ class CreateStory extends Component {
 
     return (
       <div className="card mb-3">
-        <img id="preview" src="#" alt="Card cap" className="card-img-top" />
+        <img id="preview" src="" alt="Card cap" className="card-img-top" />
         <div className="card-body">
           <h3 className="card-title">What's new?</h3>
           <form>
