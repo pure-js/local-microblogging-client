@@ -14,8 +14,8 @@ class CreateStory extends Component {
 
     this.handleHeadingChange = this.handleHeadingChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
-    this.createStory = this.createStory.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
+    this.createStory = this.createStory.bind(this);
   }
 
   handleHeadingChange(event) {
@@ -52,7 +52,7 @@ class CreateStory extends Component {
       body: this.state.body,
       image: this.state.image,
     };
-    alert(this.state.image);
+    this.props.addStory(story);
   }
 
   render() {
