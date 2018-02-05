@@ -50,6 +50,7 @@ class CreateStory extends Component {
     const story = {
       heading: this.state.heading,
       body: this.state.body,
+      image: this.state.image,
     };
     alert(this.state.image);
   }
