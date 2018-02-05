@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 
 class StoriesFeed extends Component {
-  render() {
-    function deletePost() {}
+  constructor(props) {
+    super(props);
+    this.handleDeleteStory = this.handleDeleteStory.bind(this);
+  }
 
+  handleDeleteStory() {
+    this.props.deleteStory(this.props.heading);
+  }
+
+  render() {
     return (
       <section className="card js-news-list__item">
         <img className="card-img-top" src={this.props.image} alt="Card cap" />
@@ -16,7 +23,7 @@ class StoriesFeed extends Component {
             className="btn btn-default remove-post"
             title="Remove post"
             type="button"
-            onClick={deletePost}
+            onClick={this.handleDeleteStory}
           >
             <svg width="12" height="16" viewBox="0 0 12 16" xmlns="http://www.w3.org/2000/svg">
               <title>trashcan</title>
