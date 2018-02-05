@@ -6,7 +6,7 @@ class StoriesFeed extends Component {
 
     return (
       <section className="card js-news-list__item">
-        <img className="card-img-top" src="" alt="Card cap" />
+        <img className="card-img-top" src={this.props.image} alt="Card cap" />
         <div className="card-body">
           <h3 className="card-title">
             <a className="h3__link" href="#link">{this.props.heading}</a>
