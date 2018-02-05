@@ -10,13 +10,7 @@
 node_modules/
 
 # Build
-build/
-
-# Dev
-.tmp/
-
-# Grunt folder for gh-pages grunt module
-.grunt/
+dist/
 
 # macOS
 .DS_store

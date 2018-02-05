@@ -1,15 +1,6 @@
 @import "../modules/colors";
-@import "../modules/paths";
-
-
-// Bootstrap customization
-// Overwrite path variable
-
-$icon-font-path: "../#{$path-to-bootstrap}fonts/bootstrap/" !default;
-
 
 /*-- Begin --*/
-
 
 .body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -21,22 +12,16 @@ $icon-font-path: "../#{$path-to-bootstrap}fonts/bootstrap/" !default;
 
 .container {
   margin: 0 auto;
-}
 
-@media (min-width: 768px) {
-  .container {
+  @media (min-width: 768px) {
     width: 750px;
   }
-}
 
-@media (min-width: 992px) {
-  .container {
+  @media (min-width: 992px) {
     width: 970px;
   }
-}
 
-@media (min-width: 1200px) {
-  .container {
+  @media (min-width: 1200px) {
     width: 1170px;
   }
 }
