@@ -16,7 +16,7 @@ class StoriesFeed extends Component {
     const date = datetime.toLocaleString('en-us', { day: 'numeric', month: 'long' });
 
     return (
-      <section className="card js-news-list__item">
+      <section className="card">
         <img className="card-img-top" src={this.props.image} alt="Card cap" />
         <div className="card-body">
           <h3 className="card-title">
