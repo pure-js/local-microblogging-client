@@ -11,6 +11,9 @@ class StoriesFeed extends Component {
   }
 
   render() {
+    const datetime = new Date(Number(this.props.timestamp));
+    const date = datetime.toLocaleString('en-us', { day: 'numeric', month: 'long' });
+
     return (
       <section className="card js-news-list__item">
         <img className="card-img-top" src={this.props.image} alt="Card cap" />
@@ -19,6 +22,9 @@ class StoriesFeed extends Component {
             <a className="h3__link" href="#link">{this.props.heading}</a>
           </h3>
           <p className="card-text">{this.props.body}</p>
+          <p className="card-text">
+            <small className="text-muted">{date}</small>
+          </p>
           <button
             className="btn btn-default remove-post"
             title="Remove post"

@@ -37,9 +37,16 @@ class App extends Component {
       <div className="container">
         <CreateStory addStory={this.addStory} />
         <div className="card-columns js-news-list">
-          {this.state.stories.map(story =>
-            <Story key={story.heading} heading={story.heading} body={story.body} image={story.image} deleteStory={this.deleteStory} />)
-          }
+          {this.state.stories.map(story => (
+            <Story
+              key={story.heading}
+              heading={story.heading}
+              body={story.body}
+              image={story.image}
+              timestamp={story.timestamp}
+              deleteStory={this.deleteStory}
+            />
+          ))}
         </div>
       </div>
     );
