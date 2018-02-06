@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import bootstrap from 'bootstrap/scss/bootstrap.scss';
+import PropTypes from 'prop-types';
+import StoriesFeed from './Story';
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark">
@@ -14,8 +12,9 @@ class Header extends Component {
           <div>
             <form className="form-inline my-2 my-lg-0">
               <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
+                className="btn btn-outline-primary my-2 my-sm-0"
+                type="button"
+                onClick={this.props.showForm}
               >New post
               </button>
             </form>
@@ -25,5 +24,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  showForm: PropTypes.func.isRequired,
+};
 
 export default Header;

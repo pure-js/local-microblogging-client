@@ -12,10 +12,12 @@ class App extends Component {
     super(props);
     this.state = {
       stories: posts,
+      form: false,
     };
 
     this.addStory = this.addStory.bind(this);
     this.deleteStory = this.deleteStory.bind(this);
+    this.showForm = this.showForm.bind(this);
   }
 
   addStory(story) {
@@ -32,12 +34,22 @@ class App extends Component {
     });
   }
 
+  showForm() {
+    this.setState({
+      form: true,
+    });
+  }
+
   render() {
+    let createForm = null;
+    if (this.state.form) {
+      createForm = <CreateStory addStory={this.addStory} />;
+    }
     return (
       <div>
-        <Header />
-        <div className="container">
-          <CreateStory addStory={this.addStory} />
+        <Header showForm={this.showForm} />
+        <main className="container">
+          {createForm}
           <div className="card-columns">
             {this.state.stories.map(story => (
               <Story
@@ -50,7 +62,7 @@ class App extends Component {
               />
             ))}
           </div>
-        </div>
+        </main>
       </div>
     );
   }
