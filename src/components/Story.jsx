@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class StoriesFeed extends Component {
   constructor(props) {
@@ -45,5 +46,17 @@ class StoriesFeed extends Component {
     );
   }
 }
+
+StoriesFeed.propTypes = {
+  image: PropTypes.string,
+  heading: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timestamp: PropTypes.string.isRequired,
+  deleteStory: PropTypes.func.isRequired,
+};
+
+StoriesFeed.defaultProps = {
+  image: '',
+};
 
 export default StoriesFeed;

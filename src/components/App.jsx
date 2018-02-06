@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
+import bootstrap from 'bootstrap/scss/bootstrap.scss';
 
 import Story from './Story';
 import CreateStory from './CreateStory';
 import posts from '../mock-posts';
-
-import bootstrap from 'bootstrap/scss/bootstrap.scss';
 import styles from '../styles/main.scss';
 
 class App extends Component {
