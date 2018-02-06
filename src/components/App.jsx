@@ -4,7 +4,7 @@ import bootstrap from 'bootstrap/scss/bootstrap.scss';
 import Story from './Story';
 import CreateStory from './CreateStory';
 import posts from '../mock-posts';
-import styles from '../styles/main.scss';
+import styles from './App.scss';
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="container">
         <CreateStory addStory={this.addStory} />
-        <div className="card-columns js-news-list">
+        <div className="card-columns">
           {this.state.stories.map(story => (
             <Story
               key={story.heading}
