@@ -22,7 +22,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
@@ -46,6 +46,9 @@ const config = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   devtool: 'inline-source-map',
   devServer: {
