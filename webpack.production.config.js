@@ -12,8 +12,8 @@ module.exports = {
     vendor: [
       'react',
       'react-dom',
+      'prop-types',
       // 'classnames',
-      // 'prop-types',
     ],
   },
   output: {

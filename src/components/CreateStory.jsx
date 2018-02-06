@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './CreateStory.scss';
 
@@ -51,6 +52,7 @@ class CreateStory extends Component {
       heading: this.state.heading,
       body: this.state.body,
       image: this.state.image,
+      timestamp: Date.now().toString(),
     };
     this.props.addStory(story);
   }
@@ -104,5 +106,9 @@ class CreateStory extends Component {
     );
   }
 }
+
+CreateStory.propTypes = {
+  addStory: PropTypes.func.isRequired,
+};
 
 export default CreateStory;
