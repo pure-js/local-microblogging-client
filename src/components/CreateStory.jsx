@@ -73,7 +73,7 @@ class CreateStory extends Component {
               <input
                 placeholder="Your heading"
                 type="text"
-                className="form-control js-new-post__heading"
+                className="form-control"
                 value={this.state.heading}
                 onChange={this.handleHeadingChange}
               />
@@ -82,7 +82,7 @@ class CreateStory extends Component {
               <textarea
                 placeholder="Write something"
                 rows="3"
-                className="form-control js-new-post__main-text"
+                className="form-control"
                 value={this.state.body}
                 onChange={this.handleBodyChange}
               />
