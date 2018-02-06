@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Story from './Story.jsx';
-import CreateStory from './CreateStory.jsx';
+import Story from './Story';
+import CreateStory from './CreateStory';
 import posts from '../mock-posts';
 
 import bootstrap from 'bootstrap/scss/bootstrap.scss';
