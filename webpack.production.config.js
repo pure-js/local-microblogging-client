@@ -20,6 +20,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].min.js',
   },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
+  },
   module: {
     rules: [
       {
