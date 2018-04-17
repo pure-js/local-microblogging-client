@@ -15,6 +15,7 @@ const plugins = [
 ];
 
 const config = {
+  mode: 'development',
   entry: {
     app: './src/index.jsx',
   },
@@ -48,13 +49,14 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: 9000,
     hot: true,
+    open: true,
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
