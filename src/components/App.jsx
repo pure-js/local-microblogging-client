@@ -4,14 +4,14 @@ import bootstrap from 'bootstrap/scss/bootstrap.scss';
 import Header from './Header';
 import Story from './Story';
 import CreateStory from './CreateStory';
-import posts from '../mock-posts';
+import getStories from '../services/getStories';
 import styles from './App.scss';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stories: posts,
+      stories: [],
       form: false,
     };
 
@@ -41,6 +41,12 @@ class App extends Component {
   }
 
   render() {
+    getStories().then((data) => {
+      this.setState({
+        stories: data,
+      });
+    });
+
     let createForm = null;
     if (this.state.form) {
       createForm = <CreateStory addStory={this.addStory} />;
