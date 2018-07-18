@@ -11,7 +11,6 @@ const plugins = [
     defaultAttribute: 'defer',
   }),
   new webpack.NamedModulesPlugin(),
-  new webpack.HotModuleReplacementPlugin(),
 ];
 
 const config = {

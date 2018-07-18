@@ -42,7 +42,8 @@ class App extends Component {
 
   render() {
     let createForm = null;
-    if (this.state.form) {
+    const { form, stories } = this.state;
+    if (form) {
       createForm = <CreateStory addStory={this.addStory} />;
     }
     return (
@@ -51,7 +52,7 @@ class App extends Component {
         <main className="container">
           {createForm}
           <div className="card-columns">
-            {this.state.stories.map(story => (
+            {stories.map(story => (
               <Story
                 key={story.heading}
                 heading={story.heading}
