@@ -11,16 +11,11 @@ module.exports = {
   mode: 'production',
   entry: {
     app: './src/index.jsx',
-    vendor: [
-      'react',
-      'react-dom',
-      'prop-types',
-      // 'classnames',
-    ],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].min.js',
+    chunkFilename: '[name].[chunkhash].min.js',
   },
   optimization: {
     minimizer: [
@@ -68,7 +63,7 @@ module.exports = {
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: '[name].[chunkhash].min.css',
-      chunkFilename: '[id].css',
+      chunkFilename: '[id].[chunkhash].min.css',
     }),
   ],
 };
