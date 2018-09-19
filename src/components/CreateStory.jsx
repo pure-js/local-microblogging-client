@@ -48,10 +48,11 @@ class CreateStory extends Component {
 
   createStory(event) {
     event.preventDefault();
+    const { heading, body, image } = this.state;
     const story = {
-      heading: this.state.heading,
-      body: this.state.body,
-      image: this.state.image,
+      heading,
+      body,
+      image,
       timestamp: Date.now().toString(),
     };
     this.props.addStory(story);
@@ -98,7 +99,8 @@ class CreateStory extends Component {
               type="submit"
               className="btn btn-primary btn-lg new-post__submit"
             >
-              <i className="glyphicon glyphicon-ok" />Post it
+              <i className="glyphicon glyphicon-ok" />
+              Post it
             </button>
           </form>
         </div>

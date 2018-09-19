@@ -1,7 +1,7 @@
 import posts from '../mock-posts';
 
 function getStories() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(posts);
     }, 5);

@@ -13,7 +13,8 @@ function Header(props) {
               className="btn btn-outline-primary my-2 my-sm-0"
               type="button"
               onClick={props.showForm}
-            >New post
+            >
+              New post
             </button>
           </form>
         </div>
