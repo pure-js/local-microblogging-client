@@ -8,21 +8,25 @@ class StoriesFeed extends Component {
   }
 
   handleDeleteStory() {
-    this.props.deleteStory(this.props.heading);
+    const { deleteStory, heading } = this.props;
+    deleteStory(heading);
   }
 
   render() {
-    const datetime = new Date(Number(this.props.timestamp));
+    const {
+      timestamp, image, heading, body,
+    } = this.props;
+    const datetime = new Date(Number(timestamp));
     const date = datetime.toLocaleString('en-us', { day: 'numeric', month: 'long' });
 
     return (
       <section className="card">
-        <img className="card-img-top" src={this.props.image} alt="Card cap" />
+        <img className="card-img-top" src={image} alt="Card cap" />
         <div className="card-body">
           <h3 className="card-title">
-            <a className="h3__link" href="#link">{this.props.heading}</a>
+            <a className="h3__link" href="#link">{heading}</a>
           </h3>
-          <p className="card-text">{this.props.body}</p>
+          <p className="card-text">{body}</p>
           <p className="card-text">
             <small className="text-muted">{date}</small>
           </p>

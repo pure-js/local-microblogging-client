@@ -1,11 +1,5 @@
-import posts from '../mock-posts';
-
-function getStories() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(posts);
-    }, 5);
-  });
-}
+const getStories = url => fetch(url)
+  .then(response => response.json())
+  .then(data => data.result);
 
 export default getStories;
