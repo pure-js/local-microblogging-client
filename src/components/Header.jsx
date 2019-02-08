@@ -3,6 +3,7 @@ import bootstrap from 'bootstrap/scss/bootstrap.scss';
 import PropTypes from 'prop-types';
 
 function Header(props) {
+  const { showForm } = props;
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container">
@@ -12,7 +13,7 @@ function Header(props) {
             <button
               className="btn btn-outline-primary my-2 my-sm-0"
               type="button"
-              onClick={props.showForm}
+              onClick={showForm}
             >
               New post
             </button>

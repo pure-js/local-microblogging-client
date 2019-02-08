@@ -49,24 +49,10 @@ class App extends Component {
   }
 
   render() {
-    let createForm = null;
     const { form, stories } = this.state;
+    let createForm = null;
     if (form) {
       createForm = <CreateStory addStory={this.addStory} />;
-    }
-    
-    let storyComponents = [];
-    if (stories.length > 0) {
-      storyComponents = stories.map(story => (
-        <Story
-          key={story.heading}
-          heading={story.heading}
-          body={story.body}
-          image={story.image}
-          timestamp={story.timestamp}
-          deleteStory={this.deleteStory}
-        />
-      ));
     }
     return (
       <div>
@@ -74,7 +60,16 @@ class App extends Component {
         <main className="container">
           {createForm}
           <div className="card-columns">
-            {storyComponents}
+            {stories.map(story => (
+              <Story
+                key={story.heading}
+                heading={story.heading}
+                body={story.body}
+                image={story.image}
+                timestamp={story.timestamp}
+                deleteStory={this.deleteStory}
+              />
+            ))}
           </div>
         </main>
       </div>

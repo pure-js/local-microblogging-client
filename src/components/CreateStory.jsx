@@ -47,6 +47,7 @@ class CreateStory extends Component {
   }
 
   createStory(event) {
+    const { addStory } = this.props;
     event.preventDefault();
     const { heading, body, image } = this.state;
     const story = {
@@ -55,15 +56,16 @@ class CreateStory extends Component {
       image,
       timestamp: Date.now().toString(),
     };
-    this.props.addStory(story);
+    addStory(story);
   }
 
   render() {
+    const { image, heading, body } = this.state;
     return (
       <div className="card mb-3">
         <img
           id="preview"
-          src={this.state.image}
+          src={image}
           alt="Card cap"
           className="card-img-top create-story__img"
         />
@@ -75,7 +77,7 @@ class CreateStory extends Component {
                 placeholder="Your heading"
                 type="text"
                 className="form-control"
-                value={this.state.heading}
+                value={heading}
                 onChange={this.handleHeadingChange}
               />
             </div>
@@ -84,7 +86,7 @@ class CreateStory extends Component {
                 placeholder="Write something"
                 rows="3"
                 className="form-control"
-                value={this.state.body}
+                value={body}
                 onChange={this.handleBodyChange}
               />
             </div>
