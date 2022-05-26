@@ -1,23 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const webpack = require('webpack');
 
 const plugins = [
   new HtmlWebpackPlugin({
     template: './src/index-template.html',
   }),
-  new ScriptExtHtmlWebpackPlugin({
-    defaultAttribute: 'defer',
-  }),
-  new webpack.NamedModulesPlugin(),
 ];
 
 const config = {
   mode: 'development',
-  entry: {
-    app: './src/index.jsx',
-  },
   plugins,
   module: {
     rules: [
@@ -50,16 +41,15 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
   },
+  optimization: {
+    moduleIds: 'named',
+  },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    static: './',
     port: 9000,
     hot: true,
     open: true,
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
   },
 };
 
