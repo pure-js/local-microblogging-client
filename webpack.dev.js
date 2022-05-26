@@ -1,4 +1,3 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const plugins = [
@@ -46,7 +45,6 @@ const config = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    static: './',
     port: 9000,
     hot: true,
     open: true,

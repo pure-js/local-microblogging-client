@@ -7,6 +7,11 @@ import CreateStory from './CreateStory';
 import getStories from '../services/getStories';
 import styles from './App.scss';
 
+if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production') {
+  const { worker } = require('../mocks/browser');
+  worker.start()
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +26,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getStories('/public//posts.json').then((data) => {
+    getStories('/posts').then((data) => {
       this.setState({
         stories: data,
       });
