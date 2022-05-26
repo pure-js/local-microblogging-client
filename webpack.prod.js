@@ -1,26 +1,21 @@
-const path = require('path');
-const webpack = require('webpack');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: 'production',
-  entry: {
-    app: './src/index.jsx',
-  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].min.js',
     chunkFilename: '[name].[chunkhash].min.js',
+    clean: true,
   },
   optimization: {
+    minimize: true,
     minimizer: [
-      new OptimizeCSSAssetsPlugin({}),
+      `...`,
+      new CssMinimizerPlugin(),
     ],
+    moduleIds: 'deterministic',
   },
   resolve: {
     extensions: ['.jsx', '.js', '.json'],
@@ -45,9 +40,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new MinifyPlugin(),
-    new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index-template.html',
       minify: {
@@ -55,9 +47,6 @@ module.exports = {
         collapseWhitespace: true,
         removeScriptTypeAttributes: true,
       },
-    }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer',
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
