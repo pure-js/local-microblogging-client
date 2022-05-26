@@ -6,7 +6,7 @@
   "homepage": "https://github.com/pure-js/local-microblogging-client",
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
-    "build": "node --trace-deprecation node_modules/webpack/bin/webpack.js --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "trash dist",
