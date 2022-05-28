@@ -7,6 +7,10 @@ const presets = [
       safari: '11.1',
     },
     useBuiltIns: 'usage',
+    corejs: {
+      version: "3.22",
+      proposals: true,
+    }
   }],
   ['@babel/preset-react', {
     runtime: 'automatic',
