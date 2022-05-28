@@ -1,5 +1,4 @@
 import React from 'react';
-import bootstrap from 'bootstrap/scss/bootstrap.scss';
 import PropTypes from 'prop-types';
 
 function Header(props) {
