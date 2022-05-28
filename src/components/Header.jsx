@@ -1,30 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-function Header(props) {
-  const { showForm } = props;
+const Header = () => {
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="#home">Local microblogging client</a>
+        <Link to="/" className="navbar-brand">Local microblogging client</Link>
         <div>
           <form className="form-inline my-2 my-lg-0">
-            <button
+            <Link
+              to="add-post"
               className="btn btn-outline-primary my-2 my-sm-0"
-              type="button"
-              onClick={showForm}
             >
               New post
-            </button>
+            </Link>
           </form>
         </div>
       </div>
     </nav>
   );
 }
-
-Header.propTypes = {
-  showForm: PropTypes.func.isRequired,
-};
 
 export default Header;
