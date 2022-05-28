@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { db } from '../services/db';
 
 
-const StoriesFeed = ({ id, heading, timestamp, image, body }) => {
+const BlogPost = ({ id, heading, previewTxt, timestamp, image }) => {
   function handleDeleteStory() {
     db.posts
       .where('id').equals(id)
@@ -22,7 +22,7 @@ const StoriesFeed = ({ id, heading, timestamp, image, body }) => {
         <h3 className="card-title">
           <a className="h3__link" href="#link">{heading}</a>
         </h3>
-        <p className="card-text">{body}</p>
+        <p className="card-text">{previewTxt}</p>
         <p className="card-text">
           <small className="text-muted">{date}</small>
         </p>
@@ -46,16 +46,16 @@ const StoriesFeed = ({ id, heading, timestamp, image, body }) => {
   );
 }
 
-StoriesFeed.propTypes = {
-  id: PropTypes.string.isRequired,
+BlogPost.propTypes = {
+  id: PropTypes.number.isRequired,
   image: PropTypes.string,
   heading: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+  previewTxt: PropTypes.string.isRequired,
   timestamp: PropTypes.string.isRequired,
 };
 
-StoriesFeed.defaultProps = {
+BlogPost.defaultProps = {
   image: '',
 };
 
-export default StoriesFeed;
+export default BlogPost;

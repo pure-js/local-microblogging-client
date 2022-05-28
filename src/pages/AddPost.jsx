@@ -10,6 +10,7 @@ const AddPost = () => {
   const [body, setBody] = useState('');
   const [image, setImage] = useState('');
   const [status, setStatus] = useState('');
+  const [previewTxt, setPreviewTxt] = useState('');
 
   const navigate = useNavigate();
 
@@ -30,6 +31,7 @@ const AddPost = () => {
     try {
       const id = await db.posts.add({
         heading,
+        previewTxt,
         body,
         timestamp: Date.now().toString(),
         image,
@@ -54,7 +56,7 @@ const AddPost = () => {
   }
 
   return (
-    <div className="card mb-3">
+    <div className="row card mb-3">
       <h3>{ status }</h3>
       { image && (
         <img
@@ -64,7 +66,7 @@ const AddPost = () => {
           className="card-img-top create-story__img"
         />
       ) }
-      <div className="card-body">
+      <div className="col-md-10 col-lg-6 card-body">
         <h3 className="card-title">{'What\'s new?'}</h3>
         <form onSubmit={createStory}>
           <div className="mb-3">
@@ -74,6 +76,15 @@ const AddPost = () => {
               className="form-control"
               value={heading}
               onChange={(e) => { setHeading(e.target.value); }}
+            />
+          </div>
+          <div className="mb-3">
+            <textarea
+              placeholder="Preview text"
+              rows="3"
+              className="form-control"
+              value={previewTxt}
+              onChange={(e) => { setPreviewTxt(e.target.value); }}
             />
           </div>
           <div className="mb-3">
@@ -89,7 +100,7 @@ const AddPost = () => {
             <label
               className="input-group-text"
               htmlFor="uploadImageInput"
-            >Upload</label>
+            >Upload image</label>
             <input
               id="uploadImageInput"
               type="file"

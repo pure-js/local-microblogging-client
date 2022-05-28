@@ -24,7 +24,9 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
-        <Route path="add-post" element={<AddPost />} />
+        <Route path="posts">
+          <Route path="new" element={<AddPost />} />
+        </Route>
       </Route>
     </Routes>
   </BrowserRouter>

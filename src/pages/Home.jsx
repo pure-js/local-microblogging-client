@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-import Story from '../components/Story';
+import BlogPost from '../components/BlogPost';
 import getStories from '../services/getStories';
 import { db } from '../services/db';
 
@@ -15,10 +15,10 @@ export function PostList() {
     <div className="card-columns row">
       {posts?.map(post => (
         <div key={post.id} className='col-md-6 col-lg-4'>
-          <Story
+          <BlogPost
             id={post.id}
             heading={post.heading}
-            body={post.body}
+            previewTxt={post.previewTxt}
             image={post.image}
             timestamp={post.timestamp}
           />
@@ -36,11 +36,6 @@ const Home = () => {
       setStories(data);
     });
   }, [])
-
-  function deleteStory(key) {
-    stories = stories.filter(obj => obj.heading !== key);
-    setStories(stories);
-  }
 
   return (
     <main className="container">
