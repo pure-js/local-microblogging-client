@@ -8,7 +8,8 @@ import {
 
 import App from './components/App';
 import Home from './pages/Home';
-import AddPost from './pages/AddPost';
+import BlogPost from './pages/BlogPost';
+import NewPost from './pages/NewPost';
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production') {
   const { worker } = require('./mocks/browser');
@@ -25,7 +26,9 @@ root.render(
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />
         <Route path="posts">
-          <Route path="new" element={<AddPost />} />
+          <Route path=":postId" element={<BlogPost />} />
+          <Route path=":postId/edit" element={<NewPost isEdit={true} />} />
+          <Route path="new" element={<NewPost />} />
         </Route>
       </Route>
     </Routes>

@@ -6,10 +6,10 @@ const Header = () => {
       <div className="container">
         <Link to="/" className="navbar-brand">Local microblogging client</Link>
         <div>
-          <form className="form-inline my-2 my-lg-0">
+          <form className="form-inline">
             <Link
               to="posts/new"
-              className="btn btn-outline-primary my-2 my-sm-0"
+              className="btn btn-outline-primary"
             >
               New post
             </Link>

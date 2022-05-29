@@ -1,11 +1,10 @@
 import Dexie from 'dexie';
-import {importDB, exportDB, importInto, peakImportFile} from "dexie-export-import";
 
-import { getStories } from '../services/getStories';
+import postsJson  from '../mocks/posts.json';
 
 export const db = new Dexie('Posts');
-db.version(1).stores({
-  posts: '++id, heading, previewTxt, body, timestamp, image', // Primary key and indexed props
+db.version(1.3).stores({
+  posts: '++id, heading, previewTxt, timestamp', // Primary key and indexed props
 });
 
-getStories('/posts').then((data) => { console.log(3); console.log('data', data) });
+db.posts.bulkAdd(postsJson.result);
