@@ -1,4 +1,3 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter,
@@ -12,12 +11,13 @@ import BlogPost from './pages/BlogPost';
 import NewPost from './pages/NewPost';
 
 if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production') {
+  // eslint-disable-next-line global-require
   const { worker } = require('./mocks/browser');
-  worker.start()
+  worker.start();
 }
 
 const root = createRoot(
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 root.render(
@@ -27,10 +27,10 @@ root.render(
         <Route index element={<Home />} />
         <Route path="posts">
           <Route path=":postId" element={<BlogPost />} />
-          <Route path=":postId/edit" element={<NewPost isEdit={true} />} />
+          <Route path=":postId/edit" element={<NewPost isEdit />} />
           <Route path="new" element={<NewPost />} />
         </Route>
       </Route>
     </Routes>
-  </BrowserRouter>
+  </BrowserRouter>,
 );

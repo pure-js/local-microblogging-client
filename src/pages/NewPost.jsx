@@ -133,7 +133,7 @@ function AddPost({ isEdit = false }) {
 }
 
 AddPost.propTypes = {
-  isEdit: PropTypes.func,
+  isEdit: PropTypes.bool,
 };
 
 AddPost.defaultProps = {
