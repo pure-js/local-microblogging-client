@@ -29,7 +29,7 @@ function BlogPost({
       <div className="card-footer">
         <div className="btn-group" role="group">
           <Link
-            to={`posts/${id}/edit`}
+            to={`/posts/${id}/edit`}
             className="btn btn-default"
             title="Edit post"
           >

@@ -8,7 +8,7 @@ function Header() {
         <div>
           <form className="form-inline">
             <Link
-              to="posts/new"
+              to="/posts/new"
               className="btn btn-outline-primary"
             >
               New post
