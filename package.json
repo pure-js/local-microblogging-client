@@ -1,13 +1,14 @@
 {
   "name": "local-microblogging-client",
   "version": "2.2.0",
-  "description": "For local microblogging client",
+  "description": "Local Microblogging Frontend Client",
   "main": "src/index.jsx",
-  "homepage": "https://github.com/pure-js/local-microblogging-client",
+  "homepage": "https://pure-js.github.io/local-microblogging-client/",
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "release": "standard-version",
     "lint": "eslint --ext .jsx,.js src/"
