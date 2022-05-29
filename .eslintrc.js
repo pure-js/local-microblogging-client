@@ -5,12 +5,13 @@ module.exports = {
   ],
   rules: {
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
   },
   env: {
     "browser": true,
   },
   parserOptions: {
-    "ecmaVersion": 2017,
+    "ecmaVersion": 2020,
   }
 };

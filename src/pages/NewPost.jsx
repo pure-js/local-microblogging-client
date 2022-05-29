@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { db } from '../services/db';
 
@@ -51,12 +52,6 @@ function AddPost({ isEdit = false }) {
 
   function createStory(event) {
     event.preventDefault();
-    const story = {
-      heading,
-      body,
-      image,
-      timestamp: Date.now().toString(),
-    };
     addPost();
   }
 
@@ -105,6 +100,7 @@ function AddPost({ isEdit = false }) {
               />
             </div>
             <div className="input-group mb-3">
+              { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
               <label
                 className="input-group-text"
                 htmlFor="uploadImageInput"
@@ -135,5 +131,13 @@ function AddPost({ isEdit = false }) {
     </div>
   );
 }
+
+AddPost.propTypes = {
+  isEdit: PropTypes.func,
+};
+
+AddPost.defaultProps = {
+  isEdit: false,
+};
 
 export default AddPost;

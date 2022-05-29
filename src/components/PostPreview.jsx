@@ -8,10 +8,7 @@ function BlogPost({
 }) {
   function handleDeleteStory() {
     db.posts
-      .delete(id)
-      .then((deleteCount) => {
-        console.log(`Deleted ${deleteCount} objects`);
-      });
+      .delete(id);
   }
 
   const datetime = new Date(Number(timestamp));
