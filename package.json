@@ -1,6 +1,6 @@
 {
   "name": "local-microblogging-client",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "For local microblogging client",
   "main": "src/index.jsx",
   "homepage": "https://github.com/pure-js/local-microblogging-client",
