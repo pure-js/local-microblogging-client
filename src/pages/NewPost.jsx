@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { db } from '../services/db';
 
-
-const AddPost = ({ isEdit = false }) => {
+function AddPost({ isEdit = false }) {
   const [heading, setHeading] = useState('');
   const [body, setBody] = useState('');
   const [image, setImage] = useState('');
@@ -105,11 +104,13 @@ const AddPost = ({ isEdit = false }) => {
                 onChange={(e) => { setBody(e.target.value); }}
               />
             </div>
-            <div className='input-group mb-3'>
+            <div className="input-group mb-3">
               <label
                 className="input-group-text"
                 htmlFor="uploadImageInput"
-              >Upload image</label>
+              >
+                Upload image
+              </label>
               <input
                 id="uploadImageInput"
                 type="file"

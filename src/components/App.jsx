@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import bootstrap from './bootstrap_custom.scss';
 
-const App = () => {
+function App() {
   return (
     <>
       <Header />
