@@ -27,9 +27,9 @@ const root = createRoot(
 );
 
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename={routeBasePath}>
     <Routes>
-      <Route path={routeBasePath} element={<App />}>
+      <Route path="/" element={<App />}>
         <Route index element={<Home />} />
         <Route path="posts">
           <Route path=":postId" element={<BlogPost />} />
