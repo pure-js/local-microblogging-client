@@ -8,9 +8,9 @@ const presets = [
     },
     useBuiltIns: 'usage',
     corejs: {
-      version: "3.22",
+      version: '3.22',
       proposals: true,
-    }
+    },
   }],
   ['@babel/preset-react', {
     runtime: 'automatic',
