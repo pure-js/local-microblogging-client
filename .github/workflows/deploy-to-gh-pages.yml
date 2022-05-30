@@ -1,0 +1,16 @@
+name: Deploy Release Build to GitHub pages
+on:
+  release:
+    types: [published]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install modules
+        run: npm ci
+      - name: Run Deploy
+        run: npm run deploy
