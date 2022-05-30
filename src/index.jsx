@@ -11,9 +11,8 @@ import Home from './pages/Home';
 import BlogPost from './pages/BlogPost';
 import NewPost from './pages/NewPost';
 
-
-let routeBasePath = undefined;
-
+let routeBasePath;
+/* global ROUTER_BASE_PATH */
 if (ROUTER_BASE_PATH) {
   routeBasePath = '/local-microblogging-client';
 }
