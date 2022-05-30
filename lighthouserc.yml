@@ -1,7 +1,7 @@
 ci:
   collect:
     url:
-      ['http://localhost:38943/', 'http://localhost:38943/posts/1', 'http://localhost:38943/posts/1/edit', 'http://localhost:38943/posts/new']
+      ['http://localhost', 'http://localhost/posts/1', 'http://localhost/posts/1/edit', 'http://localhost/posts/new']
     staticDistDir: './dist'
     isSinglePageApplication: true
   upload:
