@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/pure-js/local-microblogging-client/compare/v2.2.2...v2.3.0) (2022-05-30)
+
+
+### Features
+
+* add 404 page ([61cf096](https://github.com/pure-js/local-microblogging-client/commit/61cf0968263e5f0060049c17ec43004a83e70451))
+
+
+### Bug Fixes
+
+* pass basename var for lighthouse ([bd5ace7](https://github.com/pure-js/local-microblogging-client/commit/bd5ace711e11765c457fc950519cb87f9c07d464))
+
 ### [2.2.2](https://github.com/pure-js/local-microblogging-client/compare/v2.2.1...v2.2.2) (2022-05-29)
 
 ### [2.2.1](https://github.com/pure-js/local-microblogging-client/compare/v2.2.0...v2.2.1) (2022-05-29)
