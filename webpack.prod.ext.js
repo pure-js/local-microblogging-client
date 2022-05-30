@@ -7,6 +7,6 @@ module.exports = merge(prod, {
   plugins: [
     new webpack.DefinePlugin({
       ROUTER_BASE_PATH: JSON.stringify(undefined),
-    })
-  ]
+    }),
+  ],
 });
