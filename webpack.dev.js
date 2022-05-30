@@ -1,8 +1,12 @@
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const plugins = [
   new HtmlWebpackPlugin({
     template: './src/index-template.html',
+  }),
+  new webpack.DefinePlugin({
+    ROUTER_BASE_PATH: JSON.stringify(undefined),
   }),
 ];
 
