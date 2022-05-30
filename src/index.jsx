@@ -6,24 +6,20 @@ import {
 } from 'react-router-dom';
 
 import App from './components/App';
+import NoMatch from './components/NoMatch';
 import Home from './pages/Home';
 import BlogPost from './pages/BlogPost';
 import NewPost from './pages/NewPost';
 
-if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production') {
-  // eslint-disable-next-line global-require
-  const { worker } = require('./mocks/browser');
-  worker.start();
-}
 
-let routeBasePath = '/';
+let routeBasePath = undefined;
 
-if (process.env.NODE_ENV === 'production') {
+if (ROUTER_BASE_PATH) {
   routeBasePath = '/local-microblogging-client';
 }
 
 const root = createRoot(
-  document.getElementById('root'),
+  document.getElementById('app'),
 );
 
 root.render(
@@ -36,6 +32,7 @@ root.render(
           <Route path=":postId/edit" element={<NewPost isEdit />} />
           <Route path="new" element={<NewPost />} />
         </Route>
+        <Route path="*" element={<NoMatch />} />
       </Route>
     </Routes>
   </BrowserRouter>,
