@@ -22,9 +22,9 @@ function BlogPost({
 
   return (
     <section className="card mb-3">
-      <div className='row g-0'>
+      <div className="row g-0">
         { image && (
-          <div className='col-md-4'>
+          <div className="col-md-4">
             <img className="img-fluid" src={image} alt="Card cap" />
           </div>
         )}
@@ -35,14 +35,14 @@ function BlogPost({
             </h3>
             <p className="card-text">{previewTxt}</p>
           </div>
-          <div className='card-footer bg-transparent'>
-            <div className='row'>
-              <div className='col-md-6 d-flex align-items-center'>
+          <div className="card-footer bg-transparent">
+            <div className="row">
+              <div className="col-md-6 d-flex align-items-center">
                 <p className="card-text">
                   <time dateTime={validDate} className="text-muted">{date}</time>
                 </p>
               </div>
-              <div className='col-md-6 d-flex justify-content-end'>
+              <div className="col-md-6 d-flex justify-content-end">
                 <div className="btn-group" role="group">
                   <Link
                     to={`/posts/${id}/edit`}
