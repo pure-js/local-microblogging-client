@@ -14,7 +14,7 @@ export function PostList() {
   return (
     <div className="card-columns row">
       {posts?.map((post) => (
-        <div key={post.id} className="col-md-6 col-lg-4">
+        <div key={post.id} className="col-md-8 col-lg-8">
           <PostPreview
             id={post.id}
             heading={post.heading}
