@@ -97,11 +97,6 @@ function AddPost({ isEdit = false }) {
                 value={hashtags}
                 onChange={(e) => { setHashtags(e.target.value); }}
               />
-              <textarea
-                placeholder="Write your TxT..."
-                rows="5"
-                className="tw-border-none tw-bg-orange-600"
-              />
             </div>
             <div className="input-group mb-3">
               { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
