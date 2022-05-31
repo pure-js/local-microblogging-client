@@ -1,3 +1,4 @@
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter,
@@ -19,17 +20,19 @@ const root = createRoot(
 );
 
 root.render(
-  <BrowserRouter basename={import.meta.env.BASE_URL}>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route index element={<Home />} />
-        <Route path="posts">
-          <Route path=":postId" element={<BlogPost />} />
-          <Route path=":postId/edit" element={<NewPost isEdit />} />
-          <Route path="new" element={<NewPost />} />
+  <StrictMode>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="posts">
+            <Route path=":postId" element={<BlogPost />} />
+            <Route path=":postId/edit" element={<NewPost isEdit />} />
+            <Route path="new" element={<NewPost />} />
+          </Route>
+          <Route path="*" element={<NoMatch />} />
         </Route>
-        <Route path="*" element={<NoMatch />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>,
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>,
 );
