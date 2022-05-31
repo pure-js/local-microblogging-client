@@ -12,9 +12,8 @@ import BlogPost from './pages/BlogPost';
 import NewPost from './pages/NewPost';
 
 let routeBasePath;
-/* global ROUTER_BASE_PATH */
-if (ROUTER_BASE_PATH) {
-  routeBasePath = '/local-microblogging-client';
+if (import.meta.env.ROUTER_BASE_PATH) {
+  routeBasePath = import.meta.env.ROUTER_BASE_PATH;
 }
 
 const root = createRoot(
