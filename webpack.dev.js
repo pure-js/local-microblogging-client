@@ -23,6 +23,10 @@ const config = {
         },
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
         test: /\.scss$/,
         use: [
           {
@@ -30,6 +34,9 @@ const config = {
           },
           {
             loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
           },
           {
             loader: 'sass-loader',
@@ -43,7 +50,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
   },
   optimization: {
     moduleIds: 'named',
