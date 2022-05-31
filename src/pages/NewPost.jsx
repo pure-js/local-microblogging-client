@@ -6,10 +6,10 @@ import { db } from '../services/db';
 
 function AddPost({ isEdit = false }) {
   const [heading, setHeading] = useState('');
-  const [body, setBody] = useState('');
+  const [text, setText] = useState('');
   const [image, setImage] = useState('');
   const [status, setStatus] = useState('');
-  const [previewTxt, setPreviewTxt] = useState('');
+  const [hashtags, setHashtags] = useState('');
 
   const navigate = useNavigate();
 
@@ -37,9 +37,8 @@ function AddPost({ isEdit = false }) {
     try {
       const id = await db.posts.add({
         heading,
-        previewTxt,
-        body,
-        timestamp: Date.now().toString(),
+        text,
+        createdAt: Date.now().toString(),
         image,
       });
 
@@ -57,7 +56,7 @@ function AddPost({ isEdit = false }) {
 
   return (
     <div className="container">
-      <div className="row card mb-3">
+      <div className="row mb-3">
         { status && (<h3>{ status }</h3>) }
         { image && (
           <div className="col-md-10 col-lg-6">
@@ -69,7 +68,7 @@ function AddPost({ isEdit = false }) {
             />
           </div>
         ) }
-        <div className="col-md-10 col-lg-6 card-body">
+        <div className="col-md-8 col-lg-6">
           <h3 className="card-title">{isEdit ? 'Any updates?' : 'What\'s new?'}</h3>
           <form onSubmit={createStory}>
             <div className="mb-3">
@@ -83,20 +82,20 @@ function AddPost({ isEdit = false }) {
             </div>
             <div className="mb-3">
               <textarea
-                placeholder="Preview text"
-                rows="2"
+                placeholder="Write your text..."
+                rows="5"
                 className="form-control"
-                value={previewTxt}
-                onChange={(e) => { setPreviewTxt(e.target.value); }}
+                value={text}
+                onChange={(e) => { setText(e.target.value); }}
               />
             </div>
             <div className="mb-3">
               <textarea
-                placeholder="Write your text..."
-                rows="5"
+                placeholder="Hashtags"
+                rows="2"
                 className="form-control"
-                value={body}
-                onChange={(e) => { setBody(e.target.value); }}
+                value={hashtags}
+                onChange={(e) => { setHashtags(e.target.value); }}
               />
             </div>
             <div className="input-group mb-3">

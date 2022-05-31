@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { db } from '../services/db';
 
 function BlogPost({
-  id, heading, previewTxt, timestamp, image,
+  id, heading, text, createdAt, image,
 }) {
   function handleDeleteStory() {
     db.posts
       .delete(id);
   }
 
-  const datetime = new Date(Number(timestamp));
+  const datetime = new Date(Number(createdAt));
   const options = {
     short: { day: 'numeric', month: 'long' },
     full: { day: 'numeric', month: 'long', year: 'numeric' },
@@ -33,7 +33,7 @@ function BlogPost({
             <h3 className="card-title">
               <Link to={`/posts/${id}`} className="">{heading}</Link>
             </h3>
-            <p className="card-text">{previewTxt}</p>
+            <p className="card-text">{text}</p>
           </div>
           <div className="card-footer bg-transparent">
             <div className="row">
@@ -79,8 +79,8 @@ BlogPost.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string,
   heading: PropTypes.string.isRequired,
-  previewTxt: PropTypes.string.isRequired,
-  timestamp: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
 };
 
 BlogPost.defaultProps = {
