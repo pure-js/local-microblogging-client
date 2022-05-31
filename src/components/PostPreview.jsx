@@ -1,24 +1,21 @@
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { db } from '../services/db';
+import { timestampToLocaleString } from '../services/timestampToLocaleString';
 
 function BlogPost({
   id, heading, text, createdAt, image,
 }) {
+  // const [is] = useState();
+
   function handleDeleteStory() {
     db.posts
       .delete(id);
   }
 
-  const datetime = new Date(Number(createdAt));
-  const options = {
-    short: { day: 'numeric', month: 'long' },
-    full: { day: 'numeric', month: 'long', year: 'numeric' },
-  };
-  const isCurrentYear = datetime.getFullYear() === new Date().getFullYear();
-  const date = datetime.toLocaleString('en-us', isCurrentYear ? options.short : options.full);
-  const validDate = datetime.toUTCString('en-us', { year: 'numeric', month: 'numeric', day: 'numeric' });
+  const { date, htmlDatetime } = timestampToLocaleString(createdAt);
 
   return (
     <section className="card mb-3">
@@ -39,7 +36,7 @@ function BlogPost({
             <div className="row">
               <div className="col-md-6 d-flex align-items-center">
                 <p className="card-text">
-                  <time dateTime={validDate} className="text-muted">{date}</time>
+                  <time dateTime={htmlDatetime} className="text-muted">{date}</time>
                 </p>
               </div>
               <div className="col-md-6 d-flex justify-content-end">
@@ -69,6 +66,7 @@ function BlogPost({
                     className="btn btn-default"
                     title="Show more options"
                     type="button"
+                    onClick={() => {}}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                       <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
