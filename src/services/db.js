@@ -8,4 +8,4 @@ db.version(1).stores({
   authors: '++id, nickname, firstname, lastname',
 });
 
-db.posts.bulkAdd(postsJson.result);
+db.posts.bulkPut(postsJson.result);
