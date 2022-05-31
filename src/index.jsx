@@ -15,9 +15,8 @@ import './index.css';
 import './bootstrap_custom.scss';
 
 let routeBasePath;
-/* global ROUTER_BASE_PATH */
-if (ROUTER_BASE_PATH) {
-  routeBasePath = '/local-microblogging-client';
+if (import.meta.env.ROUTER_BASE_PATH) {
+  routeBasePath = import.meta.env.ROUTER_BASE_PATH;
 }
 
 const root = createRoot(
