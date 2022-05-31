@@ -11,6 +11,9 @@ import Home from './pages/Home';
 import BlogPost from './pages/BlogPost';
 import NewPost from './pages/NewPost';
 
+import './index.css';
+import './bootstrap_custom.scss';
+
 let routeBasePath;
 if (import.meta.env.ROUTER_BASE_PATH) {
   routeBasePath = import.meta.env.ROUTER_BASE_PATH;
