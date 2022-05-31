@@ -11,7 +11,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "predeploy": "npm run build",
+    "predeploy": "vite build --base=/local-microblogging-client/",
     "deploy": "gh-pages -d dist",
     "release": "standard-version",
     "lint": "eslint --ext .jsx,.js src/"

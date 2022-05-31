@@ -14,17 +14,12 @@ import NewPost from './pages/NewPost';
 import './index.css';
 import './bootstrap_custom.scss';
 
-let routeBasePath;
-if (import.meta.env.ROUTER_BASE_PATH) {
-  routeBasePath = import.meta.env.ROUTER_BASE_PATH;
-}
-
 const root = createRoot(
   document.getElementById('app'),
 );
 
 root.render(
-  <BrowserRouter basename={routeBasePath}>
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
     <Routes>
       <Route path="/" element={<App />}>
         <Route index element={<Home />} />

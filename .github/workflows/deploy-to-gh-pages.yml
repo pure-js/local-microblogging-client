@@ -20,4 +20,3 @@ jobs:
           npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ROUTER_BASE_PATH: '/local-microblogging-client'
