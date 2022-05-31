@@ -20,6 +20,7 @@ export function PostList() {
         text={post.text}
         image={post.image}
         createdAt={post.createdAt}
+        userId={post.userId}
       />
     </Fragment>
   ));
