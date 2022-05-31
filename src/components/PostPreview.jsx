@@ -110,6 +110,7 @@ BlogPost.propTypes = {
   heading: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
+  userId: PropTypes.number.isRequired,
 };
 
 BlogPost.defaultProps = {
