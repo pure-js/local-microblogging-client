@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   build: {
@@ -10,6 +11,7 @@ export default defineConfig({
       // Use React plugin in all *.jsx and *.tsx files
       include: 'src/**/*.{jsx,tsx}',
     }),
+    VitePWA({}),
   ],
   resolve: {
     alias: [
