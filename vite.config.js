@@ -13,6 +13,9 @@ export default defineConfig({
     }),
     VitePWA({}),
   ],
+  server: {
+    open: true,
+  },
   resolve: {
     alias: [
       {
