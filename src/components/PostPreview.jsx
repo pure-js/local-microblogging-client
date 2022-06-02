@@ -1,10 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { db } from '../services/db';
 import { timestampToLocaleString } from '../services/timestampToLocaleString';
 
+function Author({ userId }) {
+  const [name, setName] = useState();
+  const [username, setUsername] = useState();
+
+  async function authors() {
+    const currentAuthor = await db.authors.get(userId);
+    setName(currentAuthor.name);
+    setUsername(currentAuthor.username);
+  }
+
+  useEffect(() => {
+    authors();
+  }, []);
+
+  return (
+    <div className="col-9">
+      <Link to={`/users/${username}`}>{ name }</Link>
+      {' '}
+      <span className="text-muted">{`@${username}`}</span>
+    </div>
+  );
+}
 function BlogPost({
   id, heading, text, createdAt, image, userId,
 }) {
@@ -23,11 +45,7 @@ function BlogPost({
         <img className="img-fluid" src={image} alt="Card cap" />
       )}
       <div className="card-header bg-transparent border-0 row">
-        <div className="col-9">
-          <Link to={`/users/${userId}`}>Joanna Key</Link>
-          {' '}
-          <span className="text-muted">@joanna</span>
-        </div>
+        <Author userId={userId} />
         <div className="col-3 d-flex align-items-center justify-content-end">
           <p className="card-text">
             <time dateTime={htmlDatetime} className="text-muted">{date}</time>
@@ -104,13 +122,17 @@ function BlogPost({
   );
 }
 
+Author.propTypes = {
+  userId: PropTypes.string.isRequired,
+};
+
 BlogPost.propTypes = {
   id: PropTypes.number.isRequired,
   image: PropTypes.string,
   heading: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
-  userId: PropTypes.number.isRequired,
+  userId: PropTypes.string.isRequired,
 };
 
 BlogPost.defaultProps = {
