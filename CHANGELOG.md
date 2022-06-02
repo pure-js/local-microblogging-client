@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.5.0](https://github.com/pure-js/local-microblogging-client/compare/v2.4.2...v2.5.0) (2022-06-02)
+
+
+### Features
+
+* Add author to the post ([3939e03](https://github.com/pure-js/local-microblogging-client/commit/3939e0355d6a6be3c8ac9d93ec4ef691c9a5b997))
+* add like btn ([23abbc0](https://github.com/pure-js/local-microblogging-client/commit/23abbc06d442e25e10dfe58ee882dc72f64e0a5f))
+* add PWA ([9af760e](https://github.com/pure-js/local-microblogging-client/commit/9af760e967471445b9cd413abd6b9d0c990fead1))
+
+
+### Bug Fixes
+
+* add favicon ([4741d4b](https://github.com/pure-js/local-microblogging-client/commit/4741d4bef96d0b53d1fbc172bc5aec4887ddc6ff))
+
 ### [2.4.2](https://github.com/pure-js/local-microblogging-client/compare/v2.4.1...v2.4.2) (2022-05-31)
 
 ### [2.4.1](https://github.com/pure-js/local-microblogging-client/compare/v2.4.0...v2.4.1) (2022-05-31)
