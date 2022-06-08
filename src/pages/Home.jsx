@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-import PostPreview from '../components/PostPreview';
+import PostPreview from '../components/PostPreview.tsx';
 import { db } from '../services/db';
 
 export function PostList() {

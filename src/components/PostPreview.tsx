@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import { db } from '../services/db';
 import { timestampToLocaleString } from '../services/timestampToLocaleString';
 
-function Author({ userId }) {
+interface Author {
+  userId: string;
+};
+
+function Author({ userId }: Author) {
   const [name, setName] = useState();
   const [username, setUsername] = useState();
 
@@ -27,9 +30,19 @@ function Author({ userId }) {
     </div>
   );
 }
+
+export interface IBlogPost {
+  id: number;
+  image?: string;
+  heading: string;
+  text: string,
+  createdAt: string,
+  userId: string,
+};
+
 function BlogPost({
   id, heading, text, createdAt, image, userId,
-}) {
+}: IBlogPost) {
   const [isLiked, setIsLiked] = useState(false);
 
   function handleDeleteStory() {
@@ -121,19 +134,6 @@ function BlogPost({
     </section>
   );
 }
-
-Author.propTypes = {
-  userId: PropTypes.string.isRequired,
-};
-
-BlogPost.propTypes = {
-  id: PropTypes.number.isRequired,
-  image: PropTypes.string,
-  heading: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  userId: PropTypes.string.isRequired,
-};
 
 BlogPost.defaultProps = {
   image: '',
