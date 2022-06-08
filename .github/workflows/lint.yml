@@ -10,6 +10,6 @@ jobs:
           node-version: '16'
           cache: 'pnpm'
       - name: Install modules
-        run: pnpm ci
+        run: pnpm install --frozen-lockfile
       - name: Run ESLint
         run: pnpm run lint
