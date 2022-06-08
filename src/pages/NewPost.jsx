@@ -8,6 +8,7 @@ import { db } from '../services/db';
 // }
 
 // function AddPost({ isEdit = false }: AddPost) {
+// eslint-disable-next-line react/prop-types
 function AddPost({ isEdit = false }) {
   const [heading, setHeading] = useState('');
   const [text, setText] = useState('');
