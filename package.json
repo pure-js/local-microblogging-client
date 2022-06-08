@@ -6,7 +6,7 @@
   "homepage": "https://pure-js.github.io/local-microblogging-client/",
   "type": "module",
   "scripts": {
-    "start": "npm run dev",
+    "start": "pnpm run dev",
     "dev": "vite serve",
     "build": "vite build",
     "preview": "vite preview",
