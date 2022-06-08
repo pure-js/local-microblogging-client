@@ -5,13 +5,13 @@ CRUD demo;
 
 ## Contribution
 
-    $ npm i
-    $ npm start
+    $ pnpm i
+    $ pnpm start
 
 ## Production build
 
-    $ npm run build
+    $ pnpm run build
 
 ## Deploy to Github pages
 
-    $ npm run deploy
+    $ pnpm run deploy
