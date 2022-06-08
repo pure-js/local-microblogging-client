@@ -8,7 +8,7 @@ import {
 
 import App from './components/App.tsx';
 import NoMatch from './components/NoMatch.tsx';
-import Home from './pages/Home';
+import Home from './pages/Home.tsx';
 import BlogPost from './pages/BlogPost.tsx';
 import NewPost from './pages/NewPost';
 
