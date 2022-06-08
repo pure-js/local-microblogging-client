@@ -1,4 +1,4 @@
-export const getStories = (url) => fetch(url)
+export const getStories = (url: string) => fetch(url)
   .then((response) => response.json())
   .then((data) => data.result);
 

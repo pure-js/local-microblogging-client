@@ -4,8 +4,12 @@ import { useState } from 'react';
 
 // import { db } from '../services/db';
 
+interface IPost {
+  heading: string;
+}
+
 function BlogPost() {
-  const [post] = useState();
+  const [post] = useState<IPost | undefined>();
   // const { postId } = useParams();
 
   return (
