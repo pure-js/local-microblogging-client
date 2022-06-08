@@ -10,6 +10,6 @@ jobs:
           node-version: '16'
           cache: 'npm'
       - name: Install modules
-        run: npm ci
+        run: pnpm ci
       - name: Run tests
-        run: npm test
+        run: pnpm test
