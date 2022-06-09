@@ -6,10 +6,10 @@ import {
   Route,
 } from 'react-router-dom';
 
-import App from './components/App';
-import NoMatch from './components/NoMatch';
-import Home from './pages/Home';
-import BlogPost from './pages/BlogPost';
+import App from './components/App.tsx';
+import NoMatch from './components/NoMatch.tsx';
+import Home from './pages/Home.tsx';
+import BlogPost from './pages/BlogPost.tsx';
 import NewPost from './pages/NewPost';
 
 import './index.css';

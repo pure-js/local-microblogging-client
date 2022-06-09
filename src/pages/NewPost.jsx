@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import { db } from '../services/db';
 
+// interface AddPost {
+//   isEdit?: boolean;
+// }
+
+// function AddPost({ isEdit = false }: AddPost) {
+// eslint-disable-next-line react/prop-types
 function AddPost({ isEdit = false }) {
   const [heading, setHeading] = useState('');
   const [text, setText] = useState('');
@@ -13,6 +18,7 @@ function AddPost({ isEdit = false }) {
 
   const navigate = useNavigate();
 
+  // function handleImageChange(event: React.SyntheticEvent) {
   function handleImageChange(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -49,6 +55,7 @@ function AddPost({ isEdit = false }) {
     }
   }
 
+  // function createStory(event: Event) {
   function createStory(event) {
     event.preventDefault();
     addPost();
@@ -83,7 +90,7 @@ function AddPost({ isEdit = false }) {
             <div className="mb-3">
               <textarea
                 placeholder="Write your text..."
-                rows="5"
+                rows={5}
                 className="form-control"
                 value={text}
                 onChange={(e) => { setText(e.target.value); }}
@@ -92,7 +99,7 @@ function AddPost({ isEdit = false }) {
             <div className="mb-3">
               <textarea
                 placeholder="Hashtags"
-                rows="2"
+                rows={2}
                 className="form-control"
                 value={hashtags}
                 onChange={(e) => { setHashtags(e.target.value); }}
@@ -130,13 +137,5 @@ function AddPost({ isEdit = false }) {
     </div>
   );
 }
-
-AddPost.propTypes = {
-  isEdit: PropTypes.bool,
-};
-
-AddPost.defaultProps = {
-  isEdit: false,
-};
 
 export default AddPost;

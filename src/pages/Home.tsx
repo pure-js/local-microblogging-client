@@ -4,6 +4,8 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import PostPreview from '../components/PostPreview';
 import { db } from '../services/db';
 
+import type { IBlogPost } from '../components/PostPreview';
+
 export function PostList() {
   const posts = useLiveQuery(
     () => db.posts
@@ -12,7 +14,7 @@ export function PostList() {
       .toArray(),
   );
 
-  return posts?.map((post) => (
+  return posts?.map((post: IBlogPost) => (
     <Fragment key={post.id}>
       <PostPreview
         id={post.id}
