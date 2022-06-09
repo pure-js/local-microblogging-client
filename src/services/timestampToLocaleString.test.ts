@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { jest } from '@jest/globals';
 
-import { timestampToLocaleString } from './timestampToLocaleString';
+import { timestampToLocaleString } from './timestampToLocaleString.js';
 
 test('1654024577 equals May 31', () => {
   expect(timestampToLocaleString(1654024577)).toStrictEqual({ date: 'May 31', htmlDatetime: '2022-05-31' });
