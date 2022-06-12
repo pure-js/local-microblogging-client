@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { db } from '../services/db';
 import { timestampToLocaleString } from '../services/timestampToLocaleString';
 
-interface Author {
+interface IAuthor {
   userId: string;
-};
+}
 
-function Author({ userId }: Author) {
+function Author({ userId }: IAuthor) {
   const [name, setName] = useState();
   const [username, setUsername] = useState();
 
@@ -38,10 +38,10 @@ export interface IBlogPost {
   text: string,
   createdAt: string,
   userId: string,
-};
+}
 
 function BlogPost({
-  id, heading, text, createdAt, image, userId,
+  id, heading, text, createdAt, image = '', userId,
 }: IBlogPost) {
   const [isLiked, setIsLiked] = useState(false);
 
@@ -134,9 +134,5 @@ function BlogPost({
     </section>
   );
 }
-
-BlogPost.defaultProps = {
-  image: '',
-};
 
 export default BlogPost;
