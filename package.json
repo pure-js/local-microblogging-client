@@ -10,8 +10,8 @@
     "dev": "vite serve",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
-    "build:server": "vite build --outDir dist/server --ssr src/entry-server.jsx",
-    "generate": "vite build --outDir dist/static && npm run build:server && node prerender.cjs",
+    "build:server": "vite build && vite build --ssr",
+    "prerender": "vite build --outDir dist/static && npm run build:server && vite-plugin-ssr prerender",
     "preview": "vite preview",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "predeploy": "vite build --base=/local-microblogging-client/",
@@ -55,7 +55,8 @@
     "ts-node": "^10.8.1",
     "typescript": "^4.7.3",
     "vite": "^2.9.12",
-    "vite-plugin-pwa": "^0.12.0"
+    "vite-plugin-pwa": "^0.12.0",
+    "vite-plugin-ssr": "^0.3.64"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",

@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import ssr from 'vite-plugin-ssr/plugin';
 
 export default defineConfig({
   build: {
@@ -12,6 +14,7 @@ export default defineConfig({
       include: 'src/**/*.{jsx,tsx}',
     }),
     VitePWA({}),
+    ssr(),
   ],
   server: {
     open: true,
