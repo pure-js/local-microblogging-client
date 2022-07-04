@@ -66,8 +66,8 @@
     "microblogging"
   ],
   "engines": {
-    "node": "~16.15",
-    "npm": "~8.5.5"
+    "node": ">=16.15",
+    "npm": ">=8.5.5"
   },
   "msw": {
     "workerDirectory": "public"
