@@ -53,7 +53,7 @@ function BlogPost({
   const { date, htmlDatetime } = timestampToLocaleString(createdAt);
 
   return (
-    <section className="card mb-3">
+    <article className="card mb-3">
       { image && (
         <img className="img-fluid" src={image} alt="Card cap" />
       )}
@@ -131,7 +131,7 @@ function BlogPost({
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 }
 
