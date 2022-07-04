@@ -14,7 +14,7 @@
     "predeploy": "vite build --base=/local-microblogging-client/",
     "deploy": "gh-pages -d dist",
     "release": "standard-version",
-    "lint": "eslint --ext .jsx,.js src/"
+    "lint": "eslint --ext .tsx,.jsx,.js,.ts src/"
   },
   "repository": {
     "type": "git",
