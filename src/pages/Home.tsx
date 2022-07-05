@@ -2,10 +2,10 @@ import { Fragment } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 
 import PostPreview from '../components/PostPreview.tsx';
+import Search from '../components/Search.tsx';
 import { db } from '../services/db';
 
 import type { IBlogPost } from '../components/PostPreview';
-// import Search from '../components/Search';
 
 export function PostList() {
   const posts = useLiveQuery(
@@ -35,7 +35,7 @@ function Home() {
   return (
     <div className="container">
       <main className="row">
-        {/* <Search /> */}
+        <Search />
         <section className="col-md-8 col-lg-6" role="feed">
           <PostList />
         </section>
