@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
+import { useFeature } from '@growthbook/growthbook-react';
 
 import PostPreview from '../components/PostPreview.tsx';
 import Search from '../components/Search.tsx';
@@ -32,10 +33,12 @@ export function PostList() {
 }
 
 function Home() {
+  const featSearchBar = useFeature('search-bar').on;
+
   return (
     <div className="container">
       <main className="row">
-        <Search />
+        { featSearchBar && (<Search />) }
         <section className="col-md-8 col-lg-6" role="feed">
           <PostList />
         </section>
