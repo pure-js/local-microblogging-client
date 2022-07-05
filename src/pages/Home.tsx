@@ -33,12 +33,12 @@ export function PostList() {
 }
 
 function Home() {
-  const searchBar = useFeature('search-bar').on;
+  const featSearchBar = useFeature('search-bar').on;
 
   return (
     <div className="container">
       <main className="row">
-        { searchBar && (<Search />) }
+        { featSearchBar && (<Search />) }
         <section className="col-md-8 col-lg-6" role="feed">
           <PostList />
         </section>
