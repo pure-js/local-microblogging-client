@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 
 import PostPreview from '../components/PostPreview.tsx';
+import Search from '../components/Search.tsx';
 import { db } from '../services/db';
 
 import type { IBlogPost } from '../components/PostPreview';
@@ -9,6 +10,8 @@ import type { IBlogPost } from '../components/PostPreview';
 export function PostList() {
   const posts = useLiveQuery(
     () => db.posts
+      // .where('text')
+      // .anyOf(['The'])
       .orderBy('createdAt')
       .reverse()
       .toArray(),
@@ -32,9 +35,10 @@ function Home() {
   return (
     <div className="container">
       <main className="row">
-        <div className="col-md-8 col-lg-6">
+        <Search />
+        <section className="col-md-8 col-lg-6" role="feed">
           <PostList />
-        </div>
+        </section>
       </main>
     </div>
   );

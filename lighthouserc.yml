@@ -4,7 +4,6 @@ ci:
     startServerCommand: npm run preview
     url:
       ['http://localhost', 'http://localhost/posts/1', 'http://localhost/posts/1/edit', 'http://localhost/posts/new']
-      # ['http://localhost']
     staticDistDir: './dist'
     isSinglePageApplication: true
   upload:
