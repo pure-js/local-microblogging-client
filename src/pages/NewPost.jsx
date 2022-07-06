@@ -106,7 +106,6 @@ function AddPost({ isEdit = false }) {
               />
             </div>
             <div className="input-group mb-3">
-              { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
               <label
                 className="input-group-text"
                 htmlFor="uploadImageInput"
