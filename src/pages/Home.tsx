@@ -2,9 +2,9 @@ import { Fragment } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useFeature } from '@growthbook/growthbook-react';
 
-import PostPreview from '../components/PostPreview.tsx';
-import Search from '../components/Search.tsx';
-import { db } from '../services/db.ts';
+import PostPreview from '../components/PostPreview';
+import Search from '../components/Search';
+import { db } from '../services/db';
 
 import type { IBlogPost } from '../components/PostPreview';
 
@@ -18,7 +18,7 @@ export function PostList() {
       .toArray(),
   );
 
-  return posts?.map((post: IBlogPost) => (
+  return posts ? posts.map((post: IBlogPost) => (
     <Fragment key={post.id}>
       <PostPreview
         id={post.id}
@@ -29,7 +29,7 @@ export function PostList() {
         userId={post.userId}
       />
     </Fragment>
-  ));
+  )) : null;
 }
 
 function Home() {
