@@ -4,7 +4,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 
 import PostPreview from '../components/PostPreview.tsx';
 import Search from '../components/Search.tsx';
-import { db } from '../services/db';
+import { db } from '../services/db.ts';
 
 import type { IBlogPost } from '../components/PostPreview';
 

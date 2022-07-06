@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { db } from '../services/db';
+import { db } from '../services/db.ts';
 import { timestampToLocaleString } from '../services/timestampToLocaleString';
 
 interface IAuthor {

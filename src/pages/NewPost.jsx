@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { db } from '../services/db';
+import { db } from '../services/db.ts';
 
 // interface AddPost {
 //   isEdit?: boolean;
