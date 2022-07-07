@@ -5,6 +5,10 @@ on:
       - 'main'
     tags:
       - '**'
+
+env:
+  VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -24,4 +28,3 @@ jobs:
           npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
