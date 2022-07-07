@@ -1,25 +1,36 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useLiveQuery } from 'dexie-react-hooks';
 
-import { db } from '../services/db.ts';
+import { db } from '../services/db';
+import type { IBlogPost } from '../components/PostPreview';
 
-// interface AddPost {
-//   isEdit?: boolean;
-// }
+interface IBlogPostProps {
+  post: IBlogPost;
+}
 
-// function AddPost({ isEdit = false }: AddPost) {
-// eslint-disable-next-line react/prop-types
-function AddPost({ isEdit = false }) {
-  const [heading, setHeading] = useState('');
-  const [text, setText] = useState('');
-  const [image, setImage] = useState('');
+function EditPostWrapper() {
+  const { postId } = useParams();
+  const posts = useLiveQuery(
+    () => db.posts
+      .filter(({ id }) => id === Number(postId))
+      .toArray()
+  );
+
+  if (!posts) return null;
+  return (<EditPost post={posts[0]} />);
+}
+
+function EditPost({ post } : IBlogPostProps) {
+  const [heading, setHeading] = useState(post.heading);
+  const [text, setText] = useState(post.text);
+  const [image, setImage] = useState(post.image);
   const [status, setStatus] = useState('');
   const [hashtags, setHashtags] = useState('');
 
   const navigate = useNavigate();
 
-  // function handleImageChange(event: React.SyntheticEvent) {
-  function handleImageChange(event) {
+  function handleImageChange(event: React.FormEvent<HTMLInputElement>) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
@@ -39,26 +50,26 @@ function AddPost({ isEdit = false }) {
   // }
   // editPost();
 
-  async function addPost() {
+  async function UpdatePost() {
     try {
-      const id = await db.posts.add({
+      await db.posts.update( id, {
         heading,
         text,
         createdAt: Date.now().toString(),
         image,
       });
 
-      setStatus(`Post "${heading}" successfully added. Got id ${id}`);
+      setStatus(`Post "${heading}" successfully updated. Post id ${id}`);
       navigate('/');
     } catch (error) {
-      setStatus(`Failed to add ${heading}: ${error}`);
+      setStatus(`Failed to update ${heading}: ${error}`);
     }
   }
 
   // function createStory(event: Event) {
   function createStory(event) {
     event.preventDefault();
-    addPost();
+    UpdatePost();
   }
 
   return (
@@ -76,7 +87,7 @@ function AddPost({ isEdit = false }) {
           </div>
         ) }
         <div className="col-md-8 col-lg-6">
-          <h3 className="card-title">{isEdit ? 'Any updates?' : 'What\'s new?'}</h3>
+          <h3 className="card-title">{ 'Any updates?' }</h3>
           <form onSubmit={createStory}>
             <div className="mb-3">
               <input
@@ -122,12 +133,12 @@ function AddPost({ isEdit = false }) {
             </div>
             <div>
               <button
-                title="Add new post"
+                title="Update post"
                 type="submit"
                 className="btn btn-primary btn-lg new-post__submit"
               >
                 <i className="glyphicon glyphicon-ok" />
-                { isEdit ? 'Update it' : 'Post it' }
+                { 'Update it' }
               </button>
             </div>
           </form>
@@ -137,4 +148,4 @@ function AddPost({ isEdit = false }) {
   );
 }
 
-export default AddPost;
+export default EditPostWrapper;
