@@ -5,6 +5,10 @@ on:
       - 'main'
     tags:
       - '**'
+
+env:
+  VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
