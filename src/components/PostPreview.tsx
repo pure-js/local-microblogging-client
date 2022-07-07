@@ -40,7 +40,7 @@ export interface IBlogPost {
   image?: string;
   heading: string;
   text: string,
-  createdAt: string,
+  createdAt: number,
   userId: string,
 }
 

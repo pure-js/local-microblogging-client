@@ -37,7 +37,7 @@ function AddPost() {
       const id = await db.posts.add({
         heading,
         text,
-        createdAt: Date.now().toString(),
+        createdAt: Math.floor(Date.now() / 1000),
         image,
       });
 

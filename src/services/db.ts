@@ -13,7 +13,7 @@ export interface IPost {
   id: number;
   heading: string;
   text: string;
-  createdAt: string;
+  createdAt: number;
   hashtags?: string[];
   userId: string;
 }
