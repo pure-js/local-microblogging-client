@@ -1,7 +1,10 @@
 name: Deploy Release Build to GitHub pages
 on:
-  release:
-    types: [created, published]
+  push:
+    branches:
+      - 'main'
+    tags:
+      - '**'
 jobs:
   publish:
     runs-on: ubuntu-latest
