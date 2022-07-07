@@ -7,7 +7,7 @@ on:
       - '**'
 
 env:
-  VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
+  VITE_GROWTH_BOOK_KEY: key_prod_b3021771bb20a0c2
 
 jobs:
   publish:
