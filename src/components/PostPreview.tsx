@@ -22,13 +22,17 @@ function Author({ userId }: IAuthor) {
     authors();
   }, []);
 
-  return (
+  return userId ? (
     <div className="col-9">
       <Link to={`/users/${username}`}>{ name }</Link>
       {' '}
       <span className="text-muted">{`@${username}`}</span>
     </div>
-  );
+  ) : (
+    <div className="col-9">
+      <span className="text-muted">Anonimous</span>
+    </div>
+  )
 }
 
 export interface IBlogPost {

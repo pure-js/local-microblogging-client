@@ -11,6 +11,7 @@ import NoMatch from './components/NoMatch.tsx';
 import Home from './pages/Home.tsx';
 import BlogPost from './pages/BlogPost.tsx';
 import NewPost from './pages/NewPost';
+import EditPost from './pages/EditPost';
 
 import './index.css';
 import './bootstrap_custom.scss';
@@ -27,7 +28,7 @@ root.render(
           <Route index element={<Home />} />
           <Route path="posts">
             <Route path=":postId" element={<BlogPost />} />
-            <Route path=":postId/edit" element={<NewPost isEdit />} />
+            <Route path=":postId/edit" element={<EditPost />} />
             <Route path="new" element={<NewPost />} />
           </Route>
           <Route path="*" element={<NoMatch />} />
