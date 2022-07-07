@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/pure-js/local-microblogging-client/compare/v2.6.0...v2.7.0) (2022-07-07)
+
+
+### Features
+
+* add EDitPost component ([#41](https://github.com/pure-js/local-microblogging-client/issues/41)) ([3e3a996](https://github.com/pure-js/local-microblogging-client/commit/3e3a996e69a2851f99d86106faabc8499e39b1ca))
+
 ## [2.6.0](https://github.com/pure-js/local-microblogging-client/compare/v2.5.0...v2.6.0) (2022-07-06)
 
 
