@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
 import Header from './Header';
+import Alert from './Alert';
 
 // Create a GrowthBook instance
 const growthbook = new GrowthBook({
@@ -40,6 +41,7 @@ function App() {
   return (
     <GrowthBookProvider growthbook={growthbook}>
       <Header />
+      <Alert />
       <Outlet />
     </GrowthBookProvider>
   );

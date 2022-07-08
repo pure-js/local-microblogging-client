@@ -17,8 +17,7 @@ function EditPostWrapper() {
       .toArray()
   );
 
-  if (!posts) return null;
-  return (<EditPost post={posts[0]} />);
+  return posts ? (<EditPost post={posts[0]} />) : null;
 }
 
 function EditPost({ post } : IBlogPostProps) {
@@ -29,6 +28,7 @@ function EditPost({ post } : IBlogPostProps) {
   const [hashtags, setHashtags] = useState('');
 
   const navigate = useNavigate();
+  const { postId } = useParams();
 
   function handleImageChange(event: React.FormEvent<HTMLInputElement>) {
     const file = event.target.files[0];
@@ -43,23 +43,16 @@ function EditPost({ post } : IBlogPostProps) {
     }
   }
 
-  // async function editPost() {
-  //   const post = await db.posts
-  //     .get(postId);
-  //   console.log(post.heading, '333');
-  // }
-  // editPost();
-
   async function UpdatePost() {
     try {
-      await db.posts.update( id, {
+      await db.posts.update( postId, {
         heading,
         text,
-        createdAt: Date.now().toString(),
+        editedAt: Date.now().toString(),
         image,
       });
 
-      setStatus(`Post "${heading}" successfully updated. Post id ${id}`);
+      setStatus(`Post "${heading}" successfully updated. Post id ${postId}`);
       navigate('/');
     } catch (error) {
       setStatus(`Failed to update ${heading}: ${error}`);
