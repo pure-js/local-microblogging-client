@@ -7,13 +7,13 @@ import { db } from '../services/db';
 function Post({ heading, text }: IBlogPost) {
   return (
     <main className="container">
-      <div className='row'>
+      <div className="row">
         <article className="col-md-8 col-lg-6">
           <h1>
             { heading }
           </h1>
           <p>
-          { text }
+            { text }
           </p>
         </article>
       </div>
@@ -26,7 +26,7 @@ function BlogPost() {
   const postArr = useLiveQuery(
     () => db.posts
       .filter(({ id }) => id === Number(postId))
-      .toArray()
+      .toArray(),
   );
 
   return postArr ? postArr.map(({ id, heading, text }) => (
@@ -34,8 +34,8 @@ function BlogPost() {
       key={id}
       heading={heading}
       text={text}
-    />) 
-  ) : null
+    />
+  )) : null;
 }
 
 export default BlogPost;

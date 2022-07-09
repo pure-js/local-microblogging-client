@@ -39,4 +39,4 @@ db.posts.count((count) => {
     db.posts.bulkPut(postsJson.result);
     db.authors.bulkPut(authorsJson);
   }
-})
+});

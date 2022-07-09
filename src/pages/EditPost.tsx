@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -7,17 +8,6 @@ import type { IBlogPost } from '../components/PostPreview';
 
 interface IBlogPostProps {
   post: IBlogPost;
-}
-
-function EditPostWrapper() {
-  const { postId } = useParams();
-  const posts = useLiveQuery(
-    () => db.posts
-      .filter(({ id }) => id === Number(postId))
-      .toArray()
-  );
-
-  return posts ? (<EditPost post={posts[0]} />) : null;
 }
 
 function EditPost({ post } : IBlogPostProps) {
@@ -45,7 +35,7 @@ function EditPost({ post } : IBlogPostProps) {
 
   async function UpdatePost() {
     try {
-      await db.posts.update( Number(postId), {
+      await db.posts.update(Number(postId), {
         heading,
         text,
         editedAt: Date.now().toString(),
@@ -84,7 +74,7 @@ function EditPost({ post } : IBlogPostProps) {
           </div>
         ) }
         <div className="col-md-8 col-lg-6">
-          <h3 className="card-title">{ 'Any updates?' }</h3>
+          <h3 className="card-title">Any updates?</h3>
           <form onSubmit={updateStory}>
             <div className="mb-3">
               <input
@@ -134,7 +124,7 @@ function EditPost({ post } : IBlogPostProps) {
                 title="Update post"
                 type="submit"
                 className="btn btn-primary btn-lg new-post__submit"
-                value={ 'Update it' }
+                value="Update it"
               />
             </div>
           </form>
@@ -142,6 +132,17 @@ function EditPost({ post } : IBlogPostProps) {
       </div>
     </div>
   );
+}
+
+function EditPostWrapper() {
+  const { postId } = useParams();
+  const posts = useLiveQuery(
+    () => db.posts
+      .filter(({ id }) => id === Number(postId))
+      .toArray(),
+  );
+
+  return posts ? (<EditPost post={posts[0]} />) : null;
 }
 
 export default EditPostWrapper;

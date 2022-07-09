@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
@@ -126,7 +127,7 @@ function AddPost() {
                 className="btn btn-primary btn-lg new-post__submit"
               >
                 <i className="glyphicon glyphicon-ok" />
-                { 'Post it' }
+                Post it
               </button>
             </div>
           </form>
