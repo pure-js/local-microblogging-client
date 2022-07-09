@@ -7,6 +7,10 @@ function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);
 }
 
+const uid = function() {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
 function AddPost() {
   const [heading, setHeading] = useState('');
   const [text, setText] = useState('');
@@ -43,7 +47,7 @@ function AddPost() {
         heading,
         text,
         createdAt: Math.floor(Date.now() / 1000),
-        userId: getRandomInt(999999).toString(),
+        userId: uid(),
         image,
       });
 
