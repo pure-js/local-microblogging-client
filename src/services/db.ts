@@ -26,7 +26,7 @@ export class MySubClassedDexie extends Dexie {
   constructor() {
     super('Platform');
     this.version(1).stores({
-      posts: '++id, heading, text, createdAt, hashtags, userId',
+      posts: 'id, heading, text, createdAt, hashtags, userId',
       authors: 'id, username, name',
     });
   }
@@ -34,5 +34,9 @@ export class MySubClassedDexie extends Dexie {
 
 export const db = new MySubClassedDexie();
 
-db.posts.bulkPut(postsJson.result);
-db.authors.bulkPut(authorsJson);
+db.posts.count((count) => {
+  if (count === 0) {
+    db.posts.bulkPut(postsJson.result);
+    db.authors.bulkPut(authorsJson);
+  }
+})

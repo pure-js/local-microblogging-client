@@ -45,22 +45,26 @@ function EditPost({ post } : IBlogPostProps) {
 
   async function UpdatePost() {
     try {
-      await db.posts.update( postId, {
+      await db.posts.update( Number(postId), {
         heading,
         text,
         editedAt: Date.now().toString(),
         image,
-      });
-
-      setStatus(`Post "${heading}" successfully updated. Post id ${postId}`);
-      navigate('/');
+      })
+        .then((updated) => {
+          if (updated) {
+            setStatus(`Post "${heading}" successfully updated. Post id ${postId}`);
+            navigate('/');
+          } else {
+            setStatus(`Nothing happend with ${postId}`);
+          }
+        });
     } catch (error) {
       setStatus(`Failed to update ${heading}: ${error}`);
     }
   }
 
-  // function createStory(event: Event) {
-  function createStory(event) {
+  function updateStory(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     UpdatePost();
   }
@@ -81,7 +85,7 @@ function EditPost({ post } : IBlogPostProps) {
         ) }
         <div className="col-md-8 col-lg-6">
           <h3 className="card-title">{ 'Any updates?' }</h3>
-          <form onSubmit={createStory}>
+          <form onSubmit={updateStory}>
             <div className="mb-3">
               <input
                 placeholder="Title"
@@ -125,14 +129,13 @@ function EditPost({ post } : IBlogPostProps) {
               />
             </div>
             <div>
-              <button
+              <i className="glyphicon glyphicon-ok" />
+              <input
                 title="Update post"
                 type="submit"
                 className="btn btn-primary btn-lg new-post__submit"
-              >
-                <i className="glyphicon glyphicon-ok" />
-                { 'Update it' }
-              </button>
+                value={ 'Update it' }
+              />
             </div>
           </form>
         </div>
