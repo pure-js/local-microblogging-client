@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 import { db } from '../services/db';
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);
-}
-
-const uid = function() {
-  return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }
 
 function AddPost() {
@@ -47,7 +44,7 @@ function AddPost() {
         heading,
         text,
         createdAt: Math.floor(Date.now() / 1000),
-        userId: uid(),
+        userId: uuidv4(),
         image,
       });
 
