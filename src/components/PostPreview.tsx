@@ -14,8 +14,10 @@ function Author({ userId }: IAuthor) {
 
   async function authors() {
     const currentAuthor = await db.authors.get(userId);
-    setName(currentAuthor.name);
-    setUsername(currentAuthor.username);
+    if (currentAuthor) {
+      setName(currentAuthor.name);
+      setUsername(currentAuthor.username);
+    }
   }
 
   useEffect(() => {

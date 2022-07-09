@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { db } from '../services/db';
 
+function getRandomInt(max: number) {
+  return Math.floor(Math.random() * max);
+}
+
 function AddPost() {
   const [heading, setHeading] = useState('');
   const [text, setText] = useState('');
@@ -35,9 +39,11 @@ function AddPost() {
   async function addPost() {
     try {
       const id = await db.posts.add({
+        id: getRandomInt(999999),
         heading,
         text,
         createdAt: Math.floor(Date.now() / 1000),
+        userId: getRandomInt(999999).toString(),
         image,
       });
 
