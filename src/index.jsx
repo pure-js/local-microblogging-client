@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import BlogPost from './pages/BlogPost';
 import NewPost from './pages/NewPost';
 import EditPost from './pages/EditPost';
+import UserInfo from './pages/UserInfo';
 
 import './index.css';
 import './bootstrap_custom.scss';
@@ -30,6 +31,9 @@ root.render(
             <Route path=":postId" element={<BlogPost />} />
             <Route path=":postId/edit" element={<EditPost />} />
             <Route path="new" element={<NewPost />} />
+          </Route>
+          <Route path="users">
+            <Route path=":userName" element={<UserInfo />} />
           </Route>
           <Route path="*" element={<NoMatch />} />
         </Route>

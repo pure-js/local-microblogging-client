@@ -45,6 +45,16 @@ export interface IBlogPost {
   userId: string,
 }
 
+export interface IUser {
+  id: string;
+  username?: string;
+  name: string;
+  company?: string,
+  dob: string,
+  about?: string,
+  createdAt: number,
+}
+
 function BlogPost({
   id, heading, text, createdAt, image = '', userId,
 }: IBlogPost) {
