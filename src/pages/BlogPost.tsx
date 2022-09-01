@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-import type { IBlogPost } from '../components/PostPreview';
-import { db } from '../services/db';
+import type { IBlogPost } from '@components/PostPreview';
+import { db } from '@services/db';
 
 function Post({ heading, text }: IBlogPost) {
   return (

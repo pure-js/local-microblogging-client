@@ -22,3 +22,10 @@ rules:
   import/prefer-default-export: 'off'
   react/jsx-filename-extension: [2, { 'extensions': ['.jsx', '.tsx'] }]
   react/require-default-props: 'off'
+settings:
+  'import/resolver':
+    alias:
+      map: [
+        ['@components', './src/components']
+      ]
+      extensions: ['.ts', '.js', '.jsx', '.ts', '.tsx', '.json']

@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
-import Header from './Header';
-import Alert from './Alert';
+import Header from '@components/Header';
+import Alert from '@components/Alert';
 
 // Create a GrowthBook instance
 const growthbook = new GrowthBook({

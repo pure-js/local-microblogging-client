@@ -6,8 +6,8 @@ import {
   Route,
 } from 'react-router-dom';
 
-import App from './components/App';
-import NoMatch from './components/NoMatch';
+import App from '@components/App';
+import NoMatch from '@components/NoMatch';
 import Home from './pages/Home';
 import BlogPost from './pages/BlogPost';
 import NewPost from './pages/NewPost';
