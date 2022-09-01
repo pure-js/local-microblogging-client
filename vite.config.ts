@@ -29,12 +29,12 @@ export default defineConfig({
       {
         find: '@components',
         // replacement: path.resolve(__dirname, './src'),
-        replacement: './src/components',
+        replacement: '/src/components',
       },
       {
         find: '@services',
         // replacement: path.resolve(__dirname, './src'),
-        replacement: './src/services',
+        replacement: '/src/services',
       },
     ],
   },
