@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-import { db } from '../services/db';
+import { db } from '@services/db';
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);
