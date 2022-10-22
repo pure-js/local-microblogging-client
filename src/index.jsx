@@ -22,7 +22,7 @@ const root = createRoot(
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     children: [
       {
@@ -30,18 +30,18 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "posts",
+        path: 'posts',
         children: [
           {
-            path: ":postId",
+            path: ':postId',
             element: <BlogPost />,
           },
           {
-            path: ":postId/edit",
+            path: ':postId/edit',
             element: <EditPost />,
           },
           {
-            path: "new",
+            path: 'new',
             element: <NewPost />,
           },
         ],
@@ -52,17 +52,17 @@ const router = createBrowserRouter([
           {
             path: ':userName',
             element: <UserInfo />,
-          }
-        ]
+          },
+        ],
       },
       {
         path: '*',
         element: <NoMatch />,
-      }
+      },
     ],
   },
 ], {
-  basename: import.meta.env.BASE_URL
+  basename: import.meta.env.BASE_URL,
 });
 
 root.render(
