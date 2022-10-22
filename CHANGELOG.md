@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.10.0](https://github.com/pure-js/local-microblogging-client/compare/v2.9.0...v2.10.0) (2022-10-22)
+
+
+### Features
+
+* use react ruter v6.4 feature - history API ([cd5cbb4](https://github.com/pure-js/local-microblogging-client/commit/cd5cbb4c3d031fe9f84bc1cc1291e86c3c45b739))
+
 ## [2.9.0](https://github.com/pure-js/local-microblogging-client/compare/v2.8.2...v2.9.0) (2022-08-22)
 
 
