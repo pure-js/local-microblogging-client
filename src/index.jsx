@@ -1,9 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
+  createBrowserRouter,
+  RouterProvider,
 } from 'react-router-dom';
 
 import App from '@components/App';
@@ -21,23 +20,53 @@ const root = createRoot(
   document.getElementById('app'),
 );
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: 'posts',
+        children: [
+          {
+            path: ':postId',
+            element: <BlogPost />,
+          },
+          {
+            path: ':postId/edit',
+            element: <EditPost />,
+          },
+          {
+            path: 'new',
+            element: <NewPost />,
+          },
+        ],
+      },
+      {
+        path: 'users',
+        children: [
+          {
+            path: ':userName',
+            element: <UserInfo />,
+          },
+        ],
+      },
+      {
+        path: '*',
+        element: <NoMatch />,
+      },
+    ],
+  },
+], {
+  basename: import.meta.env.BASE_URL,
+});
+
 root.render(
   <StrictMode>
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="posts">
-            <Route path=":postId" element={<BlogPost />} />
-            <Route path=":postId/edit" element={<EditPost />} />
-            <Route path="new" element={<NewPost />} />
-          </Route>
-          <Route path="users">
-            <Route path=":userName" element={<UserInfo />} />
-          </Route>
-          <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </StrictMode>,
 );
