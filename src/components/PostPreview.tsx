@@ -89,10 +89,10 @@ function BlogPost({
 
         </div>
         <div className="card-footer bg-transparent border-0">
-          <div className="row">
-            <div className="col-6">
+          <div className="grid grid-cols-12">
+            <div className="col-span-6">
               <button
-                className="btn btn-default"
+                className="btn btn-circle btn-outline"
                 title="Like it!"
                 type="button"
                 onClick={(e) => { setIsLiked(!isLiked); e.currentTarget.blur(); }}
@@ -108,11 +108,11 @@ function BlogPost({
                 ) }
               </button>
             </div>
-            <div className="col-6 d-flex justify-content-end">
-              <div className="btn-group" role="group">
+            <div className="col-span-6 d-flex justify-content-end">
+              <div className="btn-group btn-group-horizontal" role="group">
                 <Link
                   to={`/posts/${id}/edit`}
-                  className="btn btn-default"
+                  className="btn btn-circle btn-outline"
                   title="Edit post"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-pencil" viewBox="0 0 16 16">
@@ -121,7 +121,7 @@ function BlogPost({
                   </svg>
                 </Link>
                 <button
-                  className="btn btn-default"
+                  className="btn btn-circle btn-outline"
                   title="Remove post"
                   type="button"
                   onClick={handleDeleteStory}
