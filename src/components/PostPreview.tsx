@@ -68,17 +68,19 @@ function BlogPost({
   const { date, htmlDatetime } = timestampToLocaleString(createdAt);
 
   return (
-    <article className="card mb-3">
+    <article className="card border border-black mb-3">
       { image && (
-        <img className="img-fluid" src={image} alt="Card cap" />
+        <figure>
+          <img className="img-fluid" src={image} alt="Card cap" />
+        </figure>
       )}
-      <div className="card-header bg-transparent border-0 flex justify-between">
+      <div className="card-title bg-transparent border-0 flex justify-between">
         <Author userId={userId} />
         <p className="card-text text-right">
           <time dateTime={htmlDatetime} className="text-muted">{date}</time>
         </p>
       </div>
-      <div className="col-md-12">
+      <div className="col-span-12">
         <div className="card-body">
           <h3 className="card-title">
             <Link to={`/posts/${id}`} className="">{heading}</Link>

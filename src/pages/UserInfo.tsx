@@ -6,9 +6,9 @@ import { db } from '@services/db';
 
 function Info({ name }: IUser) {
   return (
-    <main className="container">
-      <div className="row">
-        <article className="col-md-8 col-lg-6">
+    <main className="container mx-auto px-4">
+      <div className="grid grid-cols-12 gap-1">
+        <article className="col-span-12 md:col-span-8 lg:col-span-6">
           <h1>
             { name }
           </h1>

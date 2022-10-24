@@ -60,11 +60,11 @@ function EditPost({ post } : IBlogPostProps) {
   }
 
   return (
-    <div className="container">
-      <div className="row mb-3">
+    <div className="container mx-auto px-4">
+      <div className="grid grid-cols-12 gap-1 mb-3">
         { status && (<h3>{ status }</h3>) }
         { image && (
-          <div className="col-md-10 col-lg-6">
+          <div className="col-span-12 md:col-span-10 lg:col-span-6">
             <img
               id="preview"
               src={image}
@@ -73,7 +73,7 @@ function EditPost({ post } : IBlogPostProps) {
             />
           </div>
         ) }
-        <div className="col-md-8 col-lg-6">
+        <div className="col-span-12 md:col-span-8 lg:col-span-6">
           <h3 className="card-title">Any updates?</h3>
           <form onSubmit={updateStory}>
             <div className="mb-3">

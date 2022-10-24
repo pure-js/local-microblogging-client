@@ -36,10 +36,10 @@ function Home() {
   const featSearchBar = useFeature('search-bar').on;
 
   return (
-    <div className="container">
-      <main className="row">
+    <div className="container mx-auto px-4">
+      <main className="grid grid-cols-12 gap-1">
         { featSearchBar && (<Search />) }
-        <section className="col-md-8 col-lg-6" role="feed">
+        <section className="col-span-12 md:col-span-8 lg:col-span-6" role="feed">
           <PostList />
         </section>
       </main>
