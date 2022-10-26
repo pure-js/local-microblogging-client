@@ -74,13 +74,13 @@ function EditPost({ post } : IBlogPostProps) {
           </div>
         ) }
         <div className="col-span-12 md:col-span-8 lg:col-span-6">
-          <h3 className="card-title">Any updates?</h3>
+          <h3 className="text-2xl mb-5">Any updates?</h3>
           <form onSubmit={updateStory}>
             <div className="mb-3">
               <input
                 placeholder="Title"
                 type="text"
-                className="input w-full"
+                className="input w-full text-3xl"
                 value={heading}
                 onChange={(e) => { setHeading(e.target.value); }}
               />
@@ -89,7 +89,7 @@ function EditPost({ post } : IBlogPostProps) {
               <textarea
                 placeholder="Write your text..."
                 rows={5}
-                className="textarea w-full"
+                className="textarea w-full text-lg"
                 value={text}
                 onChange={(e) => { setText(e.target.value); }}
               />
@@ -98,7 +98,7 @@ function EditPost({ post } : IBlogPostProps) {
               <textarea
                 placeholder="Hashtags"
                 rows={2}
-                className="form-control"
+                className="textarea text-lg"
                 value={hashtags}
                 onChange={(e) => { setHashtags(e.target.value); }}
               />
@@ -114,7 +114,7 @@ function EditPost({ post } : IBlogPostProps) {
                 id="uploadImageInput"
                 type="file"
                 title="Add image"
-                className="form-control"
+                className="input"
                 onChange={handleImageChange}
               />
             </div>
@@ -123,7 +123,7 @@ function EditPost({ post } : IBlogPostProps) {
               <input
                 title="Update post"
                 type="submit"
-                className="btn btn-primary btn-outline new-post__submit"
+                className="btn btn-primary btn-outline"
                 value="Update it"
               />
             </div>

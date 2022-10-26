@@ -76,13 +76,13 @@ function AddPost() {
           </div>
         ) }
         <div className="col-span-12 md:col-span-8 lg:col-span-6">
-          <h3 className="card-title">{'What\'s new?'}</h3>
+          <h3 className="text-2xl mb-5">{'What\'s new?'}</h3>
           <form onSubmit={createStory}>
             <div className="mb-3">
               <input
                 placeholder="Title"
                 type="text"
-                className="form-control"
+                className="input text-3xl"
                 value={heading}
                 onChange={(e) => { setHeading(e.target.value); }}
               />
@@ -91,7 +91,7 @@ function AddPost() {
               <textarea
                 placeholder="Write your text..."
                 rows={5}
-                className="form-control"
+                className="textarea text-lg"
                 value={text}
                 onChange={(e) => { setText(e.target.value); }}
               />
@@ -100,7 +100,7 @@ function AddPost() {
               <textarea
                 placeholder="Hashtags"
                 rows={2}
-                className="form-control"
+                className="textarea text-lg"
                 value={hashtags}
                 onChange={(e) => { setHashtags(e.target.value); }}
               />
@@ -116,7 +116,7 @@ function AddPost() {
                 id="uploadImageInput"
                 type="file"
                 title="Add image"
-                className="form-control"
+                className="input"
                 onChange={handleImageChange}
               />
             </div>
