@@ -80,7 +80,7 @@ function EditPost({ post } : IBlogPostProps) {
               <input
                 placeholder="Title"
                 type="text"
-                className="form-control"
+                className="input w-full"
                 value={heading}
                 onChange={(e) => { setHeading(e.target.value); }}
               />
@@ -89,7 +89,7 @@ function EditPost({ post } : IBlogPostProps) {
               <textarea
                 placeholder="Write your text..."
                 rows={5}
-                className="form-control"
+                className="textarea w-full"
                 value={text}
                 onChange={(e) => { setText(e.target.value); }}
               />
@@ -123,7 +123,7 @@ function EditPost({ post } : IBlogPostProps) {
               <input
                 title="Update post"
                 type="submit"
-                className="btn btn-primary btn-lg new-post__submit"
+                className="btn btn-primary btn-outline new-post__submit"
                 value="Update it"
               />
             </div>
