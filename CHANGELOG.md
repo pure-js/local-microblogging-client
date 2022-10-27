@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.11.0](https://github.com/pure-js/local-microblogging-client/compare/v2.10.0...v2.11.0) (2022-10-27)
+
+
+### Features
+
+* replace bootstrap on daisyui ([#61](https://github.com/pure-js/local-microblogging-client/issues/61)) ([948bb93](https://github.com/pure-js/local-microblogging-client/commit/948bb935920e3307374c05b31ce44bc80e546e9d))
+
 ## [2.10.0](https://github.com/pure-js/local-microblogging-client/compare/v2.9.0...v2.10.0) (2022-10-22)
 
 
