@@ -14,7 +14,6 @@ import EditPost from './pages/EditPost';
 import UserInfo from './pages/UserInfo';
 
 import './index.css';
-import './bootstrap_custom.scss';
 
 const root = createRoot(
   document.getElementById('app'),

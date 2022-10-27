@@ -1,7 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable global-require */
 module.exports = {
   content: ['./src/**/*.{jsx,tsx}'],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    themes: ['forest', 'winter'],
+  },
 };

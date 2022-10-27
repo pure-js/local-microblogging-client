@@ -22,11 +22,6 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        // this is required for the SCSS modules
-        find: /^~(.*)$/,
-        replacement: '$1',
-      },
-      {
         find: '@components',
         // replacement: path.resolve(__dirname, './src'),
         replacement: '/src/components',
