@@ -74,7 +74,6 @@ function EditPost({ post } : IBlogPostProps) {
                 className="card-img-top"
               />
             </figure>
-
           ) }
           <form onSubmit={updateStory}>
             <div className="mb-3">

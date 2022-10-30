@@ -65,7 +65,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
     "theme-change": "^2.2.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "workbox-window": "^6.5.4"
   },
   "keywords": [
     "microblogging"

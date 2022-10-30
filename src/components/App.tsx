@@ -4,6 +4,7 @@ import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
 import Header from '@components/Header';
 import Alert from '@components/Alert';
+import ReloadPrompt from '@components/ReloadPrompt';
 
 // Create a GrowthBook instance
 const growthbook = new GrowthBook({
@@ -46,6 +47,7 @@ function App() {
       <Header />
       <Alert />
       <Outlet />
+      <ReloadPrompt />
     </GrowthBookProvider>
   );
 }
