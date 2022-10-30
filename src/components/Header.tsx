@@ -10,21 +10,19 @@ function Header() {
 
   return (
     <nav className="navbar bg-neutral text-neutral-content mb-3">
-      <div className="flex-1 mx-auto px-4">
-        <Link to="/" className="btn btn-ghost normal-case text-xl">Local microblogging client</Link>
+      <div className="flex-1">
+        <Link to="/" className="btn btn-ghost normal-case text-xl">Microblogging</Link>
       </div>
-      <div className="flex-none">
+      <div className="flex-none justify-between">
         <input type="checkbox" className="toggle toggle-sm mr-6" data-toggle-theme="forest,winter" data-act-class="ACTIVECLASS" />
-        <div>
-          <form className="form-inline navbar-end">
-            <Link
-              to="/posts/new"
-              className="btn btn-outline btn-primary"
-            >
-              New post
-            </Link>
-          </form>
-        </div>
+        <form className="form-inline navbar-end">
+          <Link
+            to="/posts/new"
+            className="btn btn-outline btn-primary"
+          >
+            New post
+          </Link>
+        </form>
       </div>
     </nav>
   );
