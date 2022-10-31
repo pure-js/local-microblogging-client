@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { test, expect } from '@playwright/experimental-ct-react';
 import App from './App';
 
