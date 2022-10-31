@@ -9,7 +9,8 @@ import react from '@vitejs/plugin-react';
 const config: PlaywrightTestConfig = {
   testDir: './',
   testMatch: /.*\.e2e\.(test|spec)\.(js|ts|mjs)/,
-  /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
+  /* The base directory, relative to the config file, for snapshot files created with
+    toMatchSnapshot and toHaveScreenshot. */
   snapshotDir: './__snapshots__',
   /* Maximum time one test can run for. */
   timeout: 10 * 1000,
