@@ -11,10 +11,12 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "e2e": "playwright test",
     "predeploy": "vite build --base=/local-microblogging-client/",
     "deploy": "gh-pages -d dist",
     "release": "standard-version",
-    "lint": "eslint --ext .tsx,.jsx,.js,.ts src/"
+    "lint": "eslint --ext .tsx,.jsx,.js,.ts src/",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,8 @@
     "url": "https://github.com/pure-js/local-microblogging-client/issues"
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.27.1",
+    "@playwright/test": "^1.27.1",
     "@tailwindcss/typography": "^0.5.7",
     "@types/jest": "^29.2.0",
     "@types/react": "^18.0.15",

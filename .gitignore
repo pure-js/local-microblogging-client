@@ -17,3 +17,11 @@ dist/
 
 # Local files
 *.local
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/test-results/
+/playwright-report/
+/playwright/.cache/
