@@ -18,7 +18,7 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: 'npm run preview',
     // port: ,
-    url: 'http://10.1.0.45:4173/',
+    url: 'http://localhost:4173/',
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
   },
@@ -46,7 +46,7 @@ const config: PlaywrightTestConfig = {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://10.1.0.45:4173',
+    baseURL: 'http://localhost:4173',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
