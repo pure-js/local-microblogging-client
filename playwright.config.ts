@@ -16,9 +16,9 @@ const config: PlaywrightTestConfig = {
   // testMatch: /.*\.e2e\.js/,
   testMatch: /.*\.e2e\.(test|spec)\.(js|ts|mjs)/,
   webServer: {
-    command: 'npm run preview',
-    // port: ,
-    url: 'http://localhost:4173/',
+    command: 'npm run build && npm run preview',
+    port: 4173,
+    // url: 'http://0.0.0.0:4173/',
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
   },
@@ -46,7 +46,7 @@ const config: PlaywrightTestConfig = {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:4173',
+    baseURL: 'http://127.0.0.1:4173',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
