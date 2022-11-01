@@ -17,7 +17,7 @@ const config: PlaywrightTestConfig = {
   testMatch: /.*\.e2e\.(test|spec)\.(js|ts|mjs)/,
   webServer: {
     command: 'npm run preview',
-    port: 4173,
+    // port: 4173,
     url: 'http://127.0.0.1:4173/',
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
