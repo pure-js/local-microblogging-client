@@ -9,7 +9,7 @@
     "start": "npm run dev",
     "dev": "vite serve",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "e2e": "playwright test",
     "predeploy": "vite build --base=/local-microblogging-client/",
