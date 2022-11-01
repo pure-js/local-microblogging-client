@@ -1,19 +1,20 @@
-import { StrictMode } from 'react';
+import { lazy, StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
 
-import App from '@components/App';
-import NoMatch from '@components/NoMatch';
-import Home from './pages/Home';
-import BlogPost from './pages/BlogPost';
-import NewPost from './pages/NewPost';
-import EditPost from './pages/EditPost';
-import UserInfo from './pages/UserInfo';
-
 import './index.css';
+
+const App = lazy(() => import('@components/App'));
+const Home = lazy(() => import('./pages/Home'));
+const NoMatch = lazy(() => import('@components/NoMatch'));
+
+const NewPost = lazy(() => import('./pages/NewPost'));
+const EditPost = lazy(() => import('./pages/EditPost'));
+const UserInfo = lazy(() => import('./pages/UserInfo'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 
 const root = createRoot(
   document.getElementById('app'),
@@ -66,6 +67,8 @@ const router = createBrowserRouter([
 
 root.render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<>loading...</>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </StrictMode>,
 );
