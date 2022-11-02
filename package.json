@@ -11,6 +11,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "e2e": "playwright test",
     "predeploy": "vite build --base=/local-microblogging-client/",
     "deploy": "gh-pages -d dist",
     "release": "standard-version",
@@ -26,6 +27,7 @@
     "url": "https://github.com/pure-js/local-microblogging-client/issues"
   },
   "devDependencies": {
+    "@playwright/test": "^1.27.1",
     "@tailwindcss/typography": "^0.5.7",
     "@types/jest": "^29.2.0",
     "@types/react": "^18.0.15",
@@ -53,12 +55,12 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.8.1",
     "typescript": "^4.8.4",
-    "vite": "^3.1.8",
+    "vite": "^3.2.2",
     "vite-plugin-pwa": "^0.13.1"
   },
   "dependencies": {
     "@growthbook/growthbook-react": "^0.10.0",
-    "daisyui": "^2.33.0",
+    "daisyui": "^2.37.0",
     "dexie": "^3.2.2",
     "dexie-react-hooks": "^1.1.1",
     "react": "^18.2.0",
@@ -71,8 +73,8 @@
     "microblogging"
   ],
   "engines": {
-    "node": ">=16.15",
-    "npm": ">=8.5.5"
+    "node": ">=18.12",
+    "npm": ">=8.19.2"
   },
   "msw": {
     "workerDirectory": "public"

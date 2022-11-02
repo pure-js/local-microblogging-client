@@ -44,7 +44,7 @@ function App() {
   return (
     <GrowthBookProvider growthbook={growthbook}>
       <Header />
-      <Alert />
+      <Alert message="" />
       <Outlet />
     </GrowthBookProvider>
   );

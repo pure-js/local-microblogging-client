@@ -30,7 +30,7 @@ function Header() {
             to="/posts/new"
             className="btn btn-outline btn-primary"
           >
-            New post
+            New Post
           </Link>
         </form>
       </div>
