@@ -24,7 +24,7 @@ export function PostList() {
         id={post.id}
         heading={post.heading}
         text={post.text}
-        image={post.image}
+        img={post.img}
         createdAt={post.createdAt}
         userId={post.userId}
       />

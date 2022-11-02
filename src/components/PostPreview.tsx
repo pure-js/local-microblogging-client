@@ -38,11 +38,15 @@ function Author({ userId }: IAuthor) {
 
 export interface IBlogPost {
   id: number;
-  image?: string;
+  img?: {
+    width: number;
+    height: number;
+    url: string;
+  };
   heading: string;
-  text: string,
-  createdAt: number,
-  userId: string,
+  text: string;
+  createdAt: number;
+  userId: string;
 }
 
 export interface IUser {
@@ -56,7 +60,7 @@ export interface IUser {
 }
 
 function BlogPost({
-  id, heading, text, createdAt, image = '', userId,
+  id, heading, text, createdAt, img, userId,
 }: IBlogPost) {
   const [isLiked, setIsLiked] = useState(false);
 
@@ -69,9 +73,9 @@ function BlogPost({
 
   return (
     <article className="card border border-gray-400 rounded-md mb-3">
-      { image && (
+      { img && (
         <figure>
-          <img className="img-fluid" src={image} alt="Card cap" />
+          <img className="img-fluid" width={img.width} height={img.height} src={img.url} alt="Card cap" />
         </figure>
       )}
       <div className="card-body pb-0">
