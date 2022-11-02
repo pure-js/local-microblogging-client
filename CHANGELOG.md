@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.11.4](https://github.com/pure-js/local-microblogging-client/compare/v2.11.3...v2.11.4) (2022-11-02)
+
+
+### Performance Improvements
+
+* Image now have explicit width and height ([7b729af](https://github.com/pure-js/local-microblogging-client/commit/7b729afd6205bdd054ad6bfc8064b8a54415f384))
+
 ## [2.11.3](https://github.com/pure-js/local-microblogging-client/compare/v2.11.2...v2.11.3) (2022-11-02)
 
 
