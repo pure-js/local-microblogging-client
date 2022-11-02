@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.11.3](https://github.com/pure-js/local-microblogging-client/compare/v2.11.2...v2.11.3) (2022-11-02)
+
+
+### Bug Fixes
+
+* improve accessibility ([1ae98f3](https://github.com/pure-js/local-microblogging-client/commit/1ae98f39533471f36d779d996495300877bed0fa))
+
 ## [2.11.2](https://github.com/pure-js/local-microblogging-client/compare/v2.11.1...v2.11.2) (2022-10-30)
 
 
