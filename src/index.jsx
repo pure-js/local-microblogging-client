@@ -8,13 +8,13 @@ import {
 import './index.css';
 
 const App = lazy(() => import('@components/App'));
-const Home = lazy(() => import('./pages/Home'));
-const NoMatch = lazy(() => import('@components/NoMatch'));
+const Home = lazy(() => import('./pages'));
+const NoMatch = lazy(() => import('./pages/[...all]'));
 
-const NewPost = lazy(() => import('./pages/NewPost'));
-const EditPost = lazy(() => import('./pages/EditPost'));
-const UserInfo = lazy(() => import('./pages/UserInfo'));
-const BlogPost = lazy(() => import('./pages/BlogPost'));
+const NewPost = lazy(() => import('./pages/posts/new'));
+const EditPost = lazy(() => import('./pages/posts/[postId]/edit'));
+const UserInfo = lazy(() => import('./pages/users/[userName]'));
+const BlogPost = lazy(() => import('./pages/posts/[postId]'));
 
 const root = createRoot(
   document.getElementById('app'),
