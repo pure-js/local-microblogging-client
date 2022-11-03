@@ -14,3 +14,4 @@ jobs:
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
