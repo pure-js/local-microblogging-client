@@ -1,5 +1,9 @@
 name: Lighthouse CI
 on: [push]
+
+env:
+  VITE_GROWTH_BOOK_KEY: key_prod_b3021771bb20a0c2
+
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
@@ -14,4 +18,3 @@ jobs:
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-          VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
