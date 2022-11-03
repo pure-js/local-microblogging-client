@@ -13,7 +13,7 @@ interface IBlogPostProps {
 function EditPost({ post } : IBlogPostProps) {
   const [heading, setHeading] = useState(post.heading);
   const [text, setText] = useState(post.text);
-  const [image, setImage] = useState(post.image);
+  const [img, setImg] = useState(post.img);
   const [status, setStatus] = useState('');
   const [hashtags, setHashtags] = useState('');
 
@@ -25,7 +25,7 @@ function EditPost({ post } : IBlogPostProps) {
     const reader = new FileReader();
 
     reader.addEventListener('load', () => {
-      setImage(reader.result);
+      setImg({ url: reader.result });
     }, false);
 
     if (file) {
@@ -39,7 +39,7 @@ function EditPost({ post } : IBlogPostProps) {
         heading,
         text,
         editedAt: Date.now().toString(),
-        image,
+        img,
       })
         .then((updated) => {
           if (updated) {
@@ -65,11 +65,11 @@ function EditPost({ post } : IBlogPostProps) {
         { status && (<h3>{ status }</h3>) }
         <div className="col-span-12 md:col-span-8 lg:col-span-6">
           <h3 className="text-2xl mt-3 mb-5">Any updates?</h3>
-          { image && (
+          { img && (
             <figure>
               <img
                 id="preview"
-                src={image}
+                src={img.url}
                 alt="Card cap"
                 className="card-img-top"
               />
