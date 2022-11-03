@@ -16,7 +16,7 @@ function Header() {
       <div className="flex-none justify-between">
         <button
           type="button"
-          className="mr-6"
+          className="btn btn-circle mr-6"
           data-toggle-theme="forest,winter"
           data-act-class="ACTIVECLASS"
           aria-label="Dark Theme"
