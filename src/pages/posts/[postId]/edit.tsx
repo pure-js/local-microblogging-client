@@ -11,7 +11,7 @@ interface IBlogPostProps {
 }
 
 function EditPost({ post } : IBlogPostProps) {
-  const [heading, setHeading] = useState(post.heading);
+  const [heading, setHeading] = useState(post.heading ? post.heading : '');
   const [text, setText] = useState(post.text);
   const [img, setImg] = useState(post.img);
   const [status, setStatus] = useState('');
