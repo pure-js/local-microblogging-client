@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
-// import react from '@vitejs/plugin-react';
-import { swcReactRefresh } from 'vite-plugin-swc-react-refresh';
+import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 // const path = require('node:path');
@@ -11,10 +10,12 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [
-    swcReactRefresh(),
+    react({
+      // Use React plugin in all *.jsx and *.tsx files
+      include: 'src/**/*.{jsx,tsx}',
+    }),
     VitePWA({}),
   ],
-  esbuild: { jsx: 'automatic' },
   define: {
     APP_VERSION: JSON.stringify(process.env.npm_package_version),
   },

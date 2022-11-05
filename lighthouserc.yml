@@ -10,7 +10,7 @@ ci:
     assertions:
       'categories:performance': ['error', {'minScore': 0.87}]
       'categories:accessibility': ['error', {'minScore': 0.97}]
-      'categories:best-practices': ['error', {'minScore': 1}]
+      'categories:best-practices': ['error', {'minScore': 0.92}]
       'categories:pwa': ['off']
       'categories:seo': ['error', {'minScore': 1}]
   upload:
