@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('homepage has Micrblogging in title and get started link linking to the new post page', async ({ page }) => {
-  await page.goto('https://pure-js.github.io/local-microblogging-client/');
+  await page.goto('http:/localhost:4173/');
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Local microblogging client/);
