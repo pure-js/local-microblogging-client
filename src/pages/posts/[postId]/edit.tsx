@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { redirect, useParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 
 import { db } from '@services/db';
@@ -17,7 +17,6 @@ function EditPost({ post } : IBlogPostProps) {
   const [status, setStatus] = useState('');
   const [hashtags, setHashtags] = useState('');
 
-  const navigate = useNavigate();
   const { postId } = useParams();
 
   function handleImageChange(event: React.FormEvent<HTMLInputElement>) {
@@ -44,7 +43,7 @@ function EditPost({ post } : IBlogPostProps) {
         .then((updated) => {
           if (updated) {
             setStatus(`Post "${heading}" successfully updated. Post id ${postId}`);
-            navigate('/');
+            redirect('/');
           } else {
             setStatus(`Nothing happend with ${postId}`);
           }

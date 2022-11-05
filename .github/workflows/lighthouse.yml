@@ -1,5 +1,9 @@
 name: Lighthouse CI
 on: [push]
+
+env:
+  VITE_GROWTH_BOOK_KEY: key_prod_b3021771bb20a0c2
+
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest

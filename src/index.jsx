@@ -9,7 +9,7 @@ import './index.css';
 
 const App = lazy(() => import('@components/App'));
 const Home = lazy(() => import('./pages'));
-const NoMatch = lazy(() => import('./pages/[...all]'));
+const NoMatch = lazy(() => import('./pages/[all]'));
 
 const NewPost = lazy(() => import('./pages/posts/new'));
 const EditPost = lazy(() => import('./pages/posts/[postId]/edit'));
