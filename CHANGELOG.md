@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.11.7](https://github.com/pure-js/local-microblogging-client/compare/v2.11.6...v2.11.7) (2022-11-05)
+
+
+### Bug Fixes
+
+* Lighthouse best practices score ([abe1495](https://github.com/pure-js/local-microblogging-client/commit/abe1495fec1fd16763c8f08c4219c3914371aefb))
+
 ## [2.11.6](https://github.com/pure-js/local-microblogging-client/compare/v2.11.5...v2.11.6) (2022-11-03)
 
 
