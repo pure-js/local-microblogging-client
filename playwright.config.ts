@@ -15,13 +15,6 @@ const config: PlaywrightTestConfig = {
   testDir: './tests',
   // testMatch: /.*\.e2e\.js/,
   testMatch: /.*\.e2e\.(test|spec)\.(js|ts|mjs)/,
-  // webServer: {
-  //   command: 'npm run build && npm run preview',
-  //   port: 4173,
-  //   // url: 'http://0.0.0.0:4173/',
-  //   timeout: 120 * 1000,
-  //   reuseExistingServer: !process.env.CI,
-  // },
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {
