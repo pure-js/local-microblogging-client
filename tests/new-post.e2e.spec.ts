@@ -1,9 +1,9 @@
-// import { test, expect } from '@playwright/test';
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
+// import { test, expect, Page } from '@playwright/test';
 
-async function checkTodosInLocalStorage(page: Page, title: string) {
-  return page.waitForFunction((t) => JSON.parse(indexedDB['Platform']).map((todo: any) => todo.title).includes(t), title);
-}
+// async function checkTodosInLocalStorage(page: Page, title: string) {
+//   return page.waitForFunction((t) => JSON.parse(indexedDB['Platform']).map((todo: any) => todo.title).includes(t), title);
+// }
 
 test('test', async ({ page }) => {
   await page.goto('/posts/new');
