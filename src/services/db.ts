@@ -7,6 +7,11 @@ export interface IAuthor {
   id: string;
   username: string;
   name: string;
+  profilePicture?: {
+    src: string;
+    width: number;
+    height: number;
+  }
 }
 
 export interface IPost {
@@ -25,7 +30,7 @@ export class MySubClassedDexie extends Dexie {
 
   constructor() {
     super('Platform');
-    this.version(1).stores({
+    this.version(2).stores({
       posts: 'id, heading, text, createdAt, hashtags, userId',
       authors: 'id, username, name',
     });

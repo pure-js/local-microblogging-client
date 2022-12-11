@@ -57,6 +57,11 @@ export interface IUser {
   dob: string,
   about?: string,
   createdAt: number,
+  profilePicture?: {
+    src: string,
+    width: number,
+    height: number
+  }
 }
 
 function BlogPost({

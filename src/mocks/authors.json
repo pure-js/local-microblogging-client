@@ -6,6 +6,11 @@
     "company": "Comtours",
     "dob": "1989-10-26",
     "about": "Elit elit laborum qui sit nostrud incididunt pariatur laborum reprehenderit ipsum dolore proident. Dolore non ex amet qui.",
+    "profilePicture": {
+      "src": "/avatar.jpg",
+      "width": 100,
+      "height": 100
+    },
     "createdAt": "2011-07-31T03:19:19.369Z"
   },
   {
@@ -357,7 +362,12 @@
     "company": "Autograte",
     "dob": "1991-04-09",
     "about": "Deserunt exercitation eiusmod in dolor. Laborum nulla fugiat mollit anim adipisicing commodo ex adipisicing excepteur adipisicing qui.",
-    "createdAt": "2010-03-02T12:13:35.229Z"
+    "createdAt": "2010-03-02T12:13:35.229Z",
+    "profilePicture": {
+      "src": "/avatar.jpg",
+      "width": 200,
+      "height": 200
+    }
   },
   {
     "id": "62987df7d32af2c784cf3764",
