@@ -55,7 +55,7 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.8.1",
     "typescript": "^4.8.4",
-    "vite": "^4.0.0",
+    "vite": "^4.0.1",
     "vite-plugin-pwa": "^0.14.0"
   },
   "dependencies": {
@@ -78,8 +78,5 @@
   },
   "msw": {
     "workerDirectory": "public"
-  },
-  "overrides": {
-    "vite": "^4.0.0"
   }
 }
