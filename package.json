@@ -35,7 +35,7 @@
     "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
-    "@vitejs/plugin-react": "^2.1.0",
+    "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.13",
     "eslint": "^8.23.0",
@@ -55,7 +55,7 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.8.1",
     "typescript": "^4.8.4",
-    "vite": "^3.2.2",
+    "vite": "^4.0.1",
     "vite-plugin-pwa": "^0.14.0"
   },
   "dependencies": {
