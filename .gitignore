@@ -18,6 +18,9 @@ dist/
 # Local files
 *.local
 
+# Test Coverage
+coverage/
+
 # Playwright
 /test-results/
 /playwright-report/
