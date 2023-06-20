@@ -25,3 +25,6 @@ coverage/
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Storybook build outputs
+storybook-static/

@@ -82,7 +82,7 @@ function AddPost() {
               <input
                 placeholder="Title"
                 type="text"
-                className="input text-3xl"
+                className="input w-full text-3xl"
                 value={heading}
                 onChange={(e) => { setHeading(e.target.value); }}
               />
