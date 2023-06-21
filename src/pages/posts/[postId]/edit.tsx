@@ -4,13 +4,15 @@ import { redirect, useParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 
 import { db } from '@services/db';
+
+import { Input } from '@components/Input';
 import type { IBlogPost } from '@components/PostPreview';
 
 interface IBlogPostProps {
   post: IBlogPost;
 }
 
-function EditPost({ post } : IBlogPostProps) {
+export function EditPost({ post } : IBlogPostProps) {
   const [heading, setHeading] = useState(post.heading);
   const [text, setText] = useState(post.text);
   const [img, setImg] = useState(post.img);
@@ -73,14 +75,11 @@ function EditPost({ post } : IBlogPostProps) {
                 className="card-img-top"
               />
             </figure>
-
           ) }
           <form onSubmit={updateStory}>
             <div className="mb-3">
-              <input
+              <Input
                 placeholder="Title"
-                type="text"
-                className="input w-full text-3xl"
                 value={heading}
                 onChange={(e) => { setHeading(e.target.value); }}
               />

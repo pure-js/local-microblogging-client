@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { db } from '@services/db';
 
+import { Input } from '@components/Input';
+
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);
 }
@@ -12,7 +14,7 @@ function getRandomInt(max: number) {
 function AddPost() {
   const [heading, setHeading] = useState('');
   const [text, setText] = useState('');
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState(undefined);
   const [status, setStatus] = useState('');
   const [hashtags, setHashtags] = useState('');
 
@@ -79,10 +81,8 @@ function AddPost() {
           <h3 className="text-2xl mt-3 mb-5">{'What\'s new?'}</h3>
           <form onSubmit={createStory}>
             <div className="mb-3">
-              <input
+              <Input
                 placeholder="Title"
-                type="text"
-                className="input text-3xl"
                 value={heading}
                 onChange={(e) => { setHeading(e.target.value); }}
               />
