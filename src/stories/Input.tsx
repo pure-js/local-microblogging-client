@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface InputProps {
   /**
    * Is this the principal call to action on the page?
@@ -29,7 +27,7 @@ interface InputProps {
 /**
  * Primary UI component for user interaction
  */
-export const Input = ({
+export function Input({
   primary = false,
   size = 'medium',
   placeholder,
@@ -38,7 +36,7 @@ export const Input = ({
   backgroundColor,
   label,
   ...props
-}: InputProps) => {
+}: InputProps) {
   const mode = primary ? 'storybook-input--primary' : 'storybook-input--secondary';
   return (
     <input
@@ -49,7 +47,8 @@ export const Input = ({
       onChange={onChange}
       // className={['storybook-input', `storybook-input--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     />
   );
-};
+}
