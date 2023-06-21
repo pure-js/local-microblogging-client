@@ -16,6 +16,11 @@ export interface IPost {
   createdAt: number;
   hashtags?: string[];
   userId: string;
+  image?: {
+    width?: number;
+    height?: number;
+    url?: File;
+  };
 }
 
 export class MySubClassedDexie extends Dexie {
