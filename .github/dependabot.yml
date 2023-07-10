@@ -8,3 +8,16 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-patch"]
+    groups:
+      react-dependencies:
+        patterns:
+          - "react*"
+          - "@types/react*"
+      storybook-group:
+        patterns:
+          - "@storybook"
+          - "@storybook/*"
+      eslint-group:
+        patterns:
+          - "eslint"
+          - "eslint*"
