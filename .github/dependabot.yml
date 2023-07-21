@@ -15,7 +15,7 @@ updates:
           - "@types/react*"
       storybook-group:
         patterns:
-          - "@storybook"
+          - "storybook"
           - "@storybook/*"
       eslint-group:
         patterns:
