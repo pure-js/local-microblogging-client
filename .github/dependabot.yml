@@ -20,4 +20,5 @@ updates:
       eslint-group:
         patterns:
           - "eslint"
-          - "eslint*"
+          - "eslint-*"
+          - "@typescript-eslint/*"
