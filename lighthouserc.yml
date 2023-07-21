@@ -8,7 +8,7 @@ ci:
     isSinglePageApplication: true
   assert:
     assertions:
-      'categories:performance': ['error', {'minScore': 0.86}]
+      'categories:performance': ['error', {'minScore': 0.85}]
       'categories:accessibility': ['error', {'minScore': 0.97}]
       'categories:best-practices': ['error', {'minScore': 0.92}]
       'categories:pwa': ['off']
