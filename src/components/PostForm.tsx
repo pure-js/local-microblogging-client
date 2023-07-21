@@ -1,4 +1,4 @@
-import { Input } from './Input';
+// import { Input } from './Input';
 
 type User = {
   name: string;
@@ -6,13 +6,14 @@ type User = {
 
 interface PostFormProps {
   user?: User;
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
+  // onLogin: () => void;
+  // onLogout: () => void;
+  // onCreateAccount: () => void;
 }
 
 export function PostForm({
-  user, onLogin, onLogout, onCreateAccount,
+  // user, onLogin, onLogout, onCreateAccount,
+  user,
 }: PostFormProps) {
   return (
     <header>
