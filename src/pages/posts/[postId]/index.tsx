@@ -5,11 +5,11 @@ import type { IBlogPost } from '@components/PostPreview';
 import { db } from '@services/db';
 
 function Post({ heading, text }: IBlogPost) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleNavigate = () =>{
-    navigate('/')
-  }
+  const handleNavigate = () => {
+    navigate('/');
+  };
 
   return (
     <main className="container mx-auto px-4">
@@ -21,7 +21,7 @@ function Post({ heading, text }: IBlogPost) {
           <p className="text-lg">
             { text }
           </p>
-          <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-5' onClick={handleNavigate}>Go to home</button>
+          <button type="button" className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded my-5" onClick={handleNavigate}>Go to home</button>
         </article>
       </div>
     </main>
