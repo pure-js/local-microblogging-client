@@ -11,6 +11,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "coverage": "vitest run --coverage",
     "e2e": "playwright test",
     "predeploy": "vite build --base=/local-microblogging-client/",
     "deploy": "gh-pages -d dist",
