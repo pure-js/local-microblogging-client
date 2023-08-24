@@ -1,9 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    exclude: ['src/**/*.spec.*'],
+    exclude: [
+      ...configDefaults.exclude,
+      '**/*.spec.ts',
+    ],
     coverage: {
       provider: 'v8', // or 'v8'
     },
