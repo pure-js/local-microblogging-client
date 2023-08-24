@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-// import { jest } from '@jest/globals';
+import { test, expect } from 'vitest';
 
 import { timestampToLocaleString } from './timestampToLocaleString';
 
