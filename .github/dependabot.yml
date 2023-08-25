@@ -13,7 +13,7 @@ updates:
         patterns:
           - "react*"
           - "@types/react*"
-        exlude-patterns:
+        exclude-patterns:
           - "react-router-dom"
       storybook-group:
         patterns:
