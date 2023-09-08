@@ -8,16 +8,24 @@ jobs:
   playwright:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
     env:
       CI: true
       DEBUG: pw:webserver
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
       - name: Install dependencies
-        run: npm ci
+        run: pnpm i
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
