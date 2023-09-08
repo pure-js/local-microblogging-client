@@ -1,6 +1,5 @@
 {
-  "result":
-  [
+  "result": [
     {
       "id": 1,
       "heading": "Amazon launches Scout, a machine learning-powered visual shopping tool",
@@ -46,7 +45,7 @@
       "text": "Built for the tastes of power users with an interface that anyone can understand, Workflow is a new app for iOS that lets you create shortcuts for the things you do all the time on your phone or tablet. With a simple, efficient interface, it lets anyone automate things like creating GIFs from the pictures in your photo roll to ordering an Uber going to the address for the next event on your calendar.",
       "createdAt": 1494547100,
       "userId": "62987df7efab1b36ec6606af"
-    },    
+    },
     {
       "id": 6,
       "heading": "Chromecast Now Lets Your Guests Take Over Your TV Without Needing Your WiFi Password",
@@ -60,7 +59,7 @@
       "text": "While the last time most of us thought of shingles was when we were itchy in eighth grade, Seagate has been thinking of them as a way to store data. Called Shingled Magnetic Recording (SMR) Drives, Seagate’s new drives can store 8 terabytes of data for about 3 cents a gigabyte.",
       "createdAt": 1494545200,
       "userId": "62987df71a86366fb33ace0f"
-    },    
+    },
     {
       "id": 8,
       "heading": "Swill Launches In New York To Make Buying Alcohol A ‘Seamless’ Experience",

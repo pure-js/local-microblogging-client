@@ -9,8 +9,8 @@ import Search from '@components/Search';
 import type { IBlogPost } from '@components/PostPreview';
 
 export function PostList() {
-  const posts = useLiveQuery(
-    () => db.posts
+  const posts = useLiveQuery(() =>
+    db.posts
       // .where('text')
       // .anyOf(['The'])
       .orderBy('createdAt')
@@ -18,18 +18,20 @@ export function PostList() {
       .toArray(),
   );
 
-  return posts ? posts.map((post: IBlogPost) => (
-    <Fragment key={post.id}>
-      <PostPreview
-        id={post.id}
-        heading={post.heading}
-        text={post.text}
-        img={post.img}
-        createdAt={post.createdAt}
-        userId={post.userId}
-      />
-    </Fragment>
-  )) : null;
+  return posts
+    ? posts.map((post: IBlogPost) => (
+        <Fragment key={post.id}>
+          <PostPreview
+            id={post.id}
+            heading={post.heading}
+            text={post.text}
+            img={post.img}
+            createdAt={post.createdAt}
+            userId={post.userId}
+          />
+        </Fragment>
+      ))
+    : null;
 }
 
 function Home() {
@@ -38,8 +40,11 @@ function Home() {
   return (
     <div className="container mx-auto px-4">
       <main className="grid grid-cols-12 gap-1">
-        { featSearchBar && (<Search />) }
-        <section className="col-span-12 md:col-span-8 lg:col-span-7" role="feed">
+        {featSearchBar && <Search />}
+        <section
+          className="col-span-12 md:col-span-8 lg:col-span-7"
+          role="feed"
+        >
           <PostList />
         </section>
       </main>

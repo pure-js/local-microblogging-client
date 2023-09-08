@@ -6,20 +6,20 @@ updates:
     schedule:
       interval: 'weekly'
     ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-patch"]
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch']
     groups:
       react-dependencies:
         patterns:
-          - "react*"
-          - "@types/react*"
+          - 'react*'
+          - '@types/react*'
         exclude-patterns:
-          - "react-router-dom"
+          - 'react-router-dom'
       storybook-group:
         patterns:
-          - "storybook"
-          - "@storybook/*"
+          - 'storybook'
+          - '@storybook/*'
       eslint-group:
         patterns:
-          - "eslint*"
-          - "@typescript-eslint/*"
+          - 'eslint*'
+          - '@typescript-eslint/*'

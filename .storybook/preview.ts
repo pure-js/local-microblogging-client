@@ -25,7 +25,7 @@ const preview: Preview = {
         winter: 'winter',
       },
       defaultTheme: 'winter',
-      attributeName: "data-theme",
+      attributeName: 'data-theme',
     }),
   ],
 };

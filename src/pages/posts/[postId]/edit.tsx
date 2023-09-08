@@ -12,7 +12,7 @@ interface IBlogPostProps {
   post: IBlogPost;
 }
 
-export function EditPost({ post } : IBlogPostProps) {
+export function EditPost({ post }: IBlogPostProps) {
   const [heading, setHeading] = useState(post.heading);
   const [text, setText] = useState(post.text);
   const [img, setImg] = useState(post.img);
@@ -25,9 +25,13 @@ export function EditPost({ post } : IBlogPostProps) {
     const file = event.target.files[0];
     const reader = new FileReader();
 
-    reader.addEventListener('load', () => {
-      setImg({ url: reader.result });
-    }, false);
+    reader.addEventListener(
+      'load',
+      () => {
+        setImg({ url: reader.result });
+      },
+      false,
+    );
 
     if (file) {
       reader.readAsDataURL(file);
@@ -36,15 +40,18 @@ export function EditPost({ post } : IBlogPostProps) {
 
   async function UpdatePost() {
     try {
-      await db.posts.update(Number(postId), {
-        heading,
-        text,
-        editedAt: Date.now().toString(),
-        img,
-      })
+      await db.posts
+        .update(Number(postId), {
+          heading,
+          text,
+          editedAt: Date.now().toString(),
+          img,
+        })
         .then((updated) => {
           if (updated) {
-            setStatus(`Post "${heading}" successfully updated. Post id ${postId}`);
+            setStatus(
+              `Post "${heading}" successfully updated. Post id ${postId}`,
+            );
             redirect('/');
           } else {
             setStatus(`Nothing happend with ${postId}`);
@@ -63,10 +70,10 @@ export function EditPost({ post } : IBlogPostProps) {
   return (
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-12 gap-1 mb-3">
-        { status && (<h3>{ status }</h3>) }
+        {status && <h3>{status}</h3>}
         <div className="col-span-12 md:col-span-8 lg:col-span-6">
           <h3 className="text-2xl mt-3 mb-5">Any updates?</h3>
-          { img && (
+          {img && (
             <figure>
               <img
                 id="preview"
@@ -75,13 +82,15 @@ export function EditPost({ post } : IBlogPostProps) {
                 className="card-img-top"
               />
             </figure>
-          ) }
+          )}
           <form onSubmit={updateStory}>
             <div className="mb-3">
               <Input
                 placeholder="Title"
                 value={heading}
-                onChange={(e) => { setHeading(e.target.value); }}
+                onChange={(e) => {
+                  setHeading(e.target.value);
+                }}
               />
             </div>
             <div className="mb-3">
@@ -90,7 +99,9 @@ export function EditPost({ post } : IBlogPostProps) {
                 rows={5}
                 className="textarea w-full text-lg"
                 value={text}
-                onChange={(e) => { setText(e.target.value); }}
+                onChange={(e) => {
+                  setText(e.target.value);
+                }}
               />
             </div>
             <div className="mb-3">
@@ -99,7 +110,9 @@ export function EditPost({ post } : IBlogPostProps) {
                 rows={2}
                 className="textarea text-lg w-full"
                 value={hashtags}
-                onChange={(e) => { setHashtags(e.target.value); }}
+                onChange={(e) => {
+                  setHashtags(e.target.value);
+                }}
               />
             </div>
             <div className="input-group mb-3">
@@ -140,13 +153,11 @@ export function EditPost({ post } : IBlogPostProps) {
 
 function EditPostWrapper() {
   const { postId } = useParams();
-  const posts = useLiveQuery(
-    () => db.posts
-      .filter(({ id }) => id === Number(postId))
-      .toArray(),
+  const posts = useLiveQuery(() =>
+    db.posts.filter(({ id }) => id === Number(postId)).toArray(),
   );
 
-  return posts ? (<EditPost post={posts[0]} />) : null;
+  return posts ? <EditPost post={posts[0]} /> : null;
 }
 
 export default EditPostWrapper;
