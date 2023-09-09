@@ -1,9 +1,11 @@
 name: Playwright End-to-End Tests
+
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+
 jobs:
   playwright:
     timeout-minutes: 60
@@ -25,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm i
+        run: pnpm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
