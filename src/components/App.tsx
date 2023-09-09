@@ -22,7 +22,11 @@ function App() {
     console.log(`App version: ${APP_VERSION}`);
 
     // Load feature definitions from API
-    fetch(`https://cdn.growthbook.io/api/features/${import.meta.env.VITE_GROWTH_BOOK_KEY}`)
+    fetch(
+      `https://cdn.growthbook.io/api/features/${
+        import.meta.env.VITE_GROWTH_BOOK_KEY
+      }`,
+    )
       .then((res) => res.json())
       .then((json) => {
         growthbook.setFeatures(json.features);

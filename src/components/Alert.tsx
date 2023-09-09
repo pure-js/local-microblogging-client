@@ -4,11 +4,7 @@ interface IAlertProps {
 }
 
 function Alert({ message }: IAlertProps) {
-  return (
-    <section className="bg-green-200">
-      { message }
-    </section>
-  );
+  return <section className="bg-green-200">{message}</section>;
 }
 
 export default Alert;
