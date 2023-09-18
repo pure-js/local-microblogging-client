@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@growthbook/growthbook-react':
-    specifier: ^0.17.0
-    version: 0.17.0(react@18.2.0)
+    specifier: ^0.18.0
+    version: 0.18.0(react@18.2.0)
   daisyui:
     specifier: ^2.50.0
     version: 2.50.0(autoprefixer@10.4.13)(postcss@8.4.27)
@@ -1801,18 +1801,18 @@ packages:
     resolution: {integrity: sha512-cEee/Z+I12mZcFJshKcCqC8tuX5hG3s+d+9nZ3LabqKF1vKdF41B92pJVCBggjAGORAeOzyyDDKrZwIkLffeOQ==}
     dev: true
 
-  /@growthbook/growthbook-react@0.17.0(react@18.2.0):
-    resolution: {integrity: sha512-od+bSg3RD9AXfi/TWFDSzRaB6RuJLkUX5eFOZz8u8wL8yDbgd5RF9cwu4lQIF9/tyG1WLu4qipV+SM2v5s4BcQ==}
+  /@growthbook/growthbook-react@0.18.0(react@18.2.0):
+    resolution: {integrity: sha512-Nuyn6j3nmSNN7hMcc4OEl0IhMH2nQ40zVXDYuw0q4IgfNN3gWvA8UrUeqK/p1vevBKtErXNZmETIRYe4iVoNeg==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0
     dependencies:
-      '@growthbook/growthbook': 0.27.0
+      '@growthbook/growthbook': 0.28.0
       react: 18.2.0
     dev: false
 
-  /@growthbook/growthbook@0.27.0:
-    resolution: {integrity: sha512-gt/DWXfgyudY3gXAUjzKm9kMjVfCzfRc8d0nQQiXCP523ow23jThrmBzkRKCN+zxYVxUKcHjP9yjU9EKJqP4Fw==}
+  /@growthbook/growthbook@0.28.0:
+    resolution: {integrity: sha512-RnrP29yHfL12nmAxtPbyHlY70BSB2f/LIOrYaBhqn2oBNdeuAxwGt9FO40dDJh0W+opaG5EbiPvZUxsy8J0aAw==}
     engines: {node: '>=10'}
     dependencies:
       dom-mutator: 0.5.0
