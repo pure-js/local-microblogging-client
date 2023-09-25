@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
 import Header from '@components/Header';
@@ -18,6 +18,8 @@ const growthbook = new GrowthBook({
 });
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log(`App version: ${APP_VERSION}`);
@@ -43,12 +45,12 @@ function App() {
       browser: 'foo',
       url: 'foo',
     });
-  }, []);
+  }, [location]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>
       <Header />
-      <Breadcrumbs />
+      { location.pathname !== '/' && <Breadcrumbs /> }
       <Alert message="" />
       <Outlet />
     </GrowthBookProvider>
