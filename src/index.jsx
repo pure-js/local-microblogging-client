@@ -20,9 +20,7 @@ const router = createBrowserRouter(
     {
       path: '/',
       element: <App />,
-      loader: ({ params }) => {
-        return params;
-      },
+      loader: ({ params }) => params,
       handle: {
         crumb: () => <Link to="/">Home</Link>,
       },
@@ -50,19 +48,15 @@ const router = createBrowserRouter(
         },
         {
           path: 'users',
-          loader: ({ params }) => {
-            return params;
-          },
+          loader: ({ params }) => params,
           handle: {
-            crumb: () => <p>Users</p>,
+            crumb: () => <span>Users</span>,
           },
           children: [
             {
               path: ':userName',
               element: <UserInfo />,
-              loader: ({ params }) => {
-                return params;
-              },
+              loader: ({ params }) => params,
               handle: {
                 crumb: (data) => <span>{data.userName}</span>,
               },

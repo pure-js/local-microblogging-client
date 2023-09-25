@@ -1,9 +1,10 @@
 import { useMatches } from "react-router-dom";
-import './Breadcrumbs.css';
 
-export function Breadcrumbs() {
-    let matches = useMatches();
-    let crumbs = matches
+import classes from './breadcrumbs.module.css';
+
+function Breadcrumbs() {
+    const matches = useMatches();
+    const crumbs = matches
         // first get rid of any matches that don't have handle and crumb
         .filter((match) => Boolean(match.handle?.crumb))
         // now map them into an array of elements, passing the loader
@@ -11,9 +12,10 @@ export function Breadcrumbs() {
         .map((match) => match.handle.crumb(match.data));
 
     return (
-        <ol className="breadcrumbs">
+        <ol className={classes.breadcrumbs}>
             {crumbs.map((crumb, index) => (
-                <li key={index}>{crumb}</li>
+                // eslint-disable-next-line react/no-array-index-key
+                <li className={classes.crumb} key={index}>{crumb}</li>
             ))}
         </ol>
     );
