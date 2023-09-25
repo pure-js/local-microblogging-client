@@ -4,6 +4,7 @@ import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
 import Header from '@components/Header';
 import Alert from '@components/Alert';
+import Breadcrumbs from '@components/Breadcrumbs';
 
 // Create a GrowthBook instance
 const growthbook = new GrowthBook({
@@ -23,8 +24,7 @@ function App() {
 
     // Load feature definitions from API
     fetch(
-      `https://cdn.growthbook.io/api/features/${
-        import.meta.env.VITE_GROWTH_BOOK_KEY
+      `https://cdn.growthbook.io/api/features/${import.meta.env.VITE_GROWTH_BOOK_KEY
       }`,
     )
       .then((res) => res.json())
@@ -48,6 +48,7 @@ function App() {
   return (
     <GrowthBookProvider growthbook={growthbook}>
       <Header />
+      <Breadcrumbs />
       <Alert message="" />
       <Outlet />
     </GrowthBookProvider>
