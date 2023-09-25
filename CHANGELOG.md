@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.12.0](https://github.com/pure-js/local-microblogging-client/compare/v2.11.7...v2.12.0) (2023-09-25)
+
+
+### Features
+
+* close: [#250](https://github.com/pure-js/local-microblogging-client/issues/250) add breadcrumbs ([#251](https://github.com/pure-js/local-microblogging-client/issues/251)) ([2f55297](https://github.com/pure-js/local-microblogging-client/commit/2f552978e8d53255d53551b1dc6675c47ae067a2))
+
+
+### Bug Fixes
+
+* hide breadcrumbs on the main page ([#252](https://github.com/pure-js/local-microblogging-client/issues/252)) ([dcd46f7](https://github.com/pure-js/local-microblogging-client/commit/dcd46f76c6041d36c0ace835f6da91fd53addaa5))
+* unit test ([#170](https://github.com/pure-js/local-microblogging-client/issues/170)) ([21635c8](https://github.com/pure-js/local-microblogging-client/commit/21635c80949c719f210f51e977c3fc4c53189ff0))
+
 ## [2.11.7](https://github.com/pure-js/local-microblogging-client/compare/v2.11.6...v2.11.7) (2022-11-05)
 
 
