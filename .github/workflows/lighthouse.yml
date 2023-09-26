@@ -2,6 +2,9 @@ name: Lighthouse CI
 
 on: [push]
 
+env:
+  VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
+
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
@@ -21,8 +24,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile && pnpm add -g @lhci/cli@0.12.x
       - run: pnpm run build
-        env:
-          VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
