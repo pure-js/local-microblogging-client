@@ -6,7 +6,10 @@ import { VitePWA } from 'vite-plugin-pwa';
 // const path = require('node:path');
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/local-microblogging-client/' : '/',
+  base:
+    process.env.NODE_ENV === 'production'
+      ? '/local-microblogging-client/'
+      : '/',
   build: {
     emptyOutDir: true,
   },
@@ -27,12 +30,14 @@ export default defineConfig({
     alias: [
       {
         find: '@components',
-        // replacement: path.resolve(__dirname, './src'),
         replacement: '/src/components',
       },
       {
+        find: '@pages',
+        replacement: '/src/pages',
+      },
+      {
         find: '@services',
-        // replacement: path.resolve(__dirname, './src'),
         replacement: '/src/services',
       },
     ],

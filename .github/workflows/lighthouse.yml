@@ -1,6 +1,7 @@
 name: Lighthouse CI
 
-on: [push]
+on:
+  push:
 
 env:
   VITE_GROWTH_BOOK_KEY: ${{ secrets.VITE_GROWTH_BOOK_KEY }}
