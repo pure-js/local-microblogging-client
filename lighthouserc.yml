@@ -3,10 +3,10 @@ ci:
     numberOfRuns: 5
     url:
       [
-        'http://localhost/',
-        'http://localhost/posts/1',
-        'http://localhost/posts/1/edit',
-        'http://localhost/posts/new',
+        'http://localhost/local-microblogging-client/',
+        'http://localhost/local-microblogging-client/posts/1',
+        'http://localhost/local-microblogging-client/posts/1/edit',
+        'http://localhost/local-microblogging-client/posts/new',
       ]
     staticDistDir: './dist'
     isSinglePageApplication: true
