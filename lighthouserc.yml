@@ -1,14 +1,15 @@
 ci:
   collect:
     numberOfRuns: 5
+    startServerCommand: pnpm run preview
     url:
       [
-        'http://localhost/local-microblogging-client/',
-        'http://localhost/local-microblogging-client/posts/1',
-        'http://localhost/local-microblogging-client/posts/1/edit',
-        'http://localhost/local-microblogging-client/posts/new',
+        'http://localhost:4173/local-microblogging-client/',
+        'http://localhost:4173/local-microblogging-client/posts/1',
+        'http://localhost:4173/local-microblogging-client/posts/1/edit',
+        'http://localhost:4173/local-microblogging-client/posts/new',
       ]
-    staticDistDir: './dist'
+    # staticDistDir: './dist'
     isSinglePageApplication: true
   assert:
     assertions:
