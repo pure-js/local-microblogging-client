@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 // const path = require('node:path');
 
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/local-microblogging-client/' : '/',
   build: {
     emptyOutDir: true,
   },
