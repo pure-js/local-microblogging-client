@@ -23,7 +23,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile && pnpm add -g @lhci/cli@0.12.x
-      - run: pnpm run build
+      - name: Build
+        run: pnpm run build
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
