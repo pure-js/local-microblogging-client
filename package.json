@@ -1,6 +1,6 @@
 {
   "name": "local-microblogging-client",
-  "version": "2.11.7",
+  "version": "2.12.0",
   "description": "Local Microblogging Frontend Client",
   "main": "src/index.jsx",
   "homepage": "https://pure-js.github.io/local-microblogging-client/",
@@ -60,6 +60,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "msw": "^1.2.2",
     "postcss": "^8.4.18",
+    "postcss-nesting": "12.0.1",
     "prettier": "3.0.3",
     "standard-version": "^9.5.0",
     "storybook": "^7.1.0",

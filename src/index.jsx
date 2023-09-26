@@ -1,6 +1,6 @@
 import { lazy, StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 
 import './index.css';
 
@@ -20,6 +20,10 @@ const router = createBrowserRouter(
     {
       path: '/',
       element: <App />,
+      loader: ({ params }) => params,
+      handle: {
+        crumb: () => <Link to="/">Home</Link>,
+      },
       children: [
         {
           path: '/',
@@ -44,10 +48,18 @@ const router = createBrowserRouter(
         },
         {
           path: 'users',
+          loader: ({ params }) => params,
+          handle: {
+            crumb: () => <span>Users</span>,
+          },
           children: [
             {
               path: ':userName',
               element: <UserInfo />,
+              loader: ({ params }) => params,
+              handle: {
+                crumb: (data) => <span>{data.userName}</span>,
+              },
             },
           ],
         },
