@@ -1,18 +1,18 @@
 .breadcrumbs {
-    display: flex;
-    flex-direction: row;
-    gap: .4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
 }
 
 .crumb {
-    &::after {
-        content: '>';
-        margin-left: .4rem;
-    }
+  &::after {
+    content: '>';
+    margin-left: 0.4rem;
+  }
 
-    &:last-child {
-        &::after {
-            content: '';
-        }
+  &:last-child {
+    &::after {
+      content: '';
     }
+  }
 }

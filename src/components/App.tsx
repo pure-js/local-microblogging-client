@@ -26,7 +26,8 @@ function App() {
 
     // Load feature definitions from API
     fetch(
-      `https://cdn.growthbook.io/api/features/${import.meta.env.VITE_GROWTH_BOOK_KEY
+      `https://cdn.growthbook.io/api/features/${
+        import.meta.env.VITE_GROWTH_BOOK_KEY
       }`,
     )
       .then((res) => res.json())
@@ -50,7 +51,7 @@ function App() {
   return (
     <GrowthBookProvider growthbook={growthbook}>
       <Header />
-      { location.pathname !== '/' && <Breadcrumbs /> }
+      {location.pathname !== '/' && <Breadcrumbs />}
       <Alert message="" />
       <Outlet />
     </GrowthBookProvider>
