@@ -1,7 +1,7 @@
 ci:
   collect:
     numberOfRuns: 5
-    startServerCommand: pnpm run preview
+    startServerCommand: pnpm run build && pnpm run preview
     url:
       [
         'http://localhost/local-microblogging-client/',
