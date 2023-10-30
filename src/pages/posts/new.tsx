@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { db } from '@services/db';
 
-import Input from '@components/Input';
+import { Input } from '@components/input';
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);

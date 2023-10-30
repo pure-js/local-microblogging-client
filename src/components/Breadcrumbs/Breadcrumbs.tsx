@@ -2,7 +2,7 @@ import { useMatches } from 'react-router-dom';
 
 import classes from './breadcrumbs.module.css';
 
-function Breadcrumbs() {
+export function Breadcrumbs() {
   const matches = useMatches();
   const crumbs = matches
     // first get rid of any matches that don't have handle and crumb

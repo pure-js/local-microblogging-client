@@ -4,7 +4,7 @@ import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
 import Header from '@components/Header';
 import Alert from '@components/Alert';
-import Breadcrumbs from '@components/Breadcrumbs';
+import { Breadcrumbs } from '@components/breadcrumbs';
 
 // Create a GrowthBook instance
 const growthbook = new GrowthBook({
