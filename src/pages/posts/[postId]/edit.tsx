@@ -5,7 +5,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 
 import { db } from '@services/db';
 
-import { Input } from '@components/Input';
+import Input from '@components/Input';
 import type { IBlogPost } from '@components/PostPreview';
 
 interface IBlogPostProps {
