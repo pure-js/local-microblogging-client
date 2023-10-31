@@ -61,6 +61,7 @@ export interface BlogPostProps {
   date?: string;
   htmlDatetime?: string;
   userId: string;
+  onDelete?: (arg0: string) => void;
 }
 
 export interface IUser {
@@ -71,7 +72,6 @@ export interface IUser {
   dob: string;
   about?: string;
   createdAt: number;
-  onDelete?: (arg0: string) => void;
 }
 
 function BlogPost({

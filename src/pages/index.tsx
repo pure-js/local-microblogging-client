@@ -26,7 +26,6 @@ export function PostList() {
   return posts
     ? posts.map((post: IBlogPost) => {
         const { date, htmlDatetime } = timestampToLocaleString(post.createdAt);
-        console.log(date, htmlDatetime);
         return (
           <Fragment key={post.id}>
             <PostPreview
