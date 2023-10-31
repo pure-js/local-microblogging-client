@@ -72,7 +72,7 @@
     "vitest": "^0.34.2"
   },
   "dependencies": {
-    "@growthbook/growthbook-react": "^0.17.0",
+    "@growthbook/growthbook-react": "^0.20.0",
     "daisyui": "^2.50.0",
     "dexie": "^3.2.4",
     "dexie-react-hooks": "^1.1.6",
