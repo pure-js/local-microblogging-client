@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@growthbook/growthbook-react':
-    specifier: ^0.17.0
-    version: 0.17.0(react@18.2.0)
+    specifier: ^0.20.0
+    version: 0.20.0(react@18.2.0)
   daisyui:
     specifier: ^2.50.0
     version: 2.50.0(autoprefixer@10.4.13)(postcss@8.4.27)
@@ -2108,21 +2108,21 @@ packages:
     resolution: {integrity: sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==}
     dev: true
 
-  /@growthbook/growthbook-react@0.17.0(react@18.2.0):
-    resolution: {integrity: sha512-od+bSg3RD9AXfi/TWFDSzRaB6RuJLkUX5eFOZz8u8wL8yDbgd5RF9cwu4lQIF9/tyG1WLu4qipV+SM2v5s4BcQ==}
+  /@growthbook/growthbook-react@0.20.0(react@18.2.0):
+    resolution: {integrity: sha512-mFlp0z6oZv71uRcze7QMkr5xRqoWAFxXahY9DFa/mwHwLS1giqC7wE5DQUKz2ZaC8G3YZ7ORpXB9bOc9ucILZw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0
     dependencies:
-      '@growthbook/growthbook': 0.27.0
+      '@growthbook/growthbook': 0.30.0
       react: 18.2.0
     dev: false
 
-  /@growthbook/growthbook@0.27.0:
-    resolution: {integrity: sha512-gt/DWXfgyudY3gXAUjzKm9kMjVfCzfRc8d0nQQiXCP523ow23jThrmBzkRKCN+zxYVxUKcHjP9yjU9EKJqP4Fw==}
+  /@growthbook/growthbook@0.30.0:
+    resolution: {integrity: sha512-ennMHKZIhAZokHHcnA9/tOTLFdBB4DQR0WHT8Lf1pD80jWVv8JBCAzsV1jzSjYUQhb8R8pLR2Kho0IfgjzIZGQ==}
     engines: {node: '>=10'}
     dependencies:
-      dom-mutator: 0.5.0
+      dom-mutator: 0.6.0
     dev: false
 
   /@humanwhocodes/config-array@0.11.13:
@@ -6681,8 +6681,8 @@ packages:
     resolution: {integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==}
     dev: true
 
-  /dom-mutator@0.5.0:
-    resolution: {integrity: sha512-bbeX8HWE8JGzraFgbVBX4ws2g3heZFuTtrleQBuN7huy+7n2n7etSuVnot3/1z3jdY2MiwuvoS4Ep1UT2rrGBw==}
+  /dom-mutator@0.6.0:
+    resolution: {integrity: sha512-iCt9o0aYfXMUkz/43ZOAUFQYotjGB+GNbYJiJdz4TgXkyToXbbRy5S6FbTp72lRBtfpUMwEc1KmpFEU4CZeoNg==}
     engines: {node: '>=10'}
     dev: false
 
