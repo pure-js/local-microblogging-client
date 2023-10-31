@@ -1,7 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { VitePWA } from 'vite-plugin-pwa';
+// import browserslist from 'browserslist';
+// import { browserslistToTargets } from 'lightningcss';
 
 // const path = require('node:path');
 
@@ -12,23 +14,21 @@ export default defineConfig({
       : '/',
   build: {
     emptyOutDir: true,
+    cssMinify: 'lightningcss',
   },
-  plugins: [
-    react({
-      // Use React plugin in all *.jsx and *.tsx files
-      include: 'src/**/*.{jsx,tsx}',
-    }),
-    VitePWA({}),
-  ],
+  plugins: [react(), VitePWA({})],
   define: {
     APP_VERSION: JSON.stringify(process.env.npm_package_version),
   },
   server: {
     open: true,
   },
-  css: {
-    transformer: 'lightningcss',
-  },
+  // css: {
+  //   transformer: 'lightningcss',
+  //   lightningcss: {
+  //     targets: browserslistToTargets(browserslist('>= 0.25%')),
+  //   },
+  // },
   resolve: {
     alias: [
       {
