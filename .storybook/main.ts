@@ -9,6 +9,8 @@ const config: StorybookConfig = {
       name: '@storybook/addon-styling',
       options: {},
     },
+    '@storybook/addon-mdx-gfm',
+    'storybook-addon-react-router-v6',
   ],
   framework: {
     name: '@storybook/react-vite',
@@ -18,4 +20,4 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
 };
-export default config;
+export default config satisfies StorybookConfig;

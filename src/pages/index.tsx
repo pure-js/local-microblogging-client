@@ -7,6 +7,11 @@ import PostPreview from '@components/PostPreview';
 import Search from '@components/Search';
 
 import type { IBlogPost } from '@components/PostPreview';
+import { timestampToLocaleString } from '@services/timestampToLocaleString';
+
+function handleDeleteStory(id: string) {
+  db.posts.delete(id);
+}
 
 export function PostList() {
   const posts = useLiveQuery(() =>
@@ -19,18 +24,24 @@ export function PostList() {
   );
 
   return posts
-    ? posts.map((post: IBlogPost) => (
-        <Fragment key={post.id}>
-          <PostPreview
-            id={post.id}
-            heading={post.heading}
-            text={post.text}
-            img={post.img}
-            createdAt={post.createdAt}
-            userId={post.userId}
-          />
-        </Fragment>
-      ))
+    ? posts.map((post: IBlogPost) => {
+        const { date, htmlDatetime } = timestampToLocaleString(post.createdAt);
+        console.log(date, htmlDatetime);
+        return (
+          <Fragment key={post.id}>
+            <PostPreview
+              id={post.id}
+              heading={post.heading}
+              text={post.text}
+              img={post.img}
+              date={date}
+              htmlDatetime={htmlDatetime}
+              userId={post.userId}
+              onDelete={handleDeleteStory}
+            />
+          </Fragment>
+        );
+      })
     : null;
 }
 
