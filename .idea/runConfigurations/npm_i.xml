@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="npm i" type="js.build_tools.npm" factoryName="npm">
-    <package-json value="$PROJECT_DIR$/package.json" />
-    <command value="install" />
-    <node-interpreter value="project" />
-    <envs />
-    <method />
-  </configuration>
-</component>

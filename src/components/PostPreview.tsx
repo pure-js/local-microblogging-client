@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { db } from '@services/db';
-import { timestampToLocaleString } from '@services/timestampToLocaleString';
 
 interface IAuthor {
   userId: string;
@@ -50,6 +49,21 @@ export interface IBlogPost {
   userId: string;
 }
 
+export interface BlogPostProps {
+  id: number;
+  img?: {
+    width: number;
+    height: number;
+    url: string;
+  };
+  heading: string;
+  text: string;
+  date?: string;
+  htmlDatetime?: string;
+  userId: string;
+  onDelete?: (arg0: string) => void;
+}
+
 export interface IUser {
   id: string;
   username?: string;
@@ -60,14 +74,17 @@ export interface IUser {
   createdAt: number;
 }
 
-function BlogPost({ id, heading, text, createdAt, img, userId }: IBlogPost) {
+function BlogPost({
+  id,
+  heading,
+  text,
+  date,
+  htmlDatetime,
+  img,
+  userId,
+  onDelete,
+}: BlogPostProps) {
   const [isLiked, setIsLiked] = useState(false);
-
-  function handleDeleteStory() {
-    db.posts.delete(id);
-  }
-
-  const { date, htmlDatetime } = timestampToLocaleString(createdAt);
 
   return (
     <article className="card border border-gray-400 rounded-md mb-3">
@@ -160,7 +177,9 @@ function BlogPost({ id, heading, text, createdAt, img, userId }: IBlogPost) {
               className="btn btn-ghost btn-circle"
               title="Remove post"
               type="button"
-              onClick={handleDeleteStory}
+              onClick={() => {
+                onDelete(id);
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
