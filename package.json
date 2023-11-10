@@ -7,7 +7,6 @@
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "npm run dev",
     "dev": "vite serve",
     "build": "vite build",
     "preview": "vite preview",

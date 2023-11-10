@@ -8,11 +8,12 @@ CRUD implemenation with React;
 - React
 - TypeScript
 - TailwindCSS
+- Storybook
 
 ## Contribution
 
     $ pnpm i
-    $ pnpm start
+    $ pnpm run dev
 
 ## Production build
 
