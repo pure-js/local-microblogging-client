@@ -21,7 +21,7 @@ export default defineConfig({
     APP_VERSION: JSON.stringify(process.env.npm_package_version),
   },
   server: {
-    open: true,
+    // open: true,
   },
   // css: {
   //   transformer: 'lightningcss',
