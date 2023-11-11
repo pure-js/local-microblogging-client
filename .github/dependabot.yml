@@ -17,7 +17,7 @@ updates:
           - 'react-router-dom'
       storybook-group:
         patterns:
-          - 'storybook'
+          - 'storybook*'
           - '@storybook/*'
       eslint-group:
         patterns:

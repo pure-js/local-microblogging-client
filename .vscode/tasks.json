@@ -6,7 +6,15 @@
       "script": "dev",
       "problemMatcher": [],
       "label": "pnpm: dev",
-      "detail": "vite serve"
+      "detail": "vite serve",
+      "isBackground": true
+    },
+    {
+      "type": "npm",
+      "script": "storybook",
+      "problemMatcher": [],
+      "label": "pnpm: storybook",
+      "isBackground": true
     }
   ]
 }
