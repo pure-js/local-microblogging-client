@@ -18,6 +18,7 @@ const config: StorybookConfig = {
   },
   core: {
     disableTelemetry: false, // 👈 Disables telemetry
+    enableCrashReports: false,
   },
   docs: {
     autodocs: 'tag',
