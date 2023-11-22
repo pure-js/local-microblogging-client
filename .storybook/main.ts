@@ -16,6 +16,11 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  core: {
+    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+    disableTelemetry: false, // 👈 Disables telemetry
+    enableCrashReports: false,
+  },
   docs: {
     autodocs: 'tag',
   },
