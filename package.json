@@ -61,7 +61,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
     "lightningcss": "^1.22.0",
-    "msw": "^1.2.2",
+    "msw": "^2.2.0",
     "postcss": "^8.4.31",
     "postcss-nesting": "12.0.1",
     "prettier": "3.0.3",
