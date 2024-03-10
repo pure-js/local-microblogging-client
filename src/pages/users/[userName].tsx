@@ -4,7 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@services/db';
 import type { IUser } from '@components/PostPreview';
 
-function Info({ name }: IUser) {
+function Info({ name }: IUser): JSX.Element {
   return (
     <main className="container mx-auto px-4">
       <div className="grid grid-cols-12 gap-1">
@@ -16,9 +16,9 @@ function Info({ name }: IUser) {
   );
 }
 
-function UserInfo() {
+function UserInfo(): JSX.Element {
   const { userName } = useParams();
-  const authorArr = useLiveQuery(() =>
+  const authorArr = useLiveQuery(async () =>
     db.authors.filter(({ username }) => username === userName).toArray(),
   );
 

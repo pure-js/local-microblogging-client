@@ -3,7 +3,7 @@ interface IAlertProps {
   // type: string;
 }
 
-function Alert({ message }: IAlertProps) {
+function Alert({ message }: IAlertProps): JSX.Element {
   return <section className="bg-green-200">{message}</section>;
 }
 

@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -7,11 +8,11 @@ import { db } from '@services/db';
 
 import { Input } from '@components/Input';
 
-function getRandomInt(max: number) {
+function getRandomInt(max: number): number {
   return Math.floor(Math.random() * max);
 }
 
-function AddPost() {
+function AddPost(): JSX.Element {
   const [heading, setHeading] = useState('');
   const [text, setText] = useState('');
   const [image, setImage] = useState(undefined);
@@ -20,7 +21,7 @@ function AddPost() {
 
   const navigate = useNavigate();
 
-  function handleImageChange(event: React.FormEvent<HTMLInputElement>) {
+  function handleImageChange(event: React.FormEvent<HTMLInputElement>): void {
     const file = event.target.files[0];
     const reader = new FileReader();
 
@@ -44,7 +45,7 @@ function AddPost() {
   // }
   // editPost();
 
-  async function addPost() {
+  async function addPost(): Promise<void> {
     try {
       const id = await db.posts.add({
         id: getRandomInt(999999),
@@ -62,7 +63,7 @@ function AddPost() {
     }
   }
 
-  function createStory(event: React.FormEvent) {
+  function createStory(event: React.FormEvent): void {
     event.preventDefault();
     addPost();
   }

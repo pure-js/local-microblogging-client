@@ -8,11 +8,11 @@ interface IAuthor {
   userId: string;
 }
 
-function Author({ userId }: IAuthor) {
-  const [name, setName] = useState();
-  const [username, setUsername] = useState();
+function Author({ userId }: IAuthor): JSX.Element {
+  const [name, setName] = useState<string | undefined>();
+  const [username, setUsername] = useState<string | undefined>();
 
-  async function authors() {
+  async function authors(): Promise<void> {
     const currentAuthor = await db.authors.get(userId);
     if (currentAuthor) {
       setName(currentAuthor.name);
@@ -83,7 +83,7 @@ function BlogPost({
   img,
   userId,
   onDelete,
-}: BlogPostProps) {
+}: BlogPostProps): JSX.Element {
   const [isLiked, setIsLiked] = useState(false);
 
   return (

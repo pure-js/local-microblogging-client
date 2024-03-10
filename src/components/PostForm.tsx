@@ -1,8 +1,8 @@
 // import { Input } from './Input';
 
-type User = {
+interface User {
   name: string;
-};
+}
 
 interface PostFormProps {
   user?: User;

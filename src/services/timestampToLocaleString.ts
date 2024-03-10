@@ -1,7 +1,7 @@
 export function timestampToLocaleString(
   unixTimestamp: number,
   currentDate = new Date(),
-) {
+): { date: string; htmlDatetime: string } {
   const datetime = new Date(Number(unixTimestamp) * 1000);
   const isCurrentYear = datetime.getFullYear() === currentDate.getFullYear();
   const date = datetime.toLocaleString(

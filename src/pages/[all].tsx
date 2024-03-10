@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-function NoMatch() {
+function NoMatch(): JSX.Element {
   const location = useLocation();
 
   return (

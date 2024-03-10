@@ -4,7 +4,7 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from '@services/db';
 import type { IBlogPost } from '@components/PostPreview';
 
-function Post({ heading, text }: IBlogPost) {
+function Post({ heading, text }: IBlogPost): JSX.Element {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -30,9 +30,9 @@ function Post({ heading, text }: IBlogPost) {
   );
 }
 
-function BlogPost() {
+function BlogPost(): JSX.Element {
   const { postId } = useParams();
-  const postArr = useLiveQuery(() =>
+  const postArr = useLiveQuery(async () =>
     db.posts.filter(({ id }) => id === Number(postId)).toArray(),
   );
 
