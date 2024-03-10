@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { themeChange } from 'theme-change';
 
-function Header() {
+function Header(): JSX.Element {
   useEffect(() => {
     themeChange(false);
     // 👆 false parameter is required for react project

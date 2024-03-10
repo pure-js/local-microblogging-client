@@ -1,7 +1,8 @@
-function Search() {
+function Search(): JSX.Element {
   return (
     <div className="col-span-12 w-full pb-6">
       <input
+        title="Search input"
         disabled
         type="search"
         className="disabled:bg-gray-100 rounded-l border border-blue-700 py-1 px-5"

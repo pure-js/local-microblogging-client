@@ -12,7 +12,7 @@ interface IBlogPostProps {
   post: IBlogPost;
 }
 
-export function EditPost({ post }: IBlogPostProps) {
+export function EditPost({ post }: IBlogPostProps): JSX.Element {
   const [heading, setHeading] = useState(post.heading);
   const [text, setText] = useState(post.text);
   const [img, setImg] = useState(post.img);
@@ -21,7 +21,7 @@ export function EditPost({ post }: IBlogPostProps) {
 
   const { postId } = useParams();
 
-  function handleImageChange(event: React.FormEvent<HTMLInputElement>) {
+  function handleImageChange(event: React.FormEvent<HTMLInputElement>): void {
     const file = event.target.files[0];
     const reader = new FileReader();
 
@@ -38,7 +38,7 @@ export function EditPost({ post }: IBlogPostProps) {
     }
   }
 
-  async function UpdatePost() {
+  async function UpdatePost(): Promise<void> {
     try {
       await db.posts
         .update(Number(postId), {
@@ -62,7 +62,7 @@ export function EditPost({ post }: IBlogPostProps) {
     }
   }
 
-  function updateStory(event: React.FormEvent<HTMLFormElement>) {
+  function updateStory(event: React.FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     UpdatePost();
   }
@@ -153,7 +153,7 @@ export function EditPost({ post }: IBlogPostProps) {
 
 function EditPostWrapper() {
   const { postId } = useParams();
-  const posts = useLiveQuery(() =>
+  const posts = useLiveQuery(async () =>
     db.posts.filter(({ id }) => id === Number(postId)).toArray(),
   );
 

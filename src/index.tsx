@@ -4,14 +4,14 @@ import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 
 import './index.css';
 
-const App = lazy(() => import('@components/App'));
-const Home = lazy(() => import('@pages/index'));
-const NoMatch = lazy(() => import('@pages/[all]'));
+const App = lazy(async () => import('@components/App'));
+const Home = lazy(async () => import('@pages/index'));
+const NoMatch = lazy(async () => import('@pages/[all]'));
 
-const NewPost = lazy(() => import('@pages/posts/new'));
-const BlogPost = lazy(() => import('@pages/posts/[postId]'));
-const EditPost = lazy(() => import('@pages/posts/[postId]/edit'));
-const UserInfo = lazy(() => import('@pages/users/[userName]'));
+const NewPost = lazy(async () => import('@pages/posts/new'));
+const BlogPost = lazy(async () => import('@pages/posts/[postId]'));
+const EditPost = lazy(async () => import('@pages/posts/[postId]/edit'));
+const UserInfo = lazy(async () => import('@pages/users/[userName]'));
 
 const root = createRoot(document.getElementById('app'));
 

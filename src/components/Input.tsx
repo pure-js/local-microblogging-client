@@ -31,7 +31,7 @@ export function Input({
   onChange,
   label,
   ...props
-}: InputProps) {
+}: InputProps): JSX.Element {
   const sizeAdjusted = size === 'large' ? '3xl' : 'xl';
   return (
     <input

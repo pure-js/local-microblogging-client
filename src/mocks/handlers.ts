@@ -3,7 +3,7 @@ import { rest } from 'msw';
 import postsJson from './posts.json';
 
 export const handlers = [
-  rest.get('/posts', (req, res, ctx) =>
+  rest.get('/posts', async (req, res, ctx) =>
     res(ctx.status(200), ctx.json(postsJson)),
   ),
 ];
