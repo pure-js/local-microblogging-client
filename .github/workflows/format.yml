@@ -1,9 +1,9 @@
-name: Code Linting
+name: Code Formatter
 
 on: push
 
 jobs:
-  lint:
+  format:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,4 +21,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run ESLint
-        run: pnpm run lint
+        run: pnpm run format:check

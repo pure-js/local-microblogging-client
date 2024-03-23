@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -21,7 +21,7 @@ function AddPost() {
   const navigate = useNavigate();
 
   function handleImageChange(event: React.FormEvent<HTMLInputElement>) {
-    const file = event.target.files[0];
+    const file = (event.target as HTMLInputElement)?.files?.[0];
     const reader = new FileReader();
 
     reader.addEventListener(

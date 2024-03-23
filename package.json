@@ -17,7 +17,8 @@
     "release": "standard-version",
     "lint": "eslint --ext .tsx,.jsx,.js,.ts src/",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-love": "~43.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.29.1",
@@ -64,7 +66,7 @@
     "msw": "^1.2.2",
     "postcss": "^8.4.31",
     "postcss-nesting": "12.0.1",
-    "prettier": "3.0.3",
+    "prettier": "3.2.5",
     "standard-version": "^9.5.0",
     "storybook": "^7.5.2",
     "storybook-addon-react-router-v6": "~2.0.8",
