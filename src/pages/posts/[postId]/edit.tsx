@@ -21,8 +21,8 @@ export function EditPost({ post }: IBlogPostProps) {
 
   const { postId } = useParams();
 
-  function handleImageChange(event: React.FormEvent<HTMLInputElement>) {
-    const file = event.target.files[0];
+  function handleImageChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
     const reader = new FileReader();
 
     reader.addEventListener(
@@ -153,7 +153,7 @@ export function EditPost({ post }: IBlogPostProps) {
 
 function EditPostWrapper() {
   const { postId } = useParams();
-  const posts = useLiveQuery(() =>
+  const posts = useLiveQuery(async () =>
     db.posts.filter(({ id }) => id === Number(postId)).toArray(),
   );
 

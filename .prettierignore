@@ -9,3 +9,6 @@ tsconfig.node.json
 
 # PNPM package manager
 pnpm-lock.yaml
+
+CHANGELOG.md
+public/mockServiceWorker.js
