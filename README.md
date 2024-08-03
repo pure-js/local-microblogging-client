@@ -18,7 +18,3 @@ CRUD implemenation with React;
 ## Production build
 
     $ pnpm run build
-
-## Deploy to Github pages
-
-    $ pnpm run deploy
