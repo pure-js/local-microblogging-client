@@ -1,6 +1,6 @@
 import { test, expect } from 'vitest';
 
-import { timestampToLocaleString } from './timestampToLocaleString';
+import { timestampToLocaleString } from './timestamp-to-locale-string';
 
 test('1654024577 equals May 31', () => {
   expect(

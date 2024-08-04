@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PostForm } from './PostForm';
+import { PostForm } from './post-form';
 
 const meta = {
   title: 'Components/PostForm',
