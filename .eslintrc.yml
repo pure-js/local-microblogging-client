@@ -19,12 +19,14 @@ parserOptions:
 plugins:
   - '@typescript-eslint'
   - react
+  - unicorn
 rules:
   import/prefer-default-export: 'off'
   react/jsx-filename-extension: [2, { 'extensions': ['.jsx', '.tsx'] }]
   react/require-default-props: 'off'
   '@typescript-eslint/explicit-function-return-type': 'off'
   '@typescript-eslint/no-floating-promises': 'off'
+  unicorn/filename-case: ['error', { 'case': 'kebabCase' }]
 settings:
   'import/resolver':
     alias:
