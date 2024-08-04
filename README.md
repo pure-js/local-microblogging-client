@@ -7,7 +7,7 @@ CRUD implemenation with React;
 
 - React
 - TypeScript
-- TailwindCSS
+- daisyUI & TailwindCSS
 - Storybook
 
 ## Contribution

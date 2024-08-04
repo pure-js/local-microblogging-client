@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-import { db } from '@services/db';
-import type { IBlogPost } from '@components/PostPreview';
+import { db } from '~/services/db';
+import type { IBlogPost } from '~/components/PostPreview';
 
 function Post({ heading, text }: IBlogPost) {
   const navigate = useNavigate();
