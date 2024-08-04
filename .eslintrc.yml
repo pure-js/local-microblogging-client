@@ -28,5 +28,10 @@ rules:
 settings:
   'import/resolver':
     alias:
-      map: [['~/components', './src/components']]
+      map:
+        [
+          ['~/components', './src/components'],
+          ['~/pages', './src/pages'],
+          ['~/services', './src/services'],
+        ]
       extensions: ['.ts', '.js', '.jsx', '.ts', '.tsx', '.json']
