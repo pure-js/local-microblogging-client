@@ -19,7 +19,7 @@ ci:
           'categories:pwa': ['off']
           'categories:seo': ['error', { 'minScore': 0.94 }]
       - matchingUrlPattern: https://[^/]+/posts/new
-         assertions:
+        assertions:
           'categories:accessibility': ['error', { 'minScore': 0.95 }]
   upload:
     target: 'temporary-public-storage'
