@@ -30,7 +30,7 @@ function App() {
         import.meta.env.VITE_GROWTH_BOOK_KEY
       }`,
     )
-      .then(async (res) => res.json())
+      .then((res) => res.json())
       .then((json) => {
         growthbook.setFeatures(json.features);
       });
