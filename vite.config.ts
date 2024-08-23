@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import { VitePWA } from 'vite-plugin-pwa';
 // import browserslist from 'browserslist';
 // import { browserslistToTargets } from 'lightningcss';
@@ -16,7 +17,7 @@ export default defineConfig({
     emptyOutDir: true,
     cssMinify: 'lightningcss',
   },
-  plugins: [react(), VitePWA({})],
+  plugins: [react(), VitePWA({}), vanillaExtractPlugin()],
   define: {
     APP_VERSION: JSON.stringify(process.env.npm_package_version),
   },

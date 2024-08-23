@@ -152,7 +152,7 @@ export function EditPost({ post }: IBlogPostProps) {
 
 function EditPostWrapper() {
   const { postId } = useParams();
-  const posts = useLiveQuery(async () =>
+  const posts = useLiveQuery(() =>
     db.posts.filter(({ id }) => id === Number(postId)).toArray(),
   );
 

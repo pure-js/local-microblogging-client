@@ -32,7 +32,7 @@ function Post({ heading, text }: IBlogPost) {
 
 function BlogPost() {
   const { postId } = useParams();
-  const postArr = useLiveQuery(async () =>
+  const postArr = useLiveQuery(() =>
     db.posts.filter(({ id }) => id === Number(postId)).toArray(),
   );
 

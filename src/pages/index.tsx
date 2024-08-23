@@ -14,7 +14,7 @@ function handleDeleteStory(id: string) {
 }
 
 export function PostList() {
-  const posts = useLiveQuery(async () =>
+  const posts = useLiveQuery(() =>
     db.posts
       // .where('text')
       // .anyOf(['The'])

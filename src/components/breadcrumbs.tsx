@@ -1,6 +1,6 @@
 import { useMatches } from 'react-router-dom';
 
-import classes from './breadcrumbs.module.css';
+import { breadcrumbs, crumb as StCrumb } from './breadcrumbs.css';
 
 function Breadcrumbs() {
   const matches = useMatches();
@@ -13,10 +13,10 @@ function Breadcrumbs() {
 
   return (
     <div className="container mx-auto px-4">
-      <ol className={classes.breadcrumbs}>
+      <ol className={breadcrumbs}>
         {crumbs.map((crumb, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <li className={classes.crumb} key={index}>
+          <li className={StCrumb} key={index}>
             {crumb}
           </li>
         ))}

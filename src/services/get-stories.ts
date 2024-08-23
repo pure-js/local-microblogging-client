@@ -1,6 +1,6 @@
-export const getStories = async (url: string) =>
+export const getStories = (url: string) =>
   fetch(url)
-    .then(async (response) => response.json())
+    .then((response) => response.json())
     .then((data) => data.result);
 
 export default getStories;
