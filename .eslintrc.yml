@@ -25,16 +25,16 @@ rules:
   react/jsx-filename-extension: [2, { 'extensions': ['.jsx', '.tsx'] }]
   react/require-default-props: 'off'
   '@typescript-eslint/explicit-function-return-type': 'off'
-  '@typescript-eslint/no-floating-promises': 'off'
   unicorn/filename-case: ['error', { 'case': 'kebabCase' }]
   'require-await': 'error'
 settings:
-  'import/resolver':
+  import/resolver:
     alias:
       map:
-        [
-          ['~/components', './src/components'],
-          ['~/pages', './src/pages'],
-          ['~/services', './src/services'],
-        ]
+        - - '~/components'
+          - './src/components'
+        - - '~/pages'
+          - './src/pages'
+        - - '~/services'
+          - './src/services'
       extensions: ['.ts', '.js', '.jsx', '.ts', '.tsx', '.json']
