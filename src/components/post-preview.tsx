@@ -26,7 +26,7 @@ function Author({ userId }: IAuthor) {
 
   return userId ? (
     <div>
-      <Link to={`/users/${username}`} className="link link-neutral">
+      <Link to={`/users/${username}`} className="link-neutral link">
         {name}
       </Link>{' '}
       <span className="text-muted">{`@${username}`}</span>
@@ -87,7 +87,7 @@ function BlogPost({
   const [isLiked, setIsLiked] = useState(false);
 
   return (
-    <article className="card border border-gray-400 rounded-md mb-3">
+    <article className="card mb-3 rounded-md border border-gray-400">
       {img && (
         <figure>
           <img
@@ -100,7 +100,7 @@ function BlogPost({
         </figure>
       )}
       <div className="card-body pb-0">
-        <div className="bg-transparent border-0 flex justify-between mb-3">
+        <div className="mb-3 flex justify-between border-0 bg-transparent">
           <Author userId={userId} />
           <p className="card-text text-right">
             <time dateTime={htmlDatetime} className="text-muted">
@@ -108,7 +108,7 @@ function BlogPost({
             </time>
           </p>
         </div>
-        <h3 className="card-title link link-primary mb-2 text-3xl">
+        <h3 className="link-primary link card-title mb-2 text-3xl">
           <Link to={`/posts/${id}`} className="">
             {heading}
           </Link>
@@ -118,7 +118,7 @@ function BlogPost({
       <div className="grid grid-cols-12 p-3 pb-1">
         <div className="col-span-6">
           <button
-            className="btn btn-circle btn-ghost"
+            className="btn-ghost btn-circle btn"
             title="Like it!"
             type="button"
             onClick={(e) => {
@@ -158,7 +158,7 @@ function BlogPost({
           <div className="btn-group-horizontal" role="group">
             <Link
               to={`/posts/${id}/edit`}
-              className="btn btn-ghost btn-circle"
+              className="btn-ghost btn-circle btn"
               title="Edit post"
             >
               <svg
@@ -174,7 +174,7 @@ function BlogPost({
               </svg>
             </Link>
             <button
-              className="btn btn-ghost btn-circle"
+              className="btn-ghost btn-circle btn"
               title="Remove post"
               type="button"
               onClick={() => {

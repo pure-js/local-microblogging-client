@@ -68,7 +68,7 @@ function AddPost() {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="grid grid-cols-12 gap-1 mb-3">
+      <div className="mb-3 grid grid-cols-12 gap-1">
         {status && <h3>{status}</h3>}
         {image && (
           <div className="col-span-12 md:col-span-10 lg:col-span-6">
@@ -81,7 +81,7 @@ function AddPost() {
           </div>
         )}
         <div className="col-span-12 md:col-span-8 lg:col-span-6">
-          <h3 className="text-2xl mt-3 mb-5">What&apos;s new?</h3>
+          <h3 className="mb-5 mt-3 text-2xl">What&apos;s new?</h3>
           <form onSubmit={createStory}>
             <div className="mb-3">
               <Input
@@ -96,7 +96,7 @@ function AddPost() {
               <textarea
                 placeholder="Write your text..."
                 rows={5}
-                className="textarea text-lg w-full"
+                className="textarea w-full text-lg"
                 value={text}
                 onChange={(e) => {
                   setText(e.target.value);
@@ -107,7 +107,7 @@ function AddPost() {
               <textarea
                 placeholder="Hashtags"
                 rows={2}
-                className="textarea text-lg w-full"
+                className="textarea w-full text-lg"
                 value={hashtags}
                 onChange={(e) => {
                   setHashtags(e.target.value);
@@ -125,12 +125,7 @@ function AddPost() {
                 id="uploadImageInput"
                 type="file"
                 title="Add image"
-                className="block w-full text-sm text-slate-500
-                file:mr-4 file:py-2 file:px-4
-                file:rounded-full file:border-0
-                file:text-sm file:font-semibold
-                file:bg-violet-50 file:text-slate-500
-                hover:file:bg-violet-100 cursor-pointer mt-2"
+                className="mt-2 block w-full cursor-pointer text-sm text-slate-500 file:mr-4 file:rounded-full file:border-0 file:bg-violet-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-slate-500 hover:file:bg-violet-100"
                 onChange={handleImageChange}
               />
             </div>
@@ -138,7 +133,7 @@ function AddPost() {
               <button
                 title="Add new post"
                 type="submit"
-                className="btn btn-primary btn-outline mt-5"
+                className="btn-primary btn-outline btn mt-5"
               >
                 <i className="glyphicon glyphicon-ok" />
                 Post it

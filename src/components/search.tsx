@@ -4,12 +4,12 @@ function Search() {
       <input
         disabled
         type="search"
-        className="disabled:bg-gray-100 rounded-l border border-blue-700 py-1 px-5"
+        className="rounded-l border border-blue-700 px-5 py-1 disabled:bg-gray-100"
       />
       <button
         disabled
         type="button"
-        className=" text-white fill rounded-r border bg-blue-700 border-blue-700 px-5 py-1"
+        className="fill rounded-r border border-blue-700 bg-blue-700 px-5 py-1 text-white"
       >
         Search
       </button>
