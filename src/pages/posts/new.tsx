@@ -133,7 +133,7 @@ function AddPost() {
               <button
                 title="Add new post"
                 type="submit"
-                className="btn-primary btn-outline btn mt-5"
+                className="btn btn-outline btn-primary mt-5"
               >
                 <i className="glyphicon glyphicon-ok" />
                 Post it

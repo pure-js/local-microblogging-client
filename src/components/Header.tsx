@@ -11,14 +11,14 @@ function Header() {
   return (
     <nav className="navbar mb-3 bg-neutral text-neutral-content">
       <div className="flex-1">
-        <Link to="/" className="btn-ghost btn text-xl normal-case">
+        <Link to="/" className="btn btn-ghost text-xl normal-case">
           Microblogging
         </Link>
       </div>
       <div className="flex-none justify-between">
         <button
           type="button"
-          className="btn-circle btn mr-6"
+          className="btn btn-circle mr-6"
           data-toggle-theme="forest,winter"
           data-act-class="ACTIVECLASS"
           aria-label="Dark Theme"
@@ -39,7 +39,7 @@ function Header() {
           </svg>
         </button>
         <form className="form-inline navbar-end">
-          <Link to="/posts/new" className="btn-primary btn-outline btn">
+          <Link to="/posts/new" className="btn btn-outline btn-primary">
             New Post
           </Link>
         </form>

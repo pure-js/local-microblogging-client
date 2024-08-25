@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
