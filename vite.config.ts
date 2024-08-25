@@ -17,7 +17,7 @@ export default defineConfig({
     emptyOutDir: true,
     cssMinify: 'lightningcss',
   },
-  plugins: [react(), VitePWA({}), vanillaExtractPlugin()],
+  plugins: [react(), vanillaExtractPlugin(), VitePWA()],
   define: {
     APP_VERSION: JSON.stringify(process.env.npm_package_version),
   },
