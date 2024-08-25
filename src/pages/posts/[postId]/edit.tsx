@@ -134,7 +134,7 @@ export function EditPost({ post }: IBlogPostProps) {
               <input
                 title="Update post"
                 type="submit"
-                className="btn-primary btn-outline btn mt-5"
+                className="btn btn-outline btn-primary mt-5"
                 value="Update it"
               />
             </div>
