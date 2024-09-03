@@ -3,19 +3,22 @@ import { useState } from 'react';
 import { redirect, useParams } from 'react-router-dom';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-import { Input } from '~/components/input';
 import { db } from '~/services/db';
 import type { IBlogPost } from '~/components/post-preview';
 
 interface IBlogPostProps {
   post: IBlogPost;
 }
+interface IStatus {
+  status: 'success' | 'info' | 'error';
+  message: string;
+}
 
 export function EditPost({ post }: IBlogPostProps) {
   const [heading, setHeading] = useState(post.heading);
   const [text, setText] = useState(post.text);
   const [img, setImg] = useState(post.img);
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState<IStatus | null>(null);
   const [hashtags, setHashtags] = useState('');
 
   const { postId } = useParams();
@@ -48,16 +51,23 @@ export function EditPost({ post }: IBlogPostProps) {
         })
         .then((updated) => {
           if (updated) {
-            setStatus(
-              `Post "${heading}" successfully updated. Post id ${postId}`,
-            );
+            setStatus({
+              status: 'success',
+              message: `Post "${heading}" successfully updated. Post id ${postId}`,
+            });
             redirect('/');
           } else {
-            setStatus(`Nothing happend with ${postId}`);
+            setStatus({
+              status: 'info',
+              message: `Nothing happend with ${postId}`,
+            });
           }
         });
     } catch (error) {
-      setStatus(`Failed to update ${heading}: ${error}`);
+      setStatus({
+        status: 'error',
+        message: `Failed to update ${heading}: ${error}`,
+      });
     }
   }
 
@@ -69,8 +79,12 @@ export function EditPost({ post }: IBlogPostProps) {
   return (
     <div className="container mx-auto px-4">
       <div className="mb-3 grid grid-cols-12 gap-1">
-        {status && <h3>{status}</h3>}
         <div className="col-span-12 md:col-span-8 lg:col-span-6">
+          {status && (
+            <div className={`alert mt-4 alert-${status.status}`}>
+              <span>{status.message}</span>
+            </div>
+          )}
           <h3 className="mb-5 mt-3 text-2xl">Any updates?</h3>
           {img && (
             <figure>
@@ -84,9 +98,10 @@ export function EditPost({ post }: IBlogPostProps) {
           )}
           <form onSubmit={updateStory}>
             <div className="mb-3">
-              <Input
+              <textarea
                 placeholder="Title"
                 value={heading}
+                className="textarea w-full text-3xl"
                 onChange={(e) => {
                   setHeading(e.target.value);
                 }}
