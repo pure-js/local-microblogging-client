@@ -3,7 +3,7 @@
 # Graphics
 *.jpg binary
 *.png binary
+*.avif binary
+*.webp binary
 *.gif binary
 *.ico binary
-
-package-lock.json merge=theirs
