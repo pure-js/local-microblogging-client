@@ -1,6 +1,7 @@
 import { lazy, StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+import { createBrowserRouter, Link } from 'react-router';
+import { RouterProvider } from 'react-router/dom';
 
 import './index.css';
 
@@ -58,7 +59,9 @@ const router = createBrowserRouter(
               element: <UserInfo />,
               loader: ({ params }) => params,
               handle: {
-                crumb: (data) => <span>{data.userName}</span>,
+                crumb: (data: { userName: string }) => (
+                  <span>{data.userName}</span>
+                ),
               },
             },
           ],
@@ -72,13 +75,25 @@ const router = createBrowserRouter(
   ],
   {
     basename: import.meta.env.BASE_URL,
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionErrorRevalidation: true,
+    },
   },
 );
 
 root.render(
   <StrictMode>
     <Suspense fallback={<>loading...</>}>
-      <RouterProvider router={router} />
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
     </Suspense>
   </StrictMode>,
 );

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router';
 import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 
 import Header from '~/components/header';

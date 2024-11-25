@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
 
 import { db } from '~/services/db';
