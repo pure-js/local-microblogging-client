@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.12.1](https://github.com/pure-js/local-microblogging-client/compare/v2.12.0...v2.12.1) (2024-11-25)
+
+
+### Bug Fixes
+
+* status view ([#396](https://github.com/pure-js/local-microblogging-client/issues/396)) ([7de8ef6](https://github.com/pure-js/local-microblogging-client/commit/7de8ef60f280879fdbf4cc4fc9a384bf0e6b2050))
+
+
+### Performance Improvements
+
+* use avif instead of png ([#394](https://github.com/pure-js/local-microblogging-client/issues/394)) ([ce1a8c1](https://github.com/pure-js/local-microblogging-client/commit/ce1a8c127fa439a4c655f23b9551d481261ec08a))
+
 ## [2.12.0](https://github.com/pure-js/local-microblogging-client/compare/v2.11.7...v2.12.0) (2023-09-25)
 
 
