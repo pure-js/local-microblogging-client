@@ -65,7 +65,7 @@
     "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-unicorn": "^55.0.0",
     "lightningcss": "^1.22.0",
-    "msw": "^1.3.3",
+    "msw": "^2.6.6",
     "postcss": "^8.4.41",
     "postcss-nesting": "13.0.0",
     "prettier": "3.3.3",
