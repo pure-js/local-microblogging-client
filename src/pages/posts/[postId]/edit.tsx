@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
-import { redirect, useParams } from 'react-router-dom';
+import { redirect, useParams } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
 
 import { db } from '~/services/db';
