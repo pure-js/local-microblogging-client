@@ -1,6 +1,6 @@
 # Local Microblogging Frontend Client
 
-The App allows you to view your news feed, add new posts and delete posts. Posts are stored locally, without the use of back-end. The visual design is left to your discretion. TLDR: React CRUD;
+The app allows you to browse your news feed, add new posts, edit and delete them. The posts are stored locally in the browser, without using the backend. TLDR: React CRUD
 
 ## Tech Stack
 
