@@ -12,6 +12,9 @@ node_modules/
 # Build
 dist/
 
+# TypeScript build
+tsconfig.tsbuildinfo
+
 # macOS
 .DS_store
 
