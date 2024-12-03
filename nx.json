@@ -2,15 +2,11 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
-      "outputs": [
-        "{projectRoot}/dist"
-      ],
+      "outputs": ["{projectRoot}/dist"],
       "cache": true
     },
     "build-storybook": {
-      "outputs": [
-        "{projectRoot}/storybook-static"
-      ],
+      "outputs": ["{projectRoot}/storybook-static"],
       "cache": true
     }
   },
