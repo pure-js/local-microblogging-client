@@ -3,10 +3,6 @@ build
 dist
 coverage
 
-# TypeScript config
-tsconfig.json
-tsconfig.node.json
-
 # PNPM package manager
 pnpm-lock.yaml
 

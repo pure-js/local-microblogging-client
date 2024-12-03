@@ -15,6 +15,9 @@ dist/
 # TypeScript build
 tsconfig.tsbuildinfo
 
+# Storybook build outputs
+storybook-static/
+
 # macOS
 .DS_store
 
@@ -29,5 +32,7 @@ coverage/
 /playwright-report/
 /playwright/.cache/
 
-# Storybook build outputs
-storybook-static/
+# NX
+.nx/cache
+.nx/workspace-data
+vite.config.*.timestamp*
