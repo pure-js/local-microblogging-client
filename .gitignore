@@ -27,6 +27,8 @@ storybook-static/
 # Test Coverage
 coverage/
 
+.react-router/
+
 # Playwright
 /test-results/
 /playwright-report/
