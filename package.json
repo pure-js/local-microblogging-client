@@ -35,7 +35,7 @@
     "@nx/eslint": "20.1.4",
     "@nx/playwright": "20.1.4",
     "@nx/storybook": "20.1.4",
-    "@nx/vite": "20.1.4",
+    "@nx/vite": "20.2.2",
     "@nx/web": "20.1.4",
     "@playwright/test": "^1.49.1",
     "@storybook/addon-essentials": "^8.0.10",
