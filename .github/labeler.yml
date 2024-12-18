@@ -8,16 +8,16 @@ repo:
 
 # Add 'test' label to any change to *.spec.js files within the source dir
 test:
-  - src/**/*.spec.js
+  - apps/**/*.spec.js
 
 # Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
 source:
-  - any: ['src/**', '!src/docs/*']
+  - any: ['apps/**', '!apps/docs/*']
 
 # Add 'frontend` label to any change to *.js files as long as the `main.js` hasn't changed
 frontend:
-  - any: ['src/**/*.js']
-    all: ['!src/main.js']
+  - any: ['apps/client/**/*.ts', 'apps/client/**/*.tsx']
+    all: ['!apps/client/index.tsx']
 
 # Add the 'AnyChange' label to any changes within the entire repository if the 'dot' option is set to 'false'
 AnyChange:

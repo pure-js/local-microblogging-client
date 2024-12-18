@@ -2,7 +2,7 @@
   "name": "local-microblogging-client",
   "version": "2.12.1",
   "description": "Local Microblogging Frontend Client",
-  "main": "src/index.tsx",
+  "main": "apps/client/index.tsx",
   "homepage": "https://pure-js.github.io/local-microblogging-client/",
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
     "e2e": "playwright test",
     "deploy": "act -j publish",
     "release": "standard-version",
-    "lint": "eslint src/ --ext .tsx,.jsx,.js,.ts",
+    "lint": "eslint apps/client --ext .tsx,.jsx,.js,.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format:check": "prettier --check .",

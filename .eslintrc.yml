@@ -34,9 +34,9 @@ settings:
     alias:
       map:
         - - '~/components'
-          - './src/components'
+          - './apps/client/components'
         - - '~/pages'
-          - './src/pages'
+          - './apps/client/pages'
         - - '~/services'
-          - './src/services'
+          - './apps/client/services'
       extensions: ['.ts', '.js', '.jsx', '.ts', '.tsx', '.json']
