@@ -8,7 +8,7 @@
     "rootDir": "./",
     "moduleResolution": "Node",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./apps/client/*"]
     },
     "resolveJsonModule": true,
     "allowJs": false,
@@ -22,5 +22,5 @@
     "noImplicitAny": true,
     "skipLibCheck": true
   },
-  "include": ["src", "vite-env.d.ts"]
+  "include": ["apps/client", "vite-env.d.ts"]
 }
