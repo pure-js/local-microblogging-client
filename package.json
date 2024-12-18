@@ -16,7 +16,7 @@
     "e2e": "playwright test",
     "deploy": "act -j publish",
     "release": "standard-version",
-    "lint": "eslint src/ --ext .tsx,.jsx,.js,.ts",
+    "lint": "eslint apps/client --ext .tsx,.jsx,.js,.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format:check": "prettier --check .",
