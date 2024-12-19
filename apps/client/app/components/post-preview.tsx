@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 
-import { db } from '~/services/db';
+import { db } from '~/app/services/db';
 
 interface IAuthor {
   userId: string;

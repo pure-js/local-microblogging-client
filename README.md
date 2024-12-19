@@ -1,4 +1,4 @@
-# Local Microblogging Frontend Client
+# Self-hosted Microblogging Frontend Client
 
 The app allows you to browse your news feed, add new posts, edit and delete them. The posts are stored locally in the browser, without using the backend. TLDR: React CRUD
 
