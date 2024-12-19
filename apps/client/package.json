@@ -1,9 +1,8 @@
 {
-  "name": "self-hosted-microblogging",
+  "name": "client",
   "version": "2.12.1",
-  "description": "Self-hosted Microblogging Frontend App",
   "main": "apps/client/app/index.tsx",
-  "homepage": "https://pure-js.github.io/self-hosted-microblogging/",
+  "homepage": "https://pure-js.github.io/local-microblogging-client/",
   "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -22,17 +21,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pure-js/self-hosted-microblogging.git"
+    "url": "git+https://github.com/pure-js/local-microblogging-client.git"
   },
   "author": "pure-js",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pure-js/self-hosted-microblogging/issues"
+    "url": "https://github.com/pure-js/local-microblogging-client/issues"
   },
   "devDependencies": {
     "@nx/eslint": "20.1.4",
-    "@nx/playwright": "20.1.4",
-    "@nx/storybook": "20.1.4",
     "@nx/vite": "20.1.4",
     "@nx/web": "20.1.4",
     "@playwright/test": "^1.49.1",
@@ -62,6 +59,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-compiler": "19.0.0-beta-37ed2a7-20241206",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.15",
     "eslint-plugin-unicorn": "^55.0.0",
     "msw": "^1.3.3",
     "nx": "20.1.4",
@@ -103,6 +101,6 @@
       "plugin:storybook/recommended"
     ]
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@9.14.4",
   "nx": {}
 }

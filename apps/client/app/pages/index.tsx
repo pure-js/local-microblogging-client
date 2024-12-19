@@ -2,12 +2,12 @@ import { Fragment } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useFeature } from '@growthbook/growthbook-react';
 
-import Search from '~/components/search';
+import Search from '~/app/components/search';
 
-import { db } from '~/services/db';
-import { timestampToLocaleString } from '~/services/timestamp-to-locale-string';
-import type { IBlogPost } from '~/components/post-preview';
-import PostPreview from '~/components/post-preview';
+import { db } from '~/app/services/db';
+import { timestampToLocaleString } from '~/app/services/timestamp-to-locale-string';
+import type { IBlogPost } from '~/app/components/post-preview';
+import PostPreview from '~/app/components/post-preview';
 
 function handleDeleteStory(id: string) {
   db.posts.delete(id);

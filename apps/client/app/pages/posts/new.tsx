@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Input } from '~/components/input';
-import { db } from '~/services/db';
+import { Input } from '~/app/components/input';
+import { db } from '~/app/services/db';
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * max);

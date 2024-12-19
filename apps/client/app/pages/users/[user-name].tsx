@@ -1,8 +1,8 @@
 import { useParams } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-import { db } from '~/services/db';
-import type { IUser } from '~/components/post-preview';
+import { db } from '~/app/services/db';
+import type { IUser } from '~/app/components/post-preview';
 
 function Info({ name }: IUser) {
   return (

@@ -19,6 +19,10 @@ frontend:
   - any: ['apps/client/**/*.ts', 'apps/client/**/*.tsx']
     all: ['!apps/client/index.tsx']
 
+docs:
+  - any: ['apps/docs/**/*.ts', 'apps/docs/**/*.tsx']
+    all: ['!apps/docs/src/main.tsx']
+
 # Add the 'AnyChange' label to any changes within the entire repository if the 'dot' option is set to 'false'
 AnyChange:
   - '**'

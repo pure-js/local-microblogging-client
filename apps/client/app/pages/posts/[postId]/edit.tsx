@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { redirect, useParams } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
 
-import { db } from '~/services/db';
-import type { IBlogPost } from '~/components/post-preview';
+import { db } from '~/app/services/db';
+import type { IBlogPost } from '~/app/components/post-preview';
 
 interface IBlogPostProps {
   post: IBlogPost;

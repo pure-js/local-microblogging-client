@@ -5,14 +5,14 @@ import { RouterProvider } from 'react-router/dom';
 
 import './index.css';
 
-const App = lazy(() => import('~/components/app'));
-const Home = lazy(() => import('~/pages/index'));
-const NoMatch = lazy(() => import('~/pages/[all]'));
+const App = lazy(() => import('~/app/components/app'));
+const Home = lazy(() => import('~/app/pages/index'));
+const NoMatch = lazy(() => import('~/app/pages/[all]'));
 
-const NewPost = lazy(() => import('~/pages/posts/new'));
-const BlogPost = lazy(() => import('~/pages/posts/[postId]'));
-const EditPost = lazy(() => import('~/pages/posts/[postId]/edit'));
-const UserInfo = lazy(() => import('~/pages/users/[user-name]'));
+const NewPost = lazy(() => import('~/app/pages/posts/new'));
+const BlogPost = lazy(() => import('~/app/pages/posts/[postId]'));
+const EditPost = lazy(() => import('~/app/pages/posts/[postId]/edit'));
+const UserInfo = lazy(() => import('~/app/pages/users/[user-name]'));
 
 const root = createRoot(document.getElementById('app')!);
 
