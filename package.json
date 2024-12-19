@@ -103,6 +103,6 @@
       "plugin:storybook/recommended"
     ]
   },
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@9.15.0",
   "nx": {}
 }
